@@ -44,7 +44,7 @@
         </button>
         <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-32 bg-white dark:bg-darkcard border border-gray-200 dark:border-gray-800 rounded-lg shadow-xl overflow-hidden py-1">
           {% for l in site.languages %}
-            <a href="/{{ l }}/" class="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors uppercase {% if l == lang %}text-moroccangreen font-bold{% endif %}">
+            <a href="{{ l | prepend: '/' | append: '/' | relative_url }}" class="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors uppercase {% if l == lang %}text-moroccangreen font-bold{% endif %}">
               {{ l }}
             </a>
           {% endfor %}
