@@ -15,10 +15,15 @@ languages:
   - es
 
 # Monetization Configuration
-ad_network: "propellerads"
-ad_placement_header: "11111"
-ad_placement_sidebar: "22222"
-ad_placement_incontent: "33333"
+monetization:
+  provider: "adsterra" # Options: monetag, adsterra, none
+  adsterra:
+    social_bar: "" # Paste Social Bar script here
+    top_banner: "" # Paste 728x90 Banner script here
+    anchor_banner: "" # Paste Native/Anchor script here
+    in_content: "" # Paste Native banner here
+  monetag:
+    multitag_script: '<script src="https://quge5.com/88/tag.min.js" data-zone="234755" async data-cfasync="false"></script>'
 
 markdown: kramdown
 theme: minima

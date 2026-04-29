@@ -1,12 +1,17 @@
-{% if site.ad_network %}
+{% assign provider = site.monetization.provider %}
+{% if provider != "none" %}
 <div x-data="{ hideAds: new URLSearchParams(window.location.search).has('noads') }" x-show="!hideAds">
 <div class="ad-slot my-6 flex flex-col items-center justify-center p-2 bg-black/5 dark:bg-white/5 rounded-2xl border border-white/5 transition-all hover:border-moroccangreen/20" data-zone="{{ include.zone }}">
   <!-- Label -->
   <div class="text-[8px] text-gray-500 mb-1 uppercase tracking-[0.2em] font-bold">Recommended for you</div>
   
   <div id="ad-{{ include.zone }}-container" class="w-full flex justify-center min-h-[50px]">
-    <!-- Monetag will automatically inject the ad here if the script is active -->
-    <div class="animate-pulse bg-gray-200/20 dark:bg-gray-800/20 h-full w-full rounded-lg"></div>
+    {% if provider == "adsterra" %}
+      {{ site.monetization.adsterra[include.zone] }}
+    {% elsif provider == "monetag" %}
+      <!-- Monetag handles injection via the MultiTag script in head -->
+      <div class="animate-pulse bg-gray-200/20 dark:bg-gray-800/20 h-full w-full rounded-lg"></div>
+    {% endif %}
   </div>
   
   <div class="mt-2 flex justify-between w-full px-2">

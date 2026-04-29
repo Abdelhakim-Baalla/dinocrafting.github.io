@@ -19,8 +19,12 @@
   <!-- Alpine JS -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   
-  <!-- Monetag MultiTag -->
-  <script src="https://quge5.com/88/tag.min.js" data-zone="234755" async data-cfasync="false"></script>
+  <!-- Ad Provider Script -->
+  {% if site.monetization.provider == "monetag" %}
+    {{ site.monetization.monetag.multitag_script }}
+  {% elsif site.monetization.provider == "adsterra" %}
+    {{ site.monetization.adsterra.social_bar }}
+  {% endif %}
   
   {% seo %}
 </head>
