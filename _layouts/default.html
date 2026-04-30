@@ -16,8 +16,8 @@
   <!-- Tailwind CSS -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   
-  <!-- 3D Skin Viewer Library -->
-  <script src="https://unpkg.com/skinview3d@3.0.0-alpha.2/dist/skinview3d.bundle.js"></script>
+  <!-- 3D Skin Viewer Library (jsDelivr Stable) -->
+  <script src="https://cdn.jsdelivr.net/npm/skinview3d@2.4.0/dist/skinview3d.bundle.js"></script>
 
   <!-- Alpine JS -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -53,7 +53,8 @@
     .theme-ramadan .shadow-moroccangreen { --tw-shadow-color: var(--ramadan-color); }
   </style>
 </head>
-<body class="bg-lightbg dark:bg-darkbg text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans {% if lang == 'ar' or lang == 'ma' %}font-arabic{% endif %}">
+<body class="bg-lightbg dark:bg-darkbg text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans {% if lang == 'ar' or lang == 'ma' %}font-arabic{% endif %}"
+      data-ramadan="{{ site.themes.ramadan.enabled }}">
 
   {% include header.html %}
 
@@ -84,7 +85,9 @@
       // Ramadan 2026: Feb 18 - Mar 20
       const isRamadan = (now.getMonth() === 1 && now.getDate() >= 18) || (now.getMonth() === 2 && now.getDate() <= 20);
       
-      if (isRamadan && {{ site.themes.ramadan.enabled | default: false }}) {
+      const ramadanEnabled = document.body.getAttribute('data-ramadan') === 'true';
+      
+      if (isRamadan && ramadanEnabled) {
         document.body.classList.add('theme-ramadan');
         console.log("🌙 Ramadan Theme Active - Dino Crafting");
       }

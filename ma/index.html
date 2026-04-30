@@ -8,10 +8,7 @@ title: الرئيسية
     search: '',
     ram: '4gb',
     mods: [
-      { title: 'FlowInventory', desc: 'أفضل مود لتنظيم الشنطة تلقائياً بذكاء. كيرتب ليك كلشي بلا صداع.', version: '1.21.x', url: '/mods/flowinventory/', img: 'https://media.forgecdn.net/avatars/591/10/637841050000000000.png', category: 'Utility', stars: 5 },
-      { title: 'FPS Booster', desc: 'محرك خاص لزيادة سرعة اللعبة في الأجهزة الضعيفة بزاف.', version: '1.20.x', url: '#', img: 'https://media.forgecdn.net/avatars/591/10/637841050000000000.png', category: 'Performance', stars: 4 },
-      { title: 'AutoSwap', desc: 'تبديل الأدوات تلقائياً حسب نوع البلوك لي خدام فيه.', version: '1.21.x', url: '#', img: 'https://media.forgecdn.net/avatars/591/10/637841050000000000.png', category: 'Utility', stars: 5 },
-      { title: 'Shadow Shaders', desc: 'شيدرز خفيف بزاف مصاوب للأجهزة اللي فيها 2 جيجا رام.', version: '1.21.x', url: '#', img: 'https://media.forgecdn.net/avatars/591/10/637841050000000000.png', category: 'Visuals', stars: 4 }
+      { title: 'FlowInventory', desc: 'أفضل مود لتنظيم الشنطة تلقائياً بذكاء. كيرتب ليك كلشي بلا صداع.', version: '1.21.x', url: '/mods/flowinventory/', img: 'https://media.forgecdn.net/avatars/591/10/637841050000000000.png', category: 'Utility', stars: 5 }
     ]
   }">
   
@@ -19,9 +16,10 @@ title: الرئيسية
   <section class="relative py-20 px-6 overflow-hidden rounded-[4rem] bg-gradient-to-br from-moroccangreen/20 via-black to-black border border-white/10 mb-20">
     <div class="absolute -top-24 -right-24 w-96 h-96 bg-moroccangreen/10 blur-[120px] rounded-full"></div>
     <div class="relative z-10 flex flex-col lg:flex-row items-center gap-12">
-      <!-- Left Image (rr (2).png) -->
-      <div class="w-full lg:w-1/3 hidden lg:flex justify-center">
-        <img src="/assets/images/rr (2).png" class="w-64 h-64 object-contain animate-float drop-shadow-[0_0_30px_rgba(0,98,51,0.3)]">
+      <!-- Left Image (rr (2).png) - MASSIVE -->
+      <div class="w-full lg:w-1/2 hidden lg:flex justify-center relative">
+        <div class="absolute inset-0 bg-moroccangreen/5 blur-[100px] rounded-full animate-pulse"></div>
+        <img src="/assets/images/rr (2).png" class="w-full max-w-2xl h-auto object-contain animate-float drop-shadow-[0_0_60px_rgba(0,98,51,0.5)] scale-125 z-10">
       </div>
       <!-- Right Content -->
       <div class="flex-1 text-center lg:text-right">
@@ -168,7 +166,28 @@ title: الرئيسية
       'Deep Info: Cats are the only mobs that don\'t take fall damage.',
       'Pro Tip: You can strip bark from logs using an axe.',
       'Info: Silverfish can hide inside stone blocks.',
-      'Did you know? Anvils can be used to rename any item in the game.'
+      'Did you know? Anvils can be used to rename any item in the game.',
+      'Dino Fact: You can use a water bucket to clear grass and flowers quickly.',
+      'Pro Tip: Sneaking prevents you from falling off the edge of blocks.',
+      'Deep Info: Lighting a portal with fire charges works just like a flint and steel.',
+      'Info: Hoglins in the Overworld will transform into Zoglins after a while.',
+      'Fact: You can lead a goat with wheat, and they can jump up to 10 blocks high!',
+      'Dino Says: Use FlowInventory to keep your loot organized during raids.',
+      'Deep Info: Mending is the most powerful enchantment for gear longevity.',
+      'Pro Tip: Digging straight down is the #1 cause of death in Minecraft!',
+      'Fact: Axolotls can be scooped up in a bucket and will help you fight aquatic mobs.',
+      'Info: Piglins will ignore you if you are wearing at least one piece of gold armor.',
+      'Deep Info: The Elytra allows you to fly when combined with firework rockets.',
+      'Did you know? You can smelt armor and tools to get iron or gold nuggets.',
+      'Pro Tip: Using a shield can block almost 100% of incoming damage from the front.',
+      'Fact: Villagers can be given jobs by placing specific work station blocks.',
+      'Dino Says: Always keep a backup of your Minecraft world!',
+      'Deep Info: The Nether roof is a flat layer of bedrock at Y=127.',
+      'Info: Bees will follow you if you hold any type of flower.',
+      'Did you know? You can use a lead to pull a boat across land.',
+      'Pro Tip: Burning mobs will drop cooked meat if killed with a fire aspect sword.',
+      'Deep Info: Redstone repeaters can delay signals by up to 0.4 seconds.',
+      'Fact: You can walk on powder snow if you are wearing leather boots.'
     ],
     newTip() { this.tip = this.tips[Math.floor(Math.random() * this.tips.length)]; }
   }">

@@ -50,7 +50,7 @@ plugins:
 # SEO Optimization
 seo:
   twitter:
-    username: dinocrafting
+    username: Dinoo_crafting
     card: summary_large_image
   facebook:
     app_id: ""
