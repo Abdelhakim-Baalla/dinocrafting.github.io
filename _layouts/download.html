@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+<div class="py-20" dir="ltr" x-data="{ 
+  isVIP: localStorage.getItem('isVIP') === 'true',
+  checking: true,
+  init() {
+    setTimeout(() => { this.checking = false; }, 1500);
+  }
+}">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <div x-show="checking" class="space-y-8 animate-pulse">
+      <div class="w-20 h-20 bg-white/5 rounded-full mx-auto"></div>
+      <div class="h-8 bg-white/5 w-64 mx-auto rounded-lg"></div>
+    </div>
+
+    <div x-show="!checking" x-transition>
+      <!-- VIP STATUS ACTIVE -->
+      <div x-show="isVIP">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-yellow-500/20 text-yellow-500 rounded-full text-[10px] font-black uppercase tracking-widest mb-8">
+          <span class="w-2 h-2 rounded-full bg-yellow-500 animate-ping"></span>
+          VIP Status Confirmed
+        </div>
+        <h1 class="text-6xl font-black text-white mb-6 uppercase italic tracking-tighter">Fast-Lane <span class="text-moroccangreen">Active</span></h1>
+        <p class="text-xl text-gray-400 mb-12">As a Super-Fan, you get direct access. No waiting, no ads.</p>
+        
+        <a href="{{ page.download_url }}" class="px-12 py-6 bg-moroccangreen text-white font-black rounded-[2.5rem] shadow-2xl shadow-moroccangreen/40 hover:scale-105 transition-all inline-block text-xl uppercase tracking-widest">Download Now (High Speed)</a>
+      </div>
+
+      <!-- NON-VIP STATUS -->
+      <div x-show="!isVIP">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 text-gray-500 rounded-full text-[10px] font-black uppercase tracking-widest mb-8">
+          Standard User
+        </div>
+        <h1 class="text-6xl font-black text-white mb-6 uppercase italic tracking-tighter">Download <span class="text-moroccangreen">Starting Soon</span></h1>
+        <p class="text-xl text-gray-400 mb-12">Want to skip the wait? Use the secret code from Dino's latest video!</p>
+        
+        <div class="max-w-md mx-auto mb-12">
+          <input type="text" placeholder="Enter VIP Code..." class="w-full px-6 py-4 bg-black/40 border border-white/10 rounded-2xl text-white text-center font-black outline-none focus:border-yellow-500 transition-all uppercase tracking-widest" 
+                 @keyup.enter="if($el.value.toUpperCase() === 'DINOVIP') { localStorage.setItem('isVIP', 'true'); isVIP = true; }">
+        </div>
+
+        <div class="p-8 rounded-[3rem] bg-white/5 border border-white/10 opacity-50">
+           <p class="text-sm text-gray-600 font-bold uppercase tracking-widest mb-4">Standard Download starts in 5s...</p>
+           <div class="w-full h-1 bg-white/5 rounded-full overflow-hidden">
+             <div class="h-full bg-moroccangreen animate-[progress_5s_linear]"></div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes progress {
+    from { width: 0% }
+    to { width: 100% }
+  }
+</style>

@@ -1,14 +1,20 @@
 title: Dino Crafting
 email: contact@dinocrafting.com
 description: >-
-  The official hub for Dinocrafting - Moroccan Minecraft YouTuber.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://dinocrafting.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+  The #1 Minecraft Hub in Morocco. Download exclusive mods like FlowInventory, 
+  join the best servers, and learn pro tricks. Built for the Moroccan community.
+baseurl: ""
+url: "https://dinocrafting.github.io"
+author: "Dino Crafting"
+lang: ma
+locale: ar_MA
 
-# Social Media & YouTube
+# Social Media
 youtube:
   channel_id: "@Dinocrafting"
   url: "https://www.youtube.com/@Dinocrafting"
+instagram: "dinocrafting1"
+discord: "https://discord.gg/a3UrT5Wm8V"
 
 # Analytics (Google Analytics 4)
 analytics:
@@ -16,6 +22,7 @@ analytics:
 
 # Branding
 logo: "/assets/images/avatarHead2.png"
+skin: "/assets/images/skin.png"
 
 # Collections
 collections:
@@ -25,18 +32,36 @@ collections:
   tutorials:
     output: true
     permalink: /tutorials/:path/
-  servers:
+  news:
     output: true
-    permalink: /servers/:path/
+    permalink: /news/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
 
-# Languages
-default_lang: ma
-languages:
-  - ma
-  - en
-  - fr
-  - ar
-  - es
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# SEO Optimization
+seo:
+  twitter:
+    username: dinocrafting
+    card: summary_large_image
+  facebook:
+    app_id: ""
+    publisher: ""
+
+# Theme Settings
+themes:
+  ramadan:
+    enabled: true
+    color: "#10b981" # Emerald Green
+    accent: "#7c3aed" # Royal Purple
 
 # Monetization Configuration
 monetization:
@@ -59,9 +84,3 @@ monetization:
       <div id="container-3c0ff27766e57a9417d964826c26cefb"></div>
   monetag:
     multitag_script: '<script src="https://quge5.com/88/tag.min.js" data-zone="234755" async data-cfasync="false"></script>'
-
-markdown: kramdown
-theme: minima
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag

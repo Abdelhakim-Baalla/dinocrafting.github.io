@@ -41,6 +41,17 @@
   {% endif %}
   
   {% seo %}
+
+  <style>
+    :root {
+      --ramadan-color: {{ site.themes.ramadan.color | default: '#10b981' }};
+      --ramadan-accent: {{ site.themes.ramadan.accent | default: '#7c3aed' }};
+    }
+    .theme-ramadan .text-moroccangreen { color: var(--ramadan-color) !important; }
+    .theme-ramadan .bg-moroccangreen { background-color: var(--ramadan-color) !important; }
+    .theme-ramadan .border-moroccangreen { border-color: var(--ramadan-color) !important; }
+    .theme-ramadan .shadow-moroccangreen { --tw-shadow-color: var(--ramadan-color); }
+  </style>
 </head>
 <body class="bg-lightbg dark:bg-darkbg text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans {% if lang == 'ar' or lang == 'ma' %}font-arabic{% endif %}">
 
@@ -67,14 +78,21 @@
   {% include footer.html %}
 
   <script>
-    // Theme initialization
-    if (localStorage.getItem('darkMode') === null) {
-      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        localStorage.setItem('darkMode', 'true');
-      } else {
-        localStorage.setItem('darkMode', 'false');
+    // Theme & Ramadan Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const now = new Date();
+      // Ramadan 2026: Feb 18 - Mar 20
+      const isRamadan = (now.getMonth() === 1 && now.getDate() >= 18) || (now.getMonth() === 2 && now.getDate() <= 20);
+      
+      if (isRamadan && {{ site.themes.ramadan.enabled | default: false }}) {
+        document.body.classList.add('theme-ramadan');
+        console.log("🌙 Ramadan Theme Active - Dino Crafting");
       }
-    }
+
+      if (localStorage.getItem('darkMode') === null) {
+        localStorage.setItem('darkMode', window.matchMedia('(prefers-color-scheme: dark)').matches);
+      }
+    });
   </script>
 </body>
 </html>
