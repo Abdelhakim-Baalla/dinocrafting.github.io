@@ -7,7 +7,12 @@ baseurl: ""
 url: "https://dinocrafting.github.io"
 author: "Dino Crafting"
 lang: ma
+languages: [ma, en, fr]
 locale: ar_MA
+
+# Global SEO
+keywords: "Minecraft Morocco, Dino Crafting, FlowInventory, Minecraft Mods, Minecraft Shaders, Darija Minecraft"
+google_site_verification: ""
 
 # Social Media
 youtube:
