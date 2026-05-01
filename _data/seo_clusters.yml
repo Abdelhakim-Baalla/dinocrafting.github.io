@@ -12,7 +12,7 @@ clusters:
     links:
       - "/mods/"
       - "/news/"
-      - "/videos/"
+      - "/news/"
   - key: guides
     title: "شروحات ماينكرافت"
     slug: "/minecraft-guides/"
@@ -24,7 +24,7 @@ clusters:
       - "حل مشاكل ماينكرافت"
       - "إعدادات ماينكرافت للأداء"
     links:
-      - "/videos/"
+      - "/news/"
       - "/news/"
       - "/contact/"
   - key: theories
@@ -39,7 +39,7 @@ clusters:
       - "أسرار ماينكرافت"
     links:
       - "/theories/"
-      - "/community/"
+      - "{{ site.discord.invite }}"
       - "/news/"
   - key: news
     title: "أخبار ماينكرافت"

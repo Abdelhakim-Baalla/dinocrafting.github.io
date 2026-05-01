@@ -11,7 +11,7 @@ lang: ma
     <h1 class="text-5xl font-black text-white mb-4">كلاستر شروحات ماينكرافت</h1>
     <p class="text-gray-400 mb-8">صفحة محورية للأسئلة التعليمية الأكثر بحثاً: التثبيت، الأداء، والتوافق بين المودات.</p>
     <div class="grid md:grid-cols-3 gap-4">
-      <a href="/videos/" class="p-6 rounded-2xl bg-white/5 border border-white/10 text-white font-bold">شروحات الفيديو</a>
+      <a href="{{ site.youtube.url }}" target="_blank" class="p-6 rounded-2xl bg-white/5 border border-white/10 text-white font-bold">قناة يوتيوب</a>
       <a href="/news/" class="p-6 rounded-2xl bg-white/5 border border-white/10 text-white font-bold">مقالات الشرح</a>
       <a href="/contact/" class="p-6 rounded-2xl bg-white/5 border border-white/10 text-white font-bold">اطلب شرحاً جديداً</a>
     </div>
@@ -34,7 +34,7 @@ lang: ma
   "@type": "ItemList",
   "name": "روابط شروحات ماينكرافت",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "url": "{{ site.url }}/videos/" },
+    { "@type": "ListItem", "position": 1, "url": "{{ site.youtube.url }}" },
     { "@type": "ListItem", "position": 2, "url": "{{ site.url }}/news/" },
     { "@type": "ListItem", "position": 3, "url": "{{ site.url }}/contact/" }
   ]
