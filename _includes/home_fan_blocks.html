@@ -27,37 +27,24 @@
       </div>
       <div class="flex items-start gap-3">
         <span class="mt-1 w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
-        <div><div class="text-white font-bold">مراجعة Modrinth</div><div class="text-gray-400">الحالة: <span class="text-yellow-300">قيد المراجعة</span></div></div>
+        <div><div class="text-white font-bold">نشر على المنصات</div><div class="text-gray-400">متاح الآن على CurseForge وModrinth.</div></div>
       </div>
     </div>
     <div class="mt-6 flex gap-3 flex-wrap">
+      <a href="{{ site.curseforge.flowinventory }}" target="_blank" class="px-5 py-2 rounded-lg bg-moroccangreen text-white font-bold hover:brightness-110 transition-all">CurseForge</a>
+      <a href="{{ site.modrinth.flowinventory }}" target="_blank" class="px-5 py-2 rounded-lg bg-white/10 border border-white/20 text-white font-bold hover:bg-white/20 transition-all">Modrinth</a>
       <a href="{{ site.github.flowinventory }}" target="_blank" class="px-5 py-2 rounded-lg bg-white/10 border border-white/20 text-white font-bold hover:bg-white/20 transition-all">GitHub</a>
-      <a href="{{ site.modrinth.flowinventory }}" target="_blank" class="px-5 py-2 rounded-lg bg-moroccangreen text-white font-bold hover:brightness-110 transition-all">Modrinth</a>
       <span class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 font-bold">التحميلات: <span data-stat="flowinventory-downloads">--</span></span>
     </div>
   </article>
 </section>
 
 <section class="mt-8 p-8 rounded-[2.5rem] bg-white/5 border border-white/10">
-  <div class="flex items-center justify-between mb-6">
-    <h3 class="text-2xl font-black text-white">بطاقة مجتمع Dino</h3>
-    <span data-source-badge="blogger_feed" class="px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white/10 text-gray-300">مخزن</span>
-  </div>
-  <div class="grid lg:grid-cols-3 gap-6">
-    <div class="lg:col-span-1 p-6 rounded-2xl bg-black/30 border border-white/10">
-      <h4 class="text-white font-black text-lg mb-4">روابط مهمة</h4>
-      <div class="flex flex-col gap-2 text-sm">
-        <a href="{{ site.youtube.url }}" target="_blank" class="text-gray-300 hover:text-white">يوتيوب</a>
-        <a href="{{ site.discord.invite }}" target="_blank" class="text-gray-300 hover:text-white">ديسكورد</a>
-        <a href="{{ site.modrinth.flowinventory }}" target="_blank" class="text-gray-300 hover:text-white">FlowInventory (Modrinth)</a>
-        <a href="{{ site.github.flowinventory }}" target="_blank" class="text-gray-300 hover:text-white">FlowInventory (GitHub)</a>
-      </div>
-    </div>
-    <div class="lg:col-span-2 p-6 rounded-2xl bg-black/30 border border-white/10">
-      <h4 class="text-white font-black text-lg mb-4">آخر 3 عناصر محتوى</h4>
-      <div id="fan-latest-posts" class="grid md:grid-cols-3 gap-4">
-        <div class="p-4 rounded-xl bg-white/5 text-gray-400 text-sm">جاري التحميل...</div>
-      </div>
-    </div>
+  <h3 class="text-2xl font-black text-white mb-6">روابط سريعة</h3>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <a href="/news/" class="p-4 rounded-2xl bg-white/5 border border-white/10 text-white font-bold hover:border-moroccangreen/50 transition-all text-center">الأخبار</a>
+    <a href="/mods/" class="p-4 rounded-2xl bg-white/5 border border-white/10 text-white font-bold hover:border-moroccangreen/50 transition-all text-center">المودات</a>
+    <a href="{{ site.discord.invite }}" target="_blank" class="p-4 rounded-2xl bg-white/5 border border-white/10 text-white font-bold hover:border-moroccangreen/50 transition-all text-center">الديسكورد</a>
+    <a href="mailto:{{ site.email }}" class="p-4 rounded-2xl bg-white/5 border border-white/10 text-white font-bold hover:border-moroccangreen/50 transition-all text-center">الدعم</a>
   </div>
 </section>

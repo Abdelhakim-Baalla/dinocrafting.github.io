@@ -24,15 +24,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       el.className = `px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest ${styles[state] || styles.cached}`;
     });
   };
-  const setHealthDot = (state) => {
-    const dot = document.getElementById('data-health-dot');
-    if (!dot) return;
-    dot.classList.remove('bg-emerald-400', 'bg-yellow-400', 'bg-red-500');
-    if (state === 'live') dot.classList.add('bg-emerald-400');
-    else if (state === 'unavailable') dot.classList.add('bg-red-500');
-    else dot.classList.add('bg-yellow-400');
-  };
-
   const parseBadgeValue = (raw) => {
     if (!raw) return null;
     return raw.replace(/\s*(subscribers|views)\s*$/i, '').trim();
@@ -61,28 +52,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
 
       if (cached?.sources) {
-        let liveCount = 0;
-        let unavailableCount = 0;
         Object.entries(cached.sources).forEach(([source, state]) => {
           setSourceBadge(source, state === 'live' ? 'live' : (state === 'unavailable' ? 'unavailable' : 'cached'));
-          if (state === 'live') liveCount += 1;
-          if (state === 'unavailable') unavailableCount += 1;
         });
-        if (cached?.health?.is_stale) setHealthDot('unavailable');
-        else if (liveCount >= 2 && unavailableCount <= 2) setHealthDot('live');
-        else setHealthDot('cached');
       }
 
-      const fanLatestPosts = document.getElementById('fan-latest-posts');
-      if (fanLatestPosts && Array.isArray(cached?.news?.posts)) {
-        const top3 = cached.news.posts.slice(0, 3);
-        fanLatestPosts.innerHTML = top3.map((post) => `
-          <a href="${post.url || '#'}" target="_blank" class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-moroccangreen/40 transition-all">
-            <div class="text-white font-bold text-sm line-clamp-2 mb-2">${post.title || 'بدون عنوان'}</div>
-            <div class="text-gray-400 text-xs line-clamp-2">${post.excerpt || ''}</div>
-          </a>
-        `).join('');
-      }
       return;
     }
   } catch (error) {
@@ -113,5 +87,4 @@ document.addEventListener('DOMContentLoaded', async () => {
   setSourceBadge('youtube_feed', 'cached');
   setSourceBadge('modrinth_api', 'cached');
   setSourceBadge('blogger_feed', 'cached');
-  setHealthDot('cached');
 });
