@@ -6,17 +6,11 @@ permalink: /videos/
 lang: ma
 ---
 
+{% assign t = site.data.i18n[page.lang].ui %}
+
 <div class="py-20" dir="rtl">
   <div class="max-w-6xl mx-auto px-6">
-    <!-- Page Header -->
-    <div class="text-center mb-20">
-      <h1 class="text-7xl font-black text-white mb-6 uppercase italic tracking-tighter">
-        <span class="text-red-600">DINO</span> VIDEOS
-      </h1>
-      <p class="text-xl text-gray-400 max-w-2xl mx-auto">
-        شوف آخر فيديوهات ماينكرافت. مودات، شروحات، وتجارب玩游戏 من Dino Crafting.
-      </p>
-    </div>
+    {% include page_hero.html accent="red-600" brand="DINO" title=t.hero_videos_title subtitle=t.hero_videos_subtitle %}
 
     <!-- YouTube Channel Embed -->
     <div class="mb-20 rounded-[3rem] overflow-hidden border border-white/10 bg-black/40">
@@ -88,19 +82,6 @@ lang: ma
       </div>
     </div>
 
-    <!-- Subscribe CTA -->
-    <div class="p-16 rounded-[4rem] bg-gradient-to-br from-red-600/20 via-black to-black border border-red-600/20 text-center">
-      <div class="text-6xl mb-6">🔔</div>
-      <h2 class="text-4xl font-black text-white mb-6 uppercase italic">Never Miss an Upload</h2>
-      <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-        Subscribe to get notified when I publish new mods, tutorials, and gameplay videos.
-      </p>
-      <a href="https://www.youtube.com/@Dinocrafting?sub_confirmation=1" 
-         target="_blank" 
-         class="inline-flex items-center gap-4 px-16 py-8 bg-red-600 text-white font-black rounded-[2.5rem] hover:bg-red-700 transition-all shadow-2xl shadow-red-600/30 uppercase tracking-widest text-2xl">
-        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-0.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        Subscribe Now
-      </a>
-    </div>
+    {% include cta_subscribe.html title=t.cta_subscribe_title subtitle=t.cta_subscribe_subtitle button_text=t.cta_subscribe_button %}
   </div>
 </div>

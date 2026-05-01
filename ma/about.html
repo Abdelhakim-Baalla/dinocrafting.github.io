@@ -6,6 +6,8 @@ permalink: /about/
 lang: ma
 ---
 
+{% assign t = site.data.i18n[page.lang].ui %}
+
 <div class="py-20" dir="rtl">
   <div class="max-w-4xl mx-auto px-6">
     <!-- About Hero -->
@@ -14,66 +16,43 @@ lang: ma
         <img src="{{ site.logo }}" alt="Dino Crafting" class="w-full h-full object-cover">
       </div>
       <h1 class="text-6xl font-black text-white mb-6 uppercase italic tracking-tighter">
-        <span class="text-moroccangreen">DINO</span> CRAFTING
+        <span class="text-moroccangreen">DINO</span> {{ t.hero_about_title }}
       </h1>
       <p class="text-xl text-gray-400 max-w-2xl mx-auto">
-        القناة رقم 1 للمغاربة فـ ماينكرافت. ناشر المودات، الشروحات، والمحتوى الخاص.
+        {{ t.hero_about_subtitle }}
       </p>
     </div>
 
-    <!-- Creator Story -->
     <div class="prose prose-invert max-w-none mb-20">
-      <h2 class="text-4xl font-black text-white mb-8 uppercase italic">From Player to Creator</h2>
+      <h2 class="text-4xl font-black text-white mb-8 uppercase italic">{{ t.about_story_title }}</h2>
       <p class="text-gray-300 text-lg leading-relaxed mb-6">
-        Bonjour! I'm Dino Crafting, a Moroccan Minecraft content creator passionate about modding and community building. 
-        What started as a hobby playing Minecraft quickly turned into a mission to bring high-quality Minecraft content 
-        to Arabic-speaking players, especially my fellow Moroccans.
+        {{ t.about_story_p1 }}
       </p>
       <p class="text-gray-300 text-lg leading-relaxed mb-6">
-        I believe gaming should be accessible to everyone, regardless of language. That's why I create content in Darija, 
-        English, and French — to reach as many players as possible. My mods are designed to enhance gameplay, fix issues, 
-        and add exciting new features to the game we all love.
+        {{ t.about_story_p2 }}
       </p>
       <p class="text-gray-300 text-lg leading-relaxed">
-        When I'm not coding mods or recording videos, you'll find me on the Discord server chatting with the community, 
-        brainstorming new ideas, or planning our next big project. Join the empire — let's build something amazing together!
+        {{ t.about_story_p3 }}
       </p>
     </div>
 
-    <!-- Milestones -->
     <div class="mb-20 p-16 rounded-[4rem] bg-white/5 border border-white/10">
-      <h2 class="text-4xl font-black text-white mb-10 uppercase italic text-center">Channel Milestones</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="text-center">
-          <div class="text-5xl font-black text-moroccangreen mb-2" data-stat="youtube-subscribers">--</div>
-          <p class="text-gray-400"> subscribers (verified data pending)</p>
-        </div>
-        <div class="text-center">
-          <div class="text-5xl font-black text-moroccangreen mb-2" data-stat="blog-posts">--</div>
-          <p class="text-gray-400"> milestones (verified data pending)</p>
-        </div>
-        <div class="text-center">
-          <div class="text-5xl font-black text-moroccangreen mb-2" data-stat="youtube-videos">--</div>
-          <p class="text-gray-400"> current value (verified data pending)</p>
-        </div>
-      </div>
+      <h2 class="text-4xl font-black text-white mb-10 uppercase italic text-center">{{ t.about_milestones_title }}</h2>
+      {% include stats_three_cards.html color="moroccangreen" stat_1_key="youtube-subscribers" stat_2_key="blog-posts" stat_3_key="youtube-videos" label_1=t.about_milestone_1_label label_2=t.about_milestone_2_label label_3=t.about_milestone_3_label %}
     </div>
 
     <!-- Mods Philosophy -->
     <div class="mb-20 p-16 rounded-[4rem] bg-gradient-to-br from-moroccangreen/10 via-black to-black border border-white/5">
-      <h2 class="text-4xl font-black text-white mb-6 uppercase italic text-center">Modding Philosophy</h2>
+      <h2 class="text-4xl font-black text-white mb-6 uppercase italic text-center">{{ t.about_philosophy_title }}</h2>
       <p class="text-xl text-gray-400 text-center max-w-3xl mx-auto leading-relaxed">
-        Every mod I create aims to solve real problems players face, whether it's inventory management, performance issues, 
-        or quality-of-life improvements. I prioritize stability, compatibility, and user experience. All mods are free, 
-        open-source, and built with love for the Minecraft community.
+        {{ t.about_philosophy_text }}
       </p>
     </div>
 
-    <!-- Connect CTA -->
     <div class="p-16 rounded-[4rem] bg-red-600/10 border border-red-600/20 text-center">
-      <h2 class="text-4xl font-black text-white mb-6 uppercase italic">Connect With Me</h2>
+      <h2 class="text-4xl font-black text-white mb-6 uppercase italic">{{ t.about_connect_title }}</h2>
       <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-        Follow Dino Crafting on social media for daily updates, memes, and behind-the-scenes content.
+        {{ t.about_connect_subtitle }}
       </p>
       <div class="flex flex-wrap justify-center gap-6">
         <a href="{{ site.youtube.url }}" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-red-600 text-white font-bold rounded-2xl hover:bg-red-700 transition-all">

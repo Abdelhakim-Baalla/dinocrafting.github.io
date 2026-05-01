@@ -1,0 +1,14 @@
+<div class="grid md:grid-cols-3 gap-8 mb-20">
+  <div class="p-10 rounded-[3rem] bg-white/5 border border-white/10 text-center">
+    <div class="text-5xl font-black text-{{ include.color | default: 'moroccangreen' }} mb-2" data-stat="{{ include.stat_1_key }}">--</div>
+    <div class="text-gray-400 font-bold uppercase tracking-widest text-sm">{{ include.label_1 }}</div>
+  </div>
+  <div class="p-10 rounded-[3rem] bg-white/5 border border-white/10 text-center">
+    <div class="text-5xl font-black text-{{ include.color | default: 'moroccangreen' }} mb-2" data-stat="{{ include.stat_2_key }}">--</div>
+    <div class="text-gray-400 font-bold uppercase tracking-widest text-sm">{{ include.label_2 }}</div>
+  </div>
+  <div class="p-10 rounded-[3rem] bg-white/5 border border-white/10 text-center">
+    <div class="text-5xl font-black text-{{ include.color | default: 'moroccangreen' }} mb-2" data-stat="{{ include.stat_3_key }}">--</div>
+    <div class="text-gray-400 font-bold uppercase tracking-widest text-sm">{{ include.label_3 }}</div>
+  </div>
+</div>
