@@ -32,6 +32,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     `).join('');
   } catch (error) {
     sourcesContainer.innerHTML = '<div class="text-red-400 text-sm">تعذر تحميل بيانات الحالة.</div>';
-    console.warn('Status page load failed:', error);
+    console.warn('فشل تحميل صفحة الحالة:', error);
   }
 });

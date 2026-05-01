@@ -3,14 +3,14 @@
 <div x-data="{ hideAds: new URLSearchParams(window.location.search).has('noads') }" x-show="!hideAds">
 <div class="ad-slot my-6 flex flex-col items-center justify-center p-2 bg-black/5 dark:bg-white/5 rounded-2xl border border-white/5 transition-all hover:border-moroccangreen/20" data-zone="{{ include.zone }}">
   <!-- Label -->
-  <div class="text-[8px] text-gray-500 mb-1 uppercase tracking-[0.2em] font-bold">Recommended for you</div>
+  <div class="text-[8px] text-gray-500 mb-1 uppercase tracking-[0.2em] font-bold">محتوى إعلاني مناسب لك</div>
   
   <div id="ad-{{ include.zone }}-container" class="w-full flex justify-center min-h-[50px]">
     {% if provider == "adsterra" %}
       <template class="ad-template">
         {{ site.themes.monetization.adsterra[include.zone] }}
       </template>
-      <div class="text-xs text-gray-500 uppercase tracking-widest py-4">Ad loading...</div>
+      <div class="text-xs text-gray-500 uppercase tracking-widest py-4">جاري تحميل الإعلان...</div>
     {% elsif provider == "monetag" %}
       <!-- Monetag handles injection via the MultiTag script in head -->
       <div class="animate-pulse bg-gray-200/20 dark:bg-gray-800/20 h-full w-full rounded-lg"></div>
@@ -18,8 +18,8 @@
   </div>
   
   <div class="mt-2 flex justify-between w-full px-2">
-    <a href="mailto:support@dinocrafting.com?subject=Report Ad on {{ include.zone }}" class="text-[7px] text-gray-500 hover:text-moroccanred transition-colors uppercase font-bold tracking-widest">Report Inappropriate Ad</a>
-    <span class="text-[7px] text-gray-500 uppercase font-bold tracking-widest">Ad ID: {{ include.zone }}</span>
+    <a href="mailto:support@dinocrafting.com?subject=Report Ad on {{ include.zone }}" class="text-[7px] text-gray-500 hover:text-moroccanred transition-colors uppercase font-bold tracking-widest">الإبلاغ عن إعلان غير مناسب</a>
+    <span class="text-[7px] text-gray-500 uppercase font-bold tracking-widest">معرّف الإعلان: {{ include.zone }}</span>
   </div>
 </div>
 </div>
