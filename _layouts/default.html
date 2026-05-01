@@ -29,12 +29,12 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', '{{ site.analytics.google_id }}');
+    gtag('config', '{{ site.analytics.google_id }}', { cookie_domain: 'auto' });
   </script>
   {% endif %}
 
    <!-- Ad Provider Script (limited) -->
-   {% if site.monetization.provider == "adsterra" %}
+   {% if site.themes.monetization.provider == "adsterra" %}
      <!-- Leaderboard Top Only -->
      {% comment %} Removed intrusive social_bar and popunder scripts {% endcomment %}
    {% endif %}
@@ -194,5 +194,7 @@
       });
     });
   </script>
+  <script src="{{ '/assets/js/i18n-ui.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/live-data.js' | relative_url }}"></script>
 </body>
 </html>

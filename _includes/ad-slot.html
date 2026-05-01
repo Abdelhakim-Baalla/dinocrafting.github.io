@@ -1,4 +1,4 @@
-{% assign provider = site.monetization.provider %}
+{% assign provider = site.themes.monetization.provider %}
 {% if provider != "none" %}
 <div x-data="{ hideAds: new URLSearchParams(window.location.search).has('noads') }" x-show="!hideAds">
 <div class="ad-slot my-6 flex flex-col items-center justify-center p-2 bg-black/5 dark:bg-white/5 rounded-2xl border border-white/5 transition-all hover:border-moroccangreen/20" data-zone="{{ include.zone }}">
@@ -7,7 +7,7 @@
   
   <div id="ad-{{ include.zone }}-container" class="w-full flex justify-center min-h-[50px]">
     {% if provider == "adsterra" %}
-      {{ site.monetization.adsterra[include.zone] }}
+      {{ site.themes.monetization.adsterra[include.zone] }}
     {% elsif provider == "monetag" %}
       <!-- Monetag handles injection via the MultiTag script in head -->
       <div class="animate-pulse bg-gray-200/20 dark:bg-gray-800/20 h-full w-full rounded-lg"></div>

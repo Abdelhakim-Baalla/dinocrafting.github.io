@@ -56,7 +56,7 @@ lang: ma
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
           Join Discord Server
         </a>
-        <p class="text-xs text-gray-500 mt-4">5,000+ members • Active community</p>
+        <p class="text-xs text-gray-500 mt-4"><span data-stat="discord-members">n/a</span> members • Active community</p>
       </div>
 
       <!-- Twitch -->
@@ -185,7 +185,7 @@ lang: ma
           <h2 class="text-4xl font-black text-white uppercase italic mb-2">Latest Blog Posts</h2>
           <p class="text-gray-400">من المدونة الرسمية - أخبار، شروحات، ومقالات</p>
         </div>
-        <a href="{{ site.blogger }}" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-6 py-3 bg-orange-600 text-white font-bold rounded-xl hover:bg-orange-700 transition-all">
+        <a href="/news/" class="hidden sm:inline-flex items-center gap-2 px-6 py-3 bg-orange-600 text-white font-bold rounded-xl hover:bg-orange-700 transition-all">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
           View All Posts
         </a>
@@ -198,14 +198,26 @@ lang: ma
           <div class="h-48 bg-gradient-to-br from-orange-600/20 to-yellow-600/20 rounded-[1.5rem] mb-6 flex items-center justify-center text-5xl">📝</div>
           <h3 class="text-xl font-bold text-white mb-2">مدونة قيد التطوير</h3>
           <p class="text-gray-400 text-sm mb-4">سيتم تحميل المقالات مباشرة من مدونتي على Blogger قريباً.</p>
-          <a href="{{ site.blogger }}" target="_blank" class="text-orange-500 font-bold text-sm uppercase tracking-widest">اقرأ المزيد &rarr;</a>
+          <a href="/news/" class="text-orange-500 font-bold text-sm uppercase tracking-widest">اقرأ المزيد &rarr;</a>
         </div>
       </div>
 
       <div class="mt-8 text-center sm:hidden">
-        <a href="{{ site.blogger }}" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-orange-600 text-white font-bold rounded-xl hover:bg-orange-700 transition-all">
-          View All Posts on Blogger
+        <a href="/news/" class="inline-flex items-center gap-2 px-6 py-3 bg-orange-600 text-white font-bold rounded-xl hover:bg-orange-700 transition-all">
+          View All Posts
         </a>
+      </div>
+    </div>
+
+    <div class="mb-20 p-12 rounded-[3rem] bg-white/5 border border-white/10">
+      <h2 class="text-3xl font-black text-white mb-8 uppercase italic text-center">Extended Platforms</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="{{ site.kofi }}" target="_blank" class="p-4 rounded-2xl bg-white/5 border border-white/10 text-white font-bold hover:border-moroccangreen/50 transition-all">Ko-fi</a>
+        <a href="{{ site.bluesky.url }}" target="_blank" class="p-4 rounded-2xl bg-white/5 border border-white/10 text-white font-bold hover:border-moroccangreen/50 transition-all">Bluesky</a>
+        <a href="{{ site.minecraft_platforms.planet_minecraft }}" target="_blank" class="p-4 rounded-2xl bg-white/5 border border-white/10 text-white font-bold hover:border-moroccangreen/50 transition-all">PlanetMinecraft</a>
+        <a href="{{ site.minecraft_platforms.spigotmc }}" target="_blank" class="p-4 rounded-2xl bg-white/5 border border-white/10 text-white font-bold hover:border-moroccangreen/50 transition-all">SpigotMC</a>
+        <a href="{{ site.patreon }}" target="_blank" class="p-4 rounded-2xl bg-white/5 border border-white/10 text-white font-bold hover:border-moroccangreen/50 transition-all">Patreon</a>
+        <a href="{{ site.personal_site }}" target="_blank" class="p-4 rounded-2xl bg-white/5 border border-white/10 text-white font-bold hover:border-moroccangreen/50 transition-all">baalla.tech</a>
       </div>
     </div>
 

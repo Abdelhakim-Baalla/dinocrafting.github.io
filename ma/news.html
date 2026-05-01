@@ -20,6 +20,14 @@ lang: ma
       <p class="text-gray-500 text-lg max-w-sm text-right">كاع التحديثات، الفيديوهات الجديدة، والأخبار الحصرية ديال Dino Crafting.</p>
     </div>
 
+    <div class="flex flex-wrap gap-3 mb-10" id="news-filters">
+      <button data-filter="all" class="px-4 py-2 rounded-full bg-moroccangreen text-white text-xs font-black uppercase tracking-widest">All</button>
+      <button data-filter="blogs" class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-xs font-black uppercase tracking-widest">Blogs</button>
+      <button data-filter="news" class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-xs font-black uppercase tracking-widest">News</button>
+      <button data-filter="theories" class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-xs font-black uppercase tracking-widest">Theories</button>
+      <button data-filter="mods" class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-xs font-black uppercase tracking-widest">Mods</button>
+    </div>
+
     <!-- News Grid (Dynamically loaded from Blogger) -->
     <div id="news-container" class="grid gap-12">
       <!-- Loading State -->
@@ -54,7 +62,6 @@ lang: ma
       if (data.feed.entry) {
         const entries = data.feed.entry.map(entry => {
           const title = entry.title.$t;
-          const url = entry.link.find(l => l.rel === 'alternate').href;
           const content = entry.content ? entry.content.$t : entry.summary.$t;
           const date = new Date(entry.published.$t);
           const formattedDate = date.toLocaleDateString('ar-MA', { 
@@ -71,11 +78,12 @@ lang: ma
           // Strip HTML from content
           const plainText = content.replace(/<[^>]*>/g, '').substring(0, 200);
           
-          return { title, url, content: plainText, date: formattedDate, categories, image };
+          const normalizedCategories = categories.map(c => c.toLowerCase());
+          return { title, content: plainText, date: formattedDate, categories, normalizedCategories, image };
         });
 
-        // Render all posts directly (no "View All" button)
-        container.innerHTML = entries.map((post, index) => {
+        const renderPosts = (posts) => {
+          container.innerHTML = posts.map((post, index) => {
           const isFeatured = index === 0;
           const layoutClass = isFeatured 
             ? 'col-span-full flex flex-col lg:flex-row gap-12 p-10 rounded-[4rem] bg-white/5 border border-white/10 hover:bg-white/[0.08] transition-all overflow-hidden'
@@ -110,7 +118,25 @@ lang: ma
             </div>
           </article>
           `;
-        }).join('');
+          }).join('');
+        };
+
+        renderPosts(entries);
+
+        const filters = document.querySelectorAll('#news-filters button');
+        filters.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            filters.forEach((b) => b.className = 'px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-xs font-black uppercase tracking-widest');
+            btn.className = 'px-4 py-2 rounded-full bg-moroccangreen text-white text-xs font-black uppercase tracking-widest';
+            const type = btn.getAttribute('data-filter');
+            if (type === 'all') {
+              renderPosts(entries);
+              return;
+            }
+            const filtered = entries.filter((p) => p.normalizedCategories.includes(type));
+            renderPosts(filtered.length ? filtered : entries);
+          });
+        });
       } else {
         container.innerHTML = '';
         noPosts.classList.remove('hidden');

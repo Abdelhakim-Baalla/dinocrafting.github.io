@@ -20,7 +20,7 @@ youtube:
   url: "https://www.youtube.com/@Dinocrafting"
   studio: "https://studio.youtube.com/channel/UCboeGauwIyfDKiYDhhTHgyA"
   playlist: "https://www.youtube.com/embed?listType=user_uploads&list=Dinocrafting"
-  subscribers: 0
+  subscribers: "--"
 
 twitter:
   username: "dinoo_crafting"

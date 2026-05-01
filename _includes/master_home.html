@@ -57,18 +57,40 @@
              x-init="
                const canvas = $el.querySelector('#skin-canvas');
                if (typeof skinview3d !== 'undefined') {
-                 let skinViewer = new skinview3d.SkinViewer({
+                 const skinViewer = new skinview3d.SkinViewer({
                    canvas: canvas,
                    width: 300,
                    height: 400,
                    skin: '/assets/images/skin.png'
                  });
-                 skinViewer.animations.add(skinview3d.WalkingAnimation);
-                 skinViewer.animations.add(skinview3d.RotatingAnimation);
+                 if (skinViewer.animations && typeof skinViewer.animations.add === 'function') {
+                   skinViewer.animations.add(skinview3d.WalkingAnimation);
+                 } else if (typeof skinview3d.WalkingAnimation === 'function' && 'animation' in skinViewer) {
+                   skinViewer.animation = new skinview3d.WalkingAnimation();
+                 }
                }
              ">
           <canvas id="skin-canvas" class="w-full h-full cursor-grab active:cursor-grabbing"></canvas>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FlowInventory Spotlight -->
+  <section class="p-10 lg:p-14 rounded-[3rem] bg-gradient-to-br from-moroccangreen/10 via-black to-black border border-moroccangreen/20">
+    <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 text-[10px] font-black uppercase tracking-widest mb-4">
+          Featured Mod
+        </div>
+        <h3 class="text-4xl font-black text-white mb-3">FlowInventory</h3>
+        <p class="text-gray-400 max-w-2xl">
+          Smart inventory flow for Minecraft by Dino Crafting. Faster sorting, cleaner gameplay, and better quality of life.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <a href="{{ site.github.flowinventory }}" target="_blank" class="px-6 py-3 rounded-xl bg-white/10 border border-white/20 text-white font-bold hover:bg-white/20 transition-all">GitHub Source</a>
+        <a href="{{ site.modrinth.flowinventory }}" target="_blank" class="px-6 py-3 rounded-xl bg-moroccangreen text-white font-bold hover:brightness-110 transition-all">Modrinth (Under Review)</a>
       </div>
     </div>
   </section>
