@@ -1,0 +1,52 @@
+---
+layout: default
+title: تحميل Minecraft | Dino Crafting
+description: روابط تحميل Minecraft الرسمية والـ Launchers والـ Mod Loaders والأدوات.
+permalink: /downloads/
+lang: ma
+---
+
+{% assign d = site.data.downloads %}
+
+<div class="space-y-16" dir="rtl">
+
+  <section class="p-12 rounded-[3rem] bg-gradient-to-br from-moroccangreen/20 via-black to-black border border-white/10 text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-moroccangreen/20 text-moroccangreen text-[10px] font-black uppercase tracking-widest mb-6">
+      مركز التحميل
+    </div>
+    <h1 class="text-5xl lg:text-7xl font-black text-white mb-6 tracking-tighter">{{ d.title }}</h1>
+    <p class="text-gray-400 text-lg max-w-3xl mx-auto mb-6">{{ d.description }}</p>
+    <div class="inline-block p-4 rounded-2xl bg-yellow-500/10 border border-yellow-500/30 text-yellow-300 text-sm max-w-2xl">
+      ⚠️ {{ d.disclaimer }}
+    </div>
+  </section>
+
+  {% for cat in d.categories %}
+  <section>
+    <h2 class="text-4xl font-black text-white mb-8">{{ cat.title }}</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for item in cat.items %}
+      <div class="p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-{{ cat.color }}/30 transition-all">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-black text-white">{{ item.name }}</h3>
+          <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-{{ cat.color }}/20 text-{{ cat.color }}">{{ item.type }}</span>
+        </div>
+        <div class="text-sm text-gray-400 mb-2">الإصدار: <span class="text-white">{{ item.version }}</span></div>
+        <div class="text-sm text-gray-400 mb-4">المنصات: <span class="text-white">{{ item.platform }}</span></div>
+        {% if item.notes %}<p class="text-gray-500 text-xs mb-4">{{ item.notes }}</p>{% endif %}
+        <a href="{{ item.url }}" target="_blank" rel="noopener" class="block w-full py-3 rounded-xl bg-{{ cat.color }} text-white text-center font-bold hover:brightness-110 transition-all">
+          ⬇ تحميل
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+
+  <section class="p-10 rounded-[3rem] bg-white/5 border border-white/10 text-center">
+    <h3 class="text-2xl font-black text-white mb-4">📝 لإضافة رابط جديد</h3>
+    <p class="text-gray-400 mb-2">عدّل فقط ملف:</p>
+    <code class="px-4 py-2 rounded-lg bg-black/40 text-moroccangreen">_data/downloads.yml</code>
+    <p class="text-gray-500 text-sm mt-4">سيظهر تلقائيًا هنا بدون تعديل كود الصفحة.</p>
+  </section>
+</div>

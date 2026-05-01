@@ -1,0 +1,46 @@
+---
+layout: default
+title: الخط الزمني | Dino Crafting
+description: المحطات الكبرى في رحلة Dino Crafting من البداية إلى اليوم.
+permalink: /timeline/
+lang: ma
+---
+
+{% assign timeline = site.data.timeline %}
+
+<div class="space-y-12" dir="rtl">
+  <section class="text-center py-12">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-[10px] font-black uppercase tracking-widest mb-6">
+      📅 Timeline
+    </div>
+    <h1 class="text-5xl lg:text-7xl font-black text-white mb-6 tracking-tighter">رحلة Dino Crafting</h1>
+    <p class="text-gray-400 text-lg max-w-2xl mx-auto">المحطات الكبرى التي شكلت القناة والمجتمع.</p>
+  </section>
+
+  <section class="max-w-4xl mx-auto">
+    <div class="relative">
+      <div class="absolute right-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-moroccangreen via-purple-500 to-red-600 transform translate-x-1/2 hidden md:block"></div>
+
+      <div class="space-y-10">
+        {% for e in timeline %}
+        <div class="relative md:flex md:items-center {% cycle 'right': 'md:flex-row', 'md:flex-row-reverse' %}">
+          <div class="hidden md:block absolute right-1/2 transform translate-x-1/2 w-12 h-12 rounded-full bg-{{ e.color }} border-4 border-black flex items-center justify-center text-2xl z-10">
+            {{ e.icon }}
+          </div>
+          <div class="md:w-1/2 md:px-12">
+            <div class="p-6 rounded-3xl bg-white/5 border border-white/10 {% if e.is_future %}border-dashed{% endif %}">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-3xl md:hidden">{{ e.icon }}</span>
+                <span class="px-3 py-1 rounded-full bg-{{ e.color }}/20 text-{{ e.color }} text-[10px] font-black uppercase tracking-widest">{{ e.year }}</span>
+                <span class="px-2 py-1 rounded-full bg-white/5 text-gray-400 text-[10px] font-bold">{{ e.milestone }}</span>
+              </div>
+              <h2 class="text-2xl font-black text-white mb-2">{{ e.title }}</h2>
+              <p class="text-gray-400">{{ e.description }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>

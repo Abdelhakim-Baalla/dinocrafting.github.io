@@ -1,0 +1,100 @@
+- id: village-near-spawn
+  name: "قرية بجانب الـ Spawn"
+  seed: "1234567890"
+  version: "1.21+"
+  type: "Java"
+  biome: "Plains"
+  description: "قرية كاملة على بعد 50 بلوك من نقطة البداية، مع Blacksmith وحقول قمح."
+  screenshot: "https://images.unsplash.com/photo-1528795259021-d8c86e14354c?w=600"
+  highlights:
+    - "Village + Blacksmith"
+    - "نقطة spawn ممتازة"
+    - "موارد قريبة"
+
+- id: mountain-peak
+  name: "قمة جبلية ملحمية"
+  seed: "9876543210"
+  version: "1.21+"
+  type: "Java"
+  biome: "Mountains"
+  description: "جبال شاهقة مع كهوف عميقة ومعادن قريبة من السطح."
+  screenshot: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600"
+  highlights:
+    - "Stone peaks 250+"
+    - "Diamonds في Y=12"
+    - "مناظر خلابة"
+
+- id: jungle-temple
+  name: "معبد Jungle مخفي"
+  seed: "5555111122"
+  version: "1.21+"
+  type: "Java"
+  biome: "Jungle"
+  description: "معبد jungle قريب جداً من spawn مع كنوز نادرة."
+  screenshot: "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=600"
+  highlights:
+    - "Jungle Temple"
+    - "Bamboo + Pandas"
+    - "كنوز قديمة"
+
+- id: ocean-monument
+  name: "Ocean Monument قريب"
+  seed: "777888999"
+  version: "1.21+"
+  type: "Java"
+  biome: "Deep Ocean"
+  description: "معبد محيطي ضخم على بعد 200 بلوك من البداية."
+  screenshot: "https://images.unsplash.com/photo-1505144808419-1957a94ca61e?w=600"
+  highlights:
+    - "Ocean Monument"
+    - "Guardians + Sponge"
+    - "قريب من spawn"
+
+- id: stronghold-fast
+  name: "Stronghold تحت الـ Spawn"
+  seed: "111000222"
+  version: "1.21+"
+  type: "Java"
+  biome: "Plains"
+  description: "Stronghold مباشرة تحت نقطة البداية. اذهب لـ End بسرعة."
+  screenshot: "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=600"
+  highlights:
+    - "Stronghold + End Portal"
+    - "Speedrun friendly"
+
+- id: nether-fortress
+  name: "Nether Fortress كبير"
+  seed: "333444555"
+  version: "1.21+"
+  type: "Java"
+  biome: "Nether Wastes"
+  description: "Nether Fortress ضخم مع الكثير من Blaze Spawners."
+  screenshot: "https://images.unsplash.com/photo-1528177860424-1b50ff5d11ea?w=600"
+  highlights:
+    - "Multiple Blaze Spawners"
+    - "Nether Wart"
+
+- id: mushroom-island
+  name: "جزيرة Mushroom نادرة"
+  seed: "888777666"
+  version: "1.21+"
+  type: "Java"
+  biome: "Mushroom Fields"
+  description: "جزيرة فطر بالكامل، آمنة 100% من الوحوش."
+  screenshot: "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=600"
+  highlights:
+    - "No mob spawns"
+    - "Mooshrooms"
+
+- id: ancient-city
+  name: "Ancient City مع Warden"
+  seed: "121212121"
+  version: "1.21+"
+  type: "Java"
+  biome: "Deep Dark"
+  description: "Ancient City عميق مع كنوز نادرة وWarden قوي."
+  screenshot: "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=600"
+  highlights:
+    - "Ancient City"
+    - "Echo Shards"
+    - "Sculk Sensor"

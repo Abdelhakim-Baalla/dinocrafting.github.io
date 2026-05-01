@@ -1,0 +1,49 @@
+- id: survival-arabic
+  title: "سلسلة البقاء بالعربية"
+  description: "رحلة Survival كاملة من الصفر حتى End. شرح بالعربية وتجارب ممتعة."
+  thumbnail: "https://i.ytimg.com/vi/KbbyOkysLvc/hqdefault.jpg"
+  episodes: 24
+  status: "ongoing"
+  hashtag: "#DinoSurvival"
+  url: "https://www.youtube.com/@Dinocrafting/playlists"
+  color: "moroccangreen"
+
+- id: mod-reviews
+  title: "مراجعات المودات"
+  description: "مراجعة معمقة لأفضل مودات Minecraft مع شرح التثبيت والتجربة الفعلية."
+  thumbnail: "https://media.forgecdn.net/avatars/591/10/637841050000000000.png"
+  episodes: 18
+  status: "ongoing"
+  hashtag: "#ModReview"
+  url: "https://www.youtube.com/@Dinocrafting/playlists"
+  color: "blue-500"
+
+- id: theories
+  title: "نظريات ماينكرافت"
+  description: "تحليلات وأسرار عالم Minecraft. نظريات قوية بدلائل."
+  thumbnail: "https://blogger.googleusercontent.com/img/a/AVvXsEgCeUtjQRyJi9GbYJfvItXRKemGZ6sqq5BeIs90RUqtzLYaf3BtGDq03wg0GoM9MjCICo-FBM_JlPKH4dxHz2jdBZuaqmo3_MRU6cx6YYfNtwacoXES_RWUwbc6vWNoWIxpzm2x6w0eI5YEvek8PGaWjY1O1HN0gvZ8iFgWaxRnz_2ezFDtp6IdNDeIX3fg=w640-h462"
+  episodes: 12
+  status: "ongoing"
+  hashtag: "#DinoTheories"
+  url: "https://www.youtube.com/@Dinocrafting/playlists"
+  color: "purple-500"
+
+- id: tutorials
+  title: "شروحات تثبيت ومودات"
+  description: "كيف تثبت Minecraft، Forge، Fabric، والمودات. خطوة بخطوة."
+  thumbnail: ""
+  episodes: 15
+  status: "ongoing"
+  hashtag: "#DinoTutorial"
+  url: "https://www.youtube.com/@Dinocrafting/playlists"
+  color: "yellow-500"
+
+- id: shorts
+  title: "Dino Shorts"
+  description: "فيديوهات قصيرة، ميمات، ولحظات ممتعة من Minecraft."
+  thumbnail: ""
+  episodes: 50
+  status: "ongoing"
+  hashtag: "#DinoShorts"
+  url: "https://www.youtube.com/@Dinocrafting/shorts"
+  color: "red-600"

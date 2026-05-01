@@ -1,0 +1,71 @@
+---
+layout: default
+title: قاموس Minecraft بالعربية | Dino Crafting
+description: قاموس شامل لمصطلحات Minecraft بالعربية. الوحوش، البلوكات، المعادن، الـ Enchants، والمزيد.
+permalink: /glossary/
+lang: ma
+---
+
+{% assign glossary = site.data.glossary %}
+
+<div class="space-y-10" dir="rtl"
+     x-data="{
+       search: '',
+       activeCat: 'all',
+       matches(item) {
+         if (!this.search) return true;
+         const q = this.search.toLowerCase();
+         return item.en.toLowerCase().includes(q) || item.ar.includes(this.search) || item.meaning.includes(this.search);
+       }
+     }">
+
+  <section class="text-center py-8">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-[10px] font-black uppercase tracking-widest mb-6">
+      📖 Wiki
+    </div>
+    <h1 class="text-5xl lg:text-7xl font-black text-white mb-6 tracking-tighter">قاموس Minecraft</h1>
+    <p class="text-gray-400 text-lg max-w-2xl mx-auto">كل مصطلحات Minecraft بالعربية - الوحوش، البلوكات، المعادن، والمزيد.</p>
+  </section>
+
+  <section class="sticky top-24 z-30 max-w-4xl mx-auto">
+    <input x-model="search" type="search" placeholder="🔍 ابحث عن مصطلح..."
+           class="w-full px-6 py-4 bg-black/80 backdrop-blur border border-white/10 rounded-2xl text-white text-lg outline-none focus:border-moroccangreen/60">
+  </section>
+
+  <section class="flex flex-wrap gap-3">
+    <button @click="activeCat = 'all'" :class="activeCat === 'all' ? 'bg-moroccangreen text-white' : 'bg-white/5 text-gray-400'" class="px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest transition-all">
+      الكل
+    </button>
+    {% for cat in glossary.categories %}
+    <button @click="activeCat = '{{ cat.id }}'" :class="activeCat === '{{ cat.id }}' ? 'bg-moroccangreen text-white' : 'bg-white/5 text-gray-400'" class="px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest transition-all">
+      {{ cat.title }}
+    </button>
+    {% endfor %}
+  </section>
+
+  {% for cat in glossary.categories %}
+  <section x-show="activeCat === 'all' || activeCat === '{{ cat.id }}'">
+    <h2 class="text-3xl font-black text-white mb-6">{{ cat.title }}</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      {% for item in cat.items %}
+      <div x-show="matches({en:'{{ item.en | escape }}', ar:'{{ item.ar | escape }}', meaning:'{{ item.meaning | escape }}'})" class="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-moroccangreen/30 transition-all">
+        <div class="flex items-baseline gap-3 mb-2 flex-wrap">
+          <span class="text-xl font-black text-moroccangreen">{{ item.en }}</span>
+          <span class="text-gray-500">→</span>
+          <span class="text-xl font-bold text-white">{{ item.ar }}</span>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">{{ item.meaning }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+
+  <section class="p-10 rounded-[3rem] bg-white/5 border border-white/10 text-center mt-12">
+    <h3 class="text-2xl font-black text-white mb-4">💡 مصطلح ناقص؟</h3>
+    <p class="text-gray-400 mb-6">اقترح مصطلحًا جديدًا ليُضاف إلى القاموس.</p>
+    <a href="mailto:{{ site.email }}?subject=مصطلح%20جديد%20للقاموس" class="inline-block px-8 py-4 rounded-xl bg-moroccangreen text-white font-bold hover:brightness-110 transition-all">
+      اقترح مصطلحًا
+    </a>
+  </section>
+</div>

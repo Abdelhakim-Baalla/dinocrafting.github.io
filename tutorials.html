@@ -1,0 +1,78 @@
+---
+layout: default
+title: مكتبة الشروحات | Dino Crafting
+description: شروحات Minecraft خطوة بخطوة - تثبيت، أداء، Redstone، Survival، والمزيد.
+permalink: /tutorials/
+lang: ma
+---
+
+{% assign tuts = site.data.tutorials %}
+
+<div class="space-y-12" dir="rtl"
+     x-data="{
+       search: '',
+       activeCat: 'all',
+       activeDifficulty: 'all'
+     }">
+
+  <section class="text-center py-8">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-[10px] font-black uppercase tracking-widest mb-6">
+      📚 Tutorials
+    </div>
+    <h1 class="text-5xl lg:text-7xl font-black text-white mb-6 tracking-tighter">مكتبة الشروحات</h1>
+    <p class="text-gray-400 text-lg max-w-2xl mx-auto">شروحات مكتوبة من المبتدئ حتى المحترف. كل شرح فيه الخطوات الكاملة.</p>
+  </section>
+
+  <section class="space-y-4">
+    <input x-model="search" type="search" placeholder="🔍 ابحث في الشروحات..." class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl text-white outline-none focus:border-moroccangreen/60">
+
+    <div class="flex flex-wrap gap-3">
+      <button @click="activeDifficulty = 'all'" :class="activeDifficulty === 'all' ? 'bg-moroccangreen text-white' : 'bg-white/5 text-gray-400'" class="px-4 py-2 rounded-full text-xs font-black transition-all">الكل</button>
+      <button @click="activeDifficulty = 'مبتدئ'" :class="activeDifficulty === 'مبتدئ' ? 'bg-moroccangreen text-white' : 'bg-white/5 text-gray-400'" class="px-4 py-2 rounded-full text-xs font-black transition-all">مبتدئ</button>
+      <button @click="activeDifficulty = 'متوسط'" :class="activeDifficulty === 'متوسط' ? 'bg-yellow-500 text-black' : 'bg-white/5 text-gray-400'" class="px-4 py-2 rounded-full text-xs font-black transition-all">متوسط</button>
+      <button @click="activeDifficulty = 'متقدم'" :class="activeDifficulty === 'متقدم' ? 'bg-red-600 text-white' : 'bg-white/5 text-gray-400'" class="px-4 py-2 rounded-full text-xs font-black transition-all">متقدم</button>
+    </div>
+  </section>
+
+  <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {% for t in tuts %}
+    <article x-show="(activeDifficulty === 'all' || activeDifficulty === '{{ t.difficulty }}') && (search === '' || '{{ t.title | escape }}'.toLowerCase().includes(search.toLowerCase()) || '{{ t.description | escape }}'.toLowerCase().includes(search.toLowerCase()))"
+             class="p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-moroccangreen/30 transition-all"
+             x-data="{ open: false }">
+      <div class="flex items-center gap-2 mb-3 flex-wrap">
+        <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest
+          {% if t.difficulty == 'مبتدئ' %}bg-moroccangreen/20 text-moroccangreen
+          {% elsif t.difficulty == 'متوسط' %}bg-yellow-500/20 text-yellow-400
+          {% else %}bg-red-600/20 text-red-400{% endif %}">{{ t.difficulty }}</span>
+        <span class="px-3 py-1 rounded-full bg-white/5 text-gray-400 text-[10px] font-bold">{{ t.category }}</span>
+        <span class="text-gray-500 text-xs">⏱ {{ t.read_time }} د</span>
+      </div>
+
+      <h3 class="text-xl font-black text-white mb-3">{{ t.title }}</h3>
+      <p class="text-gray-400 text-sm mb-4 leading-relaxed">{{ t.description }}</p>
+
+      <button @click="open = !open" class="text-moroccangreen text-sm font-bold hover:underline">
+        <span x-show="!open">▸ عرض الخطوات</span>
+        <span x-show="open">▾ إخفاء الخطوات</span>
+      </button>
+
+      <div x-show="open" x-collapse class="mt-4 space-y-2">
+        {% for step in t.steps %}
+        <div class="flex gap-3 text-sm text-gray-300">
+          <span class="text-moroccangreen font-bold">{{ forloop.index }}.</span>
+          <span>{{ step }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </article>
+    {% endfor %}
+  </section>
+
+  <section class="p-10 rounded-[3rem] bg-white/5 border border-white/10 text-center">
+    <h3 class="text-2xl font-black text-white mb-4">💡 شرح ناقص؟</h3>
+    <p class="text-gray-400 mb-6">اقترح موضوع شرح جديد عبر البريد.</p>
+    <a href="mailto:{{ site.email }}?subject=اقتراح%20شرح%20جديد" class="inline-block px-8 py-4 rounded-xl bg-moroccangreen text-white font-bold hover:brightness-110 transition-all">
+      اقترح شرحًا
+    </a>
+  </section>
+</div>

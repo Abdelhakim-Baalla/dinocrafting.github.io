@@ -1,0 +1,79 @@
+---
+layout: default
+title: مولد Seeds | Dino Crafting
+description: اكتشف أفضل seeds لـ Minecraft مع screenshots وتفاصيل كل عالم.
+permalink: /seed-generator/
+lang: ma
+---
+
+{% assign seeds = site.data.seeds %}
+
+<div class="space-y-12" dir="rtl" x-data="{
+  seeds: {{ seeds | jsonify }},
+  current: null,
+  init() { this.randomize(); },
+  randomize() {
+    const idx = Math.floor(Math.random() * this.seeds.length);
+    this.current = this.seeds[idx];
+  },
+  copySeed() {
+    if (this.current) {
+      navigator.clipboard.writeText(this.current.seed);
+      alert('تم نسخ الـ Seed!');
+    }
+  }
+}">
+
+  <section class="text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-moroccangreen/20 text-moroccangreen text-[10px] font-black uppercase tracking-widest mb-6">
+      🎲 مولد Seeds
+    </div>
+    <h1 class="text-5xl lg:text-6xl font-black text-white mb-6 tracking-tighter">اكتشف عالمًا جديدًا</h1>
+    <p class="text-gray-400 text-lg max-w-2xl mx-auto">اضغط الزر للحصول على seed عشوائي مع تفاصيل كاملة.</p>
+  </section>
+
+  <section class="max-w-4xl mx-auto">
+    <template x-if="current">
+      <div class="rounded-[3rem] bg-white/5 border border-white/10 overflow-hidden">
+        <img :src="current.screenshot" :alt="current.name" class="w-full h-80 object-cover">
+        <div class="p-8">
+          <div class="flex flex-wrap items-center gap-3 mb-4">
+            <span class="px-3 py-1 rounded-full bg-moroccangreen/20 text-moroccangreen text-[10px] font-black uppercase tracking-widest" x-text="current.biome"></span>
+            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-black uppercase tracking-widest" x-text="current.type"></span>
+            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-black uppercase tracking-widest" x-text="current.version"></span>
+          </div>
+          <h2 class="text-4xl font-black text-white mb-3" x-text="current.name"></h2>
+          <p class="text-gray-400 mb-6" x-text="current.description"></p>
+
+          <div class="p-6 rounded-2xl bg-black/40 border border-white/10 mb-6">
+            <div class="text-xs text-gray-500 mb-2 uppercase tracking-widest">Seed</div>
+            <div class="flex items-center gap-3">
+              <code class="flex-1 text-2xl font-black text-moroccangreen" x-text="current.seed"></code>
+              <button @click="copySeed()" class="px-4 py-2 rounded-lg bg-moroccangreen text-white font-bold hover:brightness-110 transition-all">
+                نسخ
+              </button>
+            </div>
+          </div>
+
+          <div class="space-y-2 mb-8">
+            <div class="text-xs text-gray-500 uppercase tracking-widest mb-3">المميزات</div>
+            <template x-for="h in current.highlights">
+              <div class="flex gap-3 text-gray-300">
+                <span class="text-moroccangreen">▸</span>
+                <span x-text="h"></span>
+              </div>
+            </template>
+          </div>
+
+          <button @click="randomize()" class="w-full py-4 rounded-xl bg-moroccangreen text-white font-black uppercase tracking-widest hover:brightness-110 transition-all">
+            🎲 توليد seed جديد
+          </button>
+        </div>
+      </div>
+    </template>
+
+    <div class="mt-8 text-center text-gray-500 text-sm">
+      💡 ضع الـ Seed في خانة Seed عند إنشاء عالم جديد لتحصل على نفس العالم.
+    </div>
+  </section>
+</div>

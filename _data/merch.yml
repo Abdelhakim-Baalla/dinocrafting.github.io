@@ -1,0 +1,81 @@
+categories:
+  - id: wallpapers
+    title: "خلفيات سطح المكتب"
+    color: "moroccangreen"
+    items:
+      - name: "Dino Crafting Logo - 4K"
+        description: "خلفية رسمية بدقة 4K"
+        preview: "/assets/images/avatarHead2.png"
+        download_url: "/assets/images/avatarHead2.png"
+        format: "PNG"
+        size: "4K"
+        free: true
+
+      - name: "FlowInventory Banner"
+        description: "بانر FlowInventory للموبايل والحاسوب"
+        preview: "/assets/images/avatarHead2.png"
+        download_url: "/assets/images/avatarHead2.png"
+        format: "PNG"
+        size: "2K + Mobile"
+        free: true
+
+  - id: skins
+    title: "Skins حصرية"
+    color: "red-600"
+    items:
+      - name: "Default Dino Skin"
+        description: "السكين الرسمي للقناة"
+        preview: "/assets/images/skin.png"
+        download_url: "/assets/images/skin.png"
+        format: "PNG"
+        size: "64x64"
+        free: true
+
+      - name: "Ramadan Dino Skin"
+        description: "نسخة خاصة بشهر رمضان"
+        preview: "/assets/images/skin.png"
+        download_url: "/assets/images/skin.png"
+        format: "PNG"
+        size: "64x64"
+        free: true
+
+  - id: resource_packs
+    title: "Resource Packs"
+    color: "blue-500"
+    items:
+      - name: "Dino UI Pack"
+        description: "حزمة واجهة معدلة بألوان Dino Crafting (قريبًا)"
+        preview: ""
+        download_url: ""
+        format: "ZIP"
+        size: "Coming Soon"
+        free: true
+        coming_soon: true
+
+  - id: digital_extras
+    title: "إضافات رقمية"
+    color: "purple-500"
+    items:
+      - name: "Discord Emojis Pack"
+        description: "إيموجي مخصصة لسيرفر Discord"
+        preview: ""
+        download_url: ""
+        format: "ZIP"
+        size: "Coming Soon"
+        free: true
+        coming_soon: true
+
+      - name: "Stream Overlays"
+        description: "Overlays جاهزة للبث المباشر (قريبًا)"
+        preview: ""
+        download_url: ""
+        format: "ZIP"
+        size: "Coming Soon"
+        free: true
+        coming_soon: true
+
+support_message:
+  title: "هل تحب ما نقدمه؟"
+  description: "كل المنتجات هنا مجانية. إذا أعجبتك يمكنك دعمنا."
+  ko_fi: "https://ko-fi.com/dinocrafting"
+  patreon: "https://www.patreon.com/cw/Abdelhakim_Baalla"

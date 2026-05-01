@@ -1,0 +1,62 @@
+---
+layout: default
+title: متجر Dino Crafting | Dino Crafting
+description: خلفيات، Skins، Resource Packs، وإضافات رقمية حصرية. كلها مجانية.
+permalink: /merch/
+lang: ma
+---
+
+{% assign merch = site.data.merch %}
+
+<div class="space-y-16" dir="rtl">
+  <section class="text-center py-8">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-[10px] font-black uppercase tracking-widest mb-6">
+      🎁 Free Merch
+    </div>
+    <h1 class="text-5xl lg:text-7xl font-black text-white mb-6 tracking-tighter">متجر Dino Crafting</h1>
+    <p class="text-gray-400 text-lg max-w-2xl mx-auto">منتجات رقمية حصرية. كلها مجانية. ادعم القناة إذا أعجبتك.</p>
+  </section>
+
+  {% for cat in merch.categories %}
+  <section>
+    <h2 class="text-3xl font-black text-white mb-6">{{ cat.title }}</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for item in cat.items %}
+      <div class="rounded-3xl bg-white/5 border border-white/10 overflow-hidden hover:border-{{ cat.color }}/30 transition-all {% if item.coming_soon %}opacity-60{% endif %}">
+        {% if item.preview != "" %}
+        <div class="aspect-video overflow-hidden bg-black/40">
+          <img src="{{ item.preview }}" alt="{{ item.name }}" class="w-full h-full object-cover">
+        </div>
+        {% else %}
+        <div class="aspect-video bg-{{ cat.color }}/10 flex items-center justify-center text-6xl">📦</div>
+        {% endif %}
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full bg-{{ cat.color }}/20 text-{{ cat.color }} text-[10px] font-black uppercase tracking-widest">{{ item.format }}</span>
+            <span class="text-gray-500 text-xs">{{ item.size }}</span>
+          </div>
+          <h3 class="text-lg font-black text-white mb-2">{{ item.name }}</h3>
+          <p class="text-gray-400 text-sm mb-4 leading-relaxed">{{ item.description }}</p>
+          {% if item.coming_soon %}
+          <div class="w-full py-3 rounded-xl bg-white/5 border border-white/10 text-center text-gray-500 font-bold">قريبًا</div>
+          {% else %}
+          <a href="{{ item.download_url }}" download class="block w-full py-3 rounded-xl bg-{{ cat.color }} text-white text-center font-bold hover:brightness-110 transition-all">
+            ⬇ تحميل مجاني
+          </a>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+
+  <section class="p-12 rounded-[3rem] bg-gradient-to-br from-purple-500/10 via-black to-black border border-purple-500/20 text-center">
+    <h2 class="text-3xl font-black text-white mb-4">{{ merch.support_message.title }}</h2>
+    <p class="text-gray-400 mb-8 max-w-2xl mx-auto">{{ merch.support_message.description }}</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="{{ merch.support_message.ko_fi }}" target="_blank" class="px-6 py-3 rounded-xl bg-cyan-600 text-white font-bold hover:brightness-110 transition-all">Ko-fi ☕</a>
+      <a href="{{ merch.support_message.patreon }}" target="_blank" class="px-6 py-3 rounded-xl bg-orange-600 text-white font-bold hover:brightness-110 transition-all">Patreon</a>
+    </div>
+  </section>
+</div>

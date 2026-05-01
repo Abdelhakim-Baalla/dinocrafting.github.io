@@ -1,0 +1,67 @@
+---
+layout: default
+title: بناءات المجتمع | Dino Crafting
+description: أفضل بناءات Minecraft من مجتمع Dino Crafting. شارك بناءك ليظهر هنا.
+permalink: /community-builds/
+lang: ma
+---
+
+{% assign builds = site.data.community_builds %}
+
+<div class="space-y-12" dir="rtl">
+  <section class="text-center py-8">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-[10px] font-black uppercase tracking-widest mb-6">
+      🏗️ Community Builds
+    </div>
+    <h1 class="text-5xl lg:text-7xl font-black text-white mb-6 tracking-tighter">بناءات المجتمع</h1>
+    <p class="text-gray-400 text-lg max-w-2xl mx-auto">أفضل البناءات من لاعبي Dino Crafting. الإبداع لا حدود له.</p>
+  </section>
+
+  <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {% for b in builds %}{% if b.id %}
+    <article class="group rounded-[2.5rem] bg-white/5 border border-white/10 overflow-hidden hover:border-cyan-500/30 transition-all">
+      {% if b.image != "" %}
+      <div class="aspect-video overflow-hidden">
+        <img src="{{ b.image }}" alt="{{ b.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+      {% else %}
+      <div class="aspect-video bg-cyan-500/10 flex items-center justify-center text-7xl">🏗️</div>
+      {% endif %}
+      <div class="p-6">
+        <span class="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-[10px] font-black uppercase tracking-widest">{{ b.category }}</span>
+        <h3 class="text-xl font-black text-white mt-3 mb-2">{{ b.title }}</h3>
+        <p class="text-gray-400 text-sm mb-4 leading-relaxed">{{ b.description }}</p>
+
+        <div class="flex items-center gap-3 mb-4 text-sm">
+          <div class="w-10 h-10 rounded-full bg-cyan-500 flex items-center justify-center font-black text-white">{{ b.builder | slice: 0 }}</div>
+          <div>
+            <div class="text-white font-bold">{{ b.builder }}</div>
+            <div class="text-gray-500 text-xs">{{ b.builder_socials }}</div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 text-xs text-gray-500">
+          <span>⏱ {{ b.hours }} ساعة</span>
+          <span>📦 {{ b.blocks_used }}</span>
+        </div>
+      </div>
+    </article>
+    {% endif %}{% endfor %}
+  </section>
+
+  <section class="p-12 rounded-[3rem] bg-gradient-to-br from-cyan-500/10 via-black to-black border border-cyan-500/20 text-center">
+    <h2 class="text-3xl font-black text-white mb-4">{{ builds.submission.title }}</h2>
+    <p class="text-gray-400 mb-6 max-w-2xl mx-auto">{{ builds.submission.description }}</p>
+    <div class="max-w-md mx-auto p-6 rounded-2xl bg-black/40 border border-white/10 text-right mb-8">
+      <div class="text-xs text-cyan-400 mb-3 font-black uppercase tracking-widest">المطلوب:</div>
+      <ul class="space-y-2 text-gray-300 text-sm">
+        {% for r in builds.submission.required %}
+        <li>▸ {{ r }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <a href="mailto:{{ builds.submission.email }}?subject=بناء%20جديد%20لـ%20Dino%20Crafting" class="inline-block px-8 py-4 rounded-xl bg-cyan-500 text-white font-bold hover:brightness-110 transition-all">
+      أرسل بناءك
+    </a>
+  </section>
+</div>

@@ -1,5 +1,5 @@
 <header class="sticky top-0 z-50 bg-white/80 dark:bg-darkbg/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800"
-        x-data="{ mobileMenu: false }">
+        x-data="{ mobileMenu: false, openExplore: false, openTools: false }">
   <div class="container mx-auto px-4 h-20 flex items-center justify-between">
     <!-- Logo -->
     <a href="/" class="flex items-center gap-3">
@@ -17,10 +17,46 @@
     </a>
 
     <!-- Desktop Nav -->
-    <nav class="hidden lg:flex items-center gap-8">
+    <nav class="hidden lg:flex items-center gap-6">
       <a href="/" class="text-xs font-black text-gray-400 hover:text-white uppercase tracking-widest transition-colors">الرئيسية</a>
-      <a href="/mods/" class="text-xs font-black text-gray-400 hover:text-white uppercase tracking-widest transition-colors">المودات</a>
-      <a href="/news/" class="text-xs font-black text-gray-400 hover:text-white uppercase tracking-widest transition-colors">الأخبار</a>
+
+      <!-- Explore Dropdown -->
+      <div class="relative" @mouseleave="openExplore = false">
+        <button @click="openExplore = !openExplore" @mouseenter="openExplore = true" class="text-xs font-black text-gray-400 hover:text-white uppercase tracking-widest transition-colors flex items-center gap-1">
+          استكشف <span class="text-[8px]">▼</span>
+        </button>
+        <div x-show="openExplore" x-transition class="absolute top-full left-0 mt-2 w-56 bg-black/95 backdrop-blur-xl border border-white/10 rounded-2xl p-3 shadow-2xl">
+          <a href="/mods/" class="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:bg-moroccangreen/20 hover:text-white transition-all">🎮 المودات</a>
+          <a href="/flowinventory/" class="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:bg-moroccangreen/20 hover:text-white transition-all">⭐ FlowInventory</a>
+          <a href="/news/" class="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:bg-moroccangreen/20 hover:text-white transition-all">📰 الأخبار</a>
+          <a href="/series/" class="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:bg-moroccangreen/20 hover:text-white transition-all">🎬 السلاسل</a>
+          <a href="/theories/" class="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:bg-moroccangreen/20 hover:text-white transition-all">🔮 النظريات</a>
+          <a href="/community-builds/" class="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:bg-moroccangreen/20 hover:text-white transition-all">🏗️ بناءات المجتمع</a>
+          <a href="/wall-of-fame/" class="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:bg-moroccangreen/20 hover:text-white transition-all">🏆 جدار الشرف</a>
+          <a href="/timeline/" class="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:bg-moroccangreen/20 hover:text-white transition-all">📅 الخط الزمني</a>
+          <a href="/sponsors/" class="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:bg-moroccangreen/20 hover:text-white transition-all">🤝 الرعاة والشركاء</a>
+        </div>
+      </div>
+
+      <!-- Tools Dropdown -->
+      <div class="relative" @mouseleave="openTools = false">
+        <button @click="openTools = !openTools" @mouseenter="openTools = true" class="text-xs font-black text-gray-400 hover:text-white uppercase tracking-widest transition-colors flex items-center gap-1">
+          أدوات <span class="text-[8px]">▼</span>
+        </button>
+        <div x-show="openTools" x-transition class="absolute top-full left-0 mt-2 w-56 bg-black/95 backdrop-blur-xl border border-white/10 rounded-2xl p-3 shadow-2xl">
+          <a href="/tools/" class="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:bg-moroccangreen/20 hover:text-white transition-all">🛠️ كل الأدوات</a>
+          <a href="/downloads/" class="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:bg-moroccangreen/20 hover:text-white transition-all">⬇ تحميل Minecraft</a>
+          <a href="/nether-converter/" class="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:bg-moroccangreen/20 hover:text-white transition-all">🔄 محول Nether</a>
+          <a href="/seed-generator/" class="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:bg-moroccangreen/20 hover:text-white transition-all">🎲 مولد Seeds</a>
+          <a href="/quiz/" class="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:bg-moroccangreen/20 hover:text-white transition-all">🧩 اختبار شخصيتك</a>
+          <a href="/tutorials/" class="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:bg-moroccangreen/20 hover:text-white transition-all">📚 مكتبة الشروحات</a>
+          <a href="/glossary/" class="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:bg-moroccangreen/20 hover:text-white transition-all">📖 قاموس Minecraft</a>
+          <a href="/faq/" class="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:bg-moroccangreen/20 hover:text-white transition-all">❓ أسئلة شائعة</a>
+        </div>
+      </div>
+
+      <a href="/lore/" class="text-xs font-black text-gray-400 hover:text-white uppercase tracking-widest transition-colors">القصة</a>
+      <a href="/merch/" class="text-xs font-black text-gray-400 hover:text-white uppercase tracking-widest transition-colors">المتجر</a>
       <a href="/about/" class="text-xs font-black text-gray-400 hover:text-white uppercase tracking-widest transition-colors">حول</a>
       <a href="/contact/" class="text-xs font-black text-gray-400 hover:text-white uppercase tracking-widest transition-colors">اتصل</a>
     </nav>
@@ -48,13 +84,36 @@
   </div>
 
     <!-- Mobile Menu Drawer -->
-    <div x-show="mobileMenu" x-transition class="lg:hidden fixed inset-0 z-40 bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center space-y-12">
-      <nav class="flex flex-col items-center space-y-8">
-        <a @click="mobileMenu = false" href="/" class="text-4xl font-black text-white uppercase italic">الرئيسية</a>
-        <a @click="mobileMenu = false" href="/mods/" class="text-4xl font-black text-white uppercase italic">المودات</a>
-        <a @click="mobileMenu = false" href="/news/" class="text-4xl font-black text-white uppercase italic">الأخبار</a>
-        <a @click="mobileMenu = false" href="/about/" class="text-4xl font-black text-white uppercase italic">حول</a>
-        <a @click="mobileMenu = false" href="/contact/" class="text-4xl font-black text-white uppercase italic">اتصل</a>
-      </nav>
+    <div x-show="mobileMenu" x-transition class="lg:hidden fixed inset-0 z-40 bg-black/95 backdrop-blur-2xl overflow-y-auto">
+      <div class="min-h-full flex flex-col items-center justify-start py-24 px-6 space-y-3 max-w-md mx-auto">
+        <a @click="mobileMenu = false" href="/" class="text-2xl font-black text-white">🏠 الرئيسية</a>
+        <div class="w-full h-px bg-white/10 my-2"></div>
+        <div class="text-[10px] uppercase tracking-widest text-moroccangreen font-black">استكشف</div>
+        <a @click="mobileMenu = false" href="/mods/" class="text-lg font-bold text-gray-300">المودات</a>
+        <a @click="mobileMenu = false" href="/flowinventory/" class="text-lg font-bold text-gray-300">FlowInventory</a>
+        <a @click="mobileMenu = false" href="/news/" class="text-lg font-bold text-gray-300">الأخبار</a>
+        <a @click="mobileMenu = false" href="/series/" class="text-lg font-bold text-gray-300">السلاسل</a>
+        <a @click="mobileMenu = false" href="/theories/" class="text-lg font-bold text-gray-300">النظريات</a>
+        <a @click="mobileMenu = false" href="/community-builds/" class="text-lg font-bold text-gray-300">بناءات المجتمع</a>
+        <a @click="mobileMenu = false" href="/wall-of-fame/" class="text-lg font-bold text-gray-300">جدار الشرف</a>
+        <div class="w-full h-px bg-white/10 my-2"></div>
+        <div class="text-[10px] uppercase tracking-widest text-moroccangreen font-black">أدوات</div>
+        <a @click="mobileMenu = false" href="/tools/" class="text-lg font-bold text-gray-300">صندوق الأدوات</a>
+        <a @click="mobileMenu = false" href="/downloads/" class="text-lg font-bold text-gray-300">تحميل Minecraft</a>
+        <a @click="mobileMenu = false" href="/nether-converter/" class="text-lg font-bold text-gray-300">محول Nether</a>
+        <a @click="mobileMenu = false" href="/seed-generator/" class="text-lg font-bold text-gray-300">مولد Seeds</a>
+        <a @click="mobileMenu = false" href="/quiz/" class="text-lg font-bold text-gray-300">اختبار شخصيتك</a>
+        <a @click="mobileMenu = false" href="/tutorials/" class="text-lg font-bold text-gray-300">الشروحات</a>
+        <a @click="mobileMenu = false" href="/glossary/" class="text-lg font-bold text-gray-300">القاموس</a>
+        <a @click="mobileMenu = false" href="/faq/" class="text-lg font-bold text-gray-300">الأسئلة الشائعة</a>
+        <div class="w-full h-px bg-white/10 my-2"></div>
+        <a @click="mobileMenu = false" href="/lore/" class="text-lg font-bold text-gray-300">📖 القصة</a>
+        <a @click="mobileMenu = false" href="/timeline/" class="text-lg font-bold text-gray-300">📅 الخط الزمني</a>
+        <a @click="mobileMenu = false" href="/merch/" class="text-lg font-bold text-gray-300">🎁 المتجر</a>
+        <a @click="mobileMenu = false" href="/sponsors/" class="text-lg font-bold text-gray-300">🤝 الشركاء</a>
+        <div class="w-full h-px bg-white/10 my-2"></div>
+        <a @click="mobileMenu = false" href="/about/" class="text-lg font-bold text-gray-300">حول</a>
+        <a @click="mobileMenu = false" href="/contact/" class="text-lg font-bold text-gray-300">اتصل</a>
+      </div>
     </div>
 </header>

@@ -1,0 +1,88 @@
+---
+layout: default
+title: الرعاة والشركاء | Dino Crafting
+description: قنوات شريكة، رعاة، وأصدقاء Dino Crafting. كن راعيًا أو شريكًا.
+permalink: /sponsors/
+lang: ma
+---
+
+{% assign sp = site.data.sponsors %}
+
+<div class="space-y-16" dir="rtl">
+  <section class="text-center py-8">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/20 text-orange-300 text-[10px] font-black uppercase tracking-widest mb-6">
+      🤝 Partners
+    </div>
+    <h1 class="text-5xl lg:text-7xl font-black text-white mb-6 tracking-tighter">الرعاة والشركاء</h1>
+    <p class="text-gray-400 text-lg max-w-2xl mx-auto">القنوات والشركاء الذين يدعمون Dino Crafting ويساهمون في نمو المجتمع.</p>
+  </section>
+
+  <section>
+    <h2 class="text-3xl font-black text-white mb-6">💎 الرعاة الرئيسيون</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      {% for s in sp.main_sponsors %}
+      <a href="{{ s.url }}" target="_blank" class="block p-8 rounded-3xl bg-gradient-to-br from-orange-500/10 via-black to-black border border-orange-500/20 hover:border-orange-500/50 transition-all">
+        {% if s.logo != "" %}<img src="{{ s.logo }}" alt="{{ s.name }}" class="h-16 w-auto mb-4 object-contain">{% endif %}
+        <h3 class="text-xl font-black text-white mb-2">{{ s.name }}</h3>
+        <p class="text-gray-400 text-sm">{{ s.description }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-3xl font-black text-white mb-6">📺 قنوات شريكة</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for c in sp.partner_channels %}
+      <div class="p-6 rounded-3xl bg-white/5 border border-white/10">
+        <div class="flex items-center gap-4 mb-4">
+          {% if c.avatar != "" %}<img src="{{ c.avatar }}" alt="{{ c.name }}" class="w-14 h-14 rounded-full">
+          {% else %}<div class="w-14 h-14 rounded-full bg-red-600 flex items-center justify-center font-black text-white">{{ c.name | slice: 0 }}</div>{% endif %}
+          <div>
+            <h3 class="text-lg font-black text-white">{{ c.name }}</h3>
+            <p class="text-gray-500 text-xs">{{ c.subscribers }} مشترك</p>
+          </div>
+        </div>
+        <p class="text-gray-400 text-sm mb-4">{{ c.description }}</p>
+        {% if c.youtube != "" %}<a href="{{ c.youtube }}" target="_blank" class="text-red-500 text-sm font-bold hover:underline">شاهد القناة ←</a>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-3xl font-black text-white mb-6">🌟 أصدقاء القناة</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      {% for f in sp.friends_channels %}
+      <div class="p-6 rounded-3xl bg-white/5 border border-white/10 text-center">
+        <div class="w-20 h-20 rounded-full bg-gradient-to-br from-moroccangreen to-purple-500 mx-auto mb-4 flex items-center justify-center text-2xl font-black text-white">
+          {{ f.name | slice: 0 }}
+        </div>
+        <h3 class="text-lg font-black text-white">{{ f.name }}</h3>
+        <p class="text-gray-400 text-sm mt-2">{{ f.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-3xl font-black text-white mb-6">✨ لماذا الشراكة معنا؟</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {% for p in sp.collaboration_perks %}
+      <div class="p-6 rounded-3xl bg-white/5 border border-white/10 text-center">
+        <div class="text-4xl mb-3">{{ p.icon }}</div>
+        <h3 class="text-lg font-black text-white mb-2">{{ p.title }}</h3>
+        <p class="text-gray-400 text-sm">{{ p.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="p-12 rounded-[3rem] bg-gradient-to-br from-orange-500/20 via-black to-black border border-orange-500/30 text-center">
+    <h2 class="text-4xl font-black text-white mb-4">{{ sp.become_sponsor.title }}</h2>
+    <p class="text-gray-400 mb-8 max-w-2xl mx-auto">{{ sp.become_sponsor.description }}</p>
+    <a href="mailto:{{ sp.become_sponsor.email }}?subject=Partnership%20Inquiry" class="inline-block px-10 py-5 rounded-xl bg-orange-500 text-white font-black uppercase tracking-widest hover:brightness-110 transition-all">
+      {{ sp.become_sponsor.cta }}
+    </a>
+  </section>
+</div>

@@ -1,0 +1,238 @@
+- id: install-minecraft
+  title: "كيفية تثبيت Minecraft Java Edition"
+  description: "دليل خطوة بخطوة لتثبيت Minecraft الرسمي على Windows / Mac / Linux."
+  difficulty: "مبتدئ"
+  read_time: 5
+  category: "Installation"
+  thumbnail: ""
+  video_id: ""
+  tags: ["installation", "minecraft", "java"]
+  steps:
+    - "اذهب إلى minecraft.net/download وحمّل Launcher."
+    - "ثبّت Launcher وافتحه."
+    - "سجّل دخول بحساب Microsoft."
+    - "اضغط على Play لتحميل اللعبة تلقائيًا."
+    - "بعد التحميل اختر Singleplayer لإنشاء عالم."
+
+- id: install-forge
+  title: "كيفية تثبيت Minecraft Forge"
+  description: "أسرع طريقة لتثبيت Forge وتشغيل المودات."
+  difficulty: "مبتدئ"
+  read_time: 7
+  category: "Mods"
+  thumbnail: ""
+  video_id: ""
+  tags: ["forge", "mods", "installation"]
+  steps:
+    - "تأكد أن Minecraft شغال مرة واحدة بالنسخة المطلوبة."
+    - "اذهب إلى files.minecraftforge.net واختر النسخة."
+    - "حمّل Installer."
+    - "افتح Installer واختر Install Client."
+    - "افتح Launcher، ستجد profile جديد لـ Forge."
+
+- id: install-fabric
+  title: "كيفية تثبيت Fabric"
+  description: "Mod Loader حديث وخفيف. التثبيت في 3 دقائق."
+  difficulty: "مبتدئ"
+  read_time: 5
+  category: "Mods"
+  thumbnail: ""
+  video_id: ""
+  tags: ["fabric", "mods"]
+  steps:
+    - "حمّل Fabric Installer من fabricmc.net."
+    - "افتح Installer."
+    - "اختر النسخة Vanilla."
+    - "اضغط Install."
+    - "افتح Launcher وستجد Fabric profile."
+
+- id: install-flowinventory
+  title: "كيفية تثبيت FlowInventory"
+  description: "ثبّت مود FlowInventory لتنظيم مخزونك تلقائيًا."
+  difficulty: "مبتدئ"
+  read_time: 4
+  category: "Mods"
+  thumbnail: "https://media.forgecdn.net/avatars/591/10/637841050000000000.png"
+  video_id: ""
+  tags: ["flowinventory", "mods", "inventory"]
+  steps:
+    - "تأكد من تثبيت Forge أو Fabric."
+    - "حمّل FlowInventory من CurseForge أو Modrinth."
+    - "ضع الملف .jar في مجلد .minecraft/mods."
+    - "افتح اللعبة بـ profile Forge أو Fabric."
+    - "افتح أي صندوق وستجد زر التنظيم التلقائي."
+
+- id: boost-fps
+  title: "كيف ترفع FPS في Minecraft على PC ضعيف"
+  description: "نصائح ومودات لرفع الأداء بشكل ملحوظ."
+  difficulty: "متوسط"
+  read_time: 8
+  category: "Performance"
+  thumbnail: ""
+  video_id: ""
+  tags: ["fps", "performance", "optimization"]
+  steps:
+    - "ثبّت OptiFine أو Sodium."
+    - "قلل Render Distance إلى 8."
+    - "أطفئ Smooth Lighting وFancy Graphics."
+    - "زد RAM المخصص إلى 4-6GB في Launcher."
+    - "حدّث drivers بطاقة الرسومات."
+
+- id: redstone-basics
+  title: "أساسيات Redstone للمبتدئين"
+  description: "تعلم Redstone من الصفر مع أمثلة عملية."
+  difficulty: "متوسط"
+  read_time: 12
+  category: "Redstone"
+  thumbnail: ""
+  video_id: ""
+  tags: ["redstone", "tutorial", "basics"]
+  steps:
+    - "افهم Redstone Dust كسلك كهربائي."
+    - "Redstone Torch = مصدر طاقة دائم."
+    - "Lever / Button / Pressure Plate = مفاتيح."
+    - "Repeater يضخم الإشارة كل 15 بلوك."
+    - "Comparator يقيس قوة الإشارة."
+
+- id: build-shelter
+  title: "بناء أول ملجأ في Survival"
+  description: "ابني ملجأ آمن في أول ليلة. خطوات بسيطة."
+  difficulty: "مبتدئ"
+  read_time: 6
+  category: "Building"
+  thumbnail: ""
+  video_id: ""
+  tags: ["survival", "shelter", "beginners"]
+  steps:
+    - "اقطع الأشجار وادسم الخشب لتصنع Crafting Table."
+    - "اصنع Wooden Pickaxe."
+    - "ابدأ في حفر منزل في تلة قريبة."
+    - "ضع Crafting Table وFurnace داخل."
+    - "أغلق المدخل بـ Door أو Dirt."
+
+- id: nether-survive
+  title: "كيف تنجو من Nether"
+  description: "نصائح أساسية للسفر إلى Nether والعودة سالمًا."
+  difficulty: "متوسط"
+  read_time: 10
+  category: "Survival"
+  thumbnail: ""
+  video_id: ""
+  tags: ["nether", "survival", "advanced"]
+  steps:
+    - "احمل Diamond Armor ودرع جيد."
+    - "خذ Bow + arrows ضد Ghasts."
+    - "اصنع Fire Resistance Potion إذا أمكن."
+    - "ابني Nether Portal سريع للهروب."
+    - "اجمع Quartz وBlaze Rods قبل الرجوع."
+
+- id: defeat-ender-dragon
+  title: "كيف تهزم Ender Dragon"
+  description: "استراتيجية كاملة للقضاء على البوس النهائي."
+  difficulty: "متقدم"
+  read_time: 15
+  category: "Boss Fight"
+  thumbnail: ""
+  video_id: ""
+  tags: ["ender-dragon", "boss", "end"]
+  steps:
+    - "احصل على Diamond/Netherite Armor + Sword."
+    - "اجمع Ender Pearls (12+)."
+    - "اصنع Bow + Arrows + Eye of Ender (12)."
+    - "ابحث عن Stronghold وفتح Portal."
+    - "في End: حطم Crystals أولاً ثم اضرب Dragon."
+
+- id: build-modern-house
+  title: "تصميم منزل عصري"
+  description: "10 نصائح لتصميم منزل بأسلوب modern."
+  difficulty: "متوسط"
+  read_time: 10
+  category: "Building"
+  thumbnail: ""
+  video_id: ""
+  tags: ["building", "modern", "design"]
+  steps:
+    - "استعمل Concrete وQuartz بكثرة."
+    - "نوافذ زجاجية كبيرة."
+    - "خطوط أفقية ورأسية واضحة."
+    - "إضاءة LED مخفية."
+    - "أحواض زرع داخلية."
+
+- id: get-emeralds-fast
+  title: "كيف تحصل على Emeralds بسرعة"
+  description: "أفضل 5 طرق لجمع Emeralds من القرى."
+  difficulty: "مبتدئ"
+  read_time: 6
+  category: "Economy"
+  thumbnail: ""
+  video_id: ""
+  tags: ["emeralds", "trading", "village"]
+  steps:
+    - "اعثر على قرية وحدد Librarian."
+    - "بع Sticks (32 = 1 Emerald)."
+    - "اصطد الحيوانات وبيع لحومها."
+    - "زرع Wheat وFarmer ليبادلك."
+    - "احصل على Mending Book بكلفة منخفضة."
+
+- id: sodium-vs-optifine
+  title: "Sodium vs OptiFine - الفرق والاختيار"
+  description: "مقارنة بين أكبر مودي تحسين الأداء."
+  difficulty: "متوسط"
+  read_time: 8
+  category: "Performance"
+  thumbnail: ""
+  video_id: ""
+  tags: ["sodium", "optifine", "performance", "comparison"]
+  steps:
+    - "OptiFine: Forge، يدعم Shaders، Capes."
+    - "Sodium: Fabric، أسرع وأخف."
+    - "للأداء البحت: Sodium."
+    - "للميزات الإضافية: OptiFine."
+    - "يمكن دمج Sodium + Iris للحصول على Shaders."
+
+- id: minecraft-realms
+  title: "كيف تنشئ Minecraft Realm"
+  description: "سيرفر مغلق صغير لك ولأصدقائك."
+  difficulty: "مبتدئ"
+  read_time: 5
+  category: "Multiplayer"
+  thumbnail: ""
+  video_id: ""
+  tags: ["realms", "multiplayer", "server"]
+  steps:
+    - "افتح اللعبة واضغط Realms."
+    - "اختر Subscribe (مدفوع)."
+    - "اختر اسم وعالم."
+    - "أرسل دعوات لأصدقائك."
+    - "ابدأ اللعب معًا."
+
+- id: backup-world
+  title: "كيف تحفظ نسخة احتياطية من عالمك"
+  description: "احم عالمك من الضياع. طريقة سهلة."
+  difficulty: "مبتدئ"
+  read_time: 4
+  category: "Tips"
+  thumbnail: ""
+  video_id: ""
+  tags: ["backup", "save", "world"]
+  steps:
+    - "اذهب لـ %appdata%/.minecraft/saves."
+    - "انسخ مجلد عالمك."
+    - "احفظه في مكان آمن (USB / Cloud)."
+    - "للاسترجاع: ضع المجلد في saves من جديد."
+
+- id: enchant-strategy
+  title: "أفضل استراتيجية Enchanting"
+  description: "كيف تحصل على أفضل Enchants بكفاءة."
+  difficulty: "متقدم"
+  read_time: 10
+  category: "Enchanting"
+  thumbnail: ""
+  video_id: ""
+  tags: ["enchanting", "xp", "books"]
+  steps:
+    - "ابني Enchanting Table محاطة بـ 15 Bookshelves."
+    - "اجمع XP بقتل Mobs أو في mob farm."
+    - "استعمل Books أولاً ثم انقل بـ Anvil."
+    - "ابحث عن Mending في Librarian."
+    - "ركّب Mending + Unbreaking + Enchants أخرى."

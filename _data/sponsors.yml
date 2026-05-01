@@ -1,0 +1,48 @@
+main_sponsors:
+  - name: "Ko-fi Supporters"
+    description: "كل الداعمين الرائعين على Ko-fi"
+    logo: "https://storage.ko-fi.com/cdn/cup-border.png"
+    url: "https://ko-fi.com/dinocrafting"
+    type: "supporters"
+
+partner_channels:
+  - name: "Channel Partner 1"
+    description: "صانع محتوى Minecraft عربي رائع"
+    avatar: ""
+    youtube: ""
+    subscribers: ""
+    type: "youtube"
+
+  - name: "Channel Partner 2"
+    description: "أصدقاء القناة وقناة شريكة"
+    avatar: ""
+    youtube: ""
+    subscribers: ""
+    type: "youtube"
+
+friends_channels:
+  - name: "صديق القناة"
+    description: "أحد أصدقاء Dino Crafting"
+    avatar: ""
+    url: ""
+    platform: "youtube"
+
+become_sponsor:
+  title: "كن راعيًا"
+  description: "تواصل معنا لمناقشة فرص الرعاية والتعاون."
+  email: "abdelhakimbaalla50@gmail.com"
+  cta: "ابدأ شراكة"
+
+collaboration_perks:
+  - icon: "🎯"
+    title: "جمهور مستهدف"
+    text: "وصول مباشر للمجتمع المغربي والعربي المهتم بـ Minecraft."
+  - icon: "📊"
+    title: "إحصائيات شفافة"
+    text: "إحصائيات حقيقية وتقارير أداء مفصلة."
+  - icon: "🎬"
+    title: "محتوى احترافي"
+    text: "إنتاج عالي الجودة مع تركيز على القصة."
+  - icon: "🌍"
+    title: "تأثير حقيقي"
+    text: "مجتمع نشط على يوتيوب وDiscord ومنصات اجتماعية."

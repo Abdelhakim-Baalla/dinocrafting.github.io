@@ -1,16 +1,41 @@
 # Dino Crafting
 
-Official website for Dino Crafting (Minecraft content, mods, news, and community).
+Official website for Dino Crafting (Minecraft content in Arabic - mods, news, tutorials, and community).
 
-## Important URLs
+## Main URLs
 - https://dinocrafting.github.io/
-- https://dinocrafting.github.io/mods/
-- https://dinocrafting.github.io/news/
-- https://dinocrafting.github.io/theories/
+- https://dinocrafting.github.io/about/
+- https://dinocrafting.github.io/contact/
+- https://dinocrafting.github.io/lore/
+- https://dinocrafting.github.io/timeline/
 - https://dinocrafting.github.io/site-map/
-- https://dinocrafting.github.io/seo-clusters/
+
+## Content
+- https://dinocrafting.github.io/news/
+- https://dinocrafting.github.io/mods/
+- https://dinocrafting.github.io/flowinventory/
+- https://dinocrafting.github.io/series/
+- https://dinocrafting.github.io/theories/
+- https://dinocrafting.github.io/community-builds/
+- https://dinocrafting.github.io/wall-of-fame/
+
+## Tools & Tutorials
+- https://dinocrafting.github.io/tools/
+- https://dinocrafting.github.io/downloads/
+- https://dinocrafting.github.io/nether-converter/
+- https://dinocrafting.github.io/seed-generator/
+- https://dinocrafting.github.io/quiz/
+- https://dinocrafting.github.io/tutorials/
+- https://dinocrafting.github.io/glossary/
+- https://dinocrafting.github.io/faq/
+
+## Community & Support
+- https://dinocrafting.github.io/sponsors/
+- https://dinocrafting.github.io/merch/
+- https://dinocrafting.github.io/socials/
 
 ## SEO Cluster URLs
+- https://dinocrafting.github.io/seo-clusters/
 - https://dinocrafting.github.io/minecraft-mods/
 - https://dinocrafting.github.io/minecraft-guides/
 - https://dinocrafting.github.io/minecraft-theories/

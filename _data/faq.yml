@@ -1,0 +1,160 @@
+categories:
+  - id: getting_started
+    title: "البدء مع Minecraft"
+    items:
+      - q: "ماهي متطلبات تشغيل Minecraft على PC ضعيف؟"
+        a: "الحد الأدنى: 4GB RAM، معالج Intel i3 أو AMD Ryzen 3، وبطاقة رسومية مدمجة. للأداء أفضل: 8GB RAM وGPU dedicated."
+      - q: "كيف أشتري Minecraft الأصلي؟"
+        a: "من الموقع الرسمي minecraft.net مقابل ~26 دولار لـ Java + Bedrock معًا."
+      - q: "ما الفرق بين Java وBedrock؟"
+        a: "Java للحاسوب فقط ويدعم المودات. Bedrock لكل المنصات (موبايل، كونسول، حاسوب) ويدعم Add-ons فقط."
+      - q: "كيف أحدث Minecraft؟"
+        a: "افتح Launcher الرسمي، سيقوم تلقائيًا بالتحقق من التحديثات."
+      - q: "هل يمكن لعب Minecraft بدون إنترنت؟"
+        a: "نعم، بعد تسجيل الدخول مرة أولى يعمل offline في Single Player."
+
+  - id: mods
+    title: "المودات"
+    items:
+      - q: "كيف أحمل FlowInventory؟"
+        a: "حمل من CurseForge أو Modrinth، ضع الملف في مجلد .minecraft/mods، ثم شغل اللعبة مع Forge أو Fabric."
+      - q: "ما الفرق بين Forge وFabric؟"
+        a: "Forge أقدم ويدعم مودات كبيرة. Fabric أحدث وأخف وأسرع تحديثًا."
+      - q: "هل يمكن استعمال Forge وFabric معًا؟"
+        a: "لا، اختر واحد فقط لكل instance. لكن يمكنك إنشاء instances منفصلة."
+      - q: "أين أحمل المودات بأمان؟"
+        a: "CurseForge وModrinth فقط. لا تحمل من مواقع غير معروفة."
+      - q: "لماذا تتعطل اللعبة بعد تثبيت مود؟"
+        a: "غالبًا تعارض إصدارات. تأكد أن المود يدعم نسخة Minecraft وModloader الذي تستعمله."
+      - q: "كم مود يمكن تثبيته؟"
+        a: "نظريًا لا حد، لكن عمليًا 100-200 مود مع 8GB RAM."
+      - q: "كيف أزيل مودًا؟"
+        a: "احذف ملف .jar من مجلد mods وأعد تشغيل اللعبة."
+
+  - id: performance
+    title: "الأداء"
+    items:
+      - q: "كيف أرفع FPS في Minecraft؟"
+        a: "ثبت OptiFine أو Sodium، قلل Render Distance، وأطفئ Fancy Graphics."
+      - q: "كم RAM أحتاج لـ Minecraft؟"
+        a: "Vanilla: 4GB كافي. مع Mods: 6-8GB. Modpacks ضخمة: 10-16GB."
+      - q: "كيف أزيد RAM المخصص للعبة؟"
+        a: "في Launcher، Edit Profile، More Options، عدّل JVM Arguments إلى -Xmx8G."
+      - q: "هل Shaders تخفض FPS كثيرًا؟"
+        a: "نعم، Shaders تتطلب GPU قوي. جرب Sildur's Vibrant Shaders Lite للحاسبات الضعيفة."
+      - q: "ما أفضل launcher للأداء؟"
+        a: "Prism Launcher يستهلك أقل موارد ويعطي تحكم أكبر."
+
+  - id: minecraft_servers
+    title: "الخوادم والـ Multiplayer"
+    items:
+      - q: "كيف أنشئ سيرفر Minecraft خاص؟"
+        a: "حمل server.jar من minecraft.net أو استعمل Aternos مجانًا للبدء السريع."
+      - q: "كيف ألعب مع الأصدقاء؟"
+        a: "LAN: في نفس الشبكة. Online: عبر سيرفر مشترك أو Realms من Mojang."
+      - q: "هل Hypixel متاح للعرب؟"
+        a: "نعم، Hypixel سيرفر Java عالمي. لكن لاتنسي تأخير الإنترنت من المغرب."
+      - q: "ما أفضل Hosting سيرفر مغربي؟"
+        a: "Aternos مجاني للبداية. للأداء الجاد جرب Apex Hosting أو Pebblehost."
+
+  - id: troubleshooting
+    title: "حل المشاكل"
+    items:
+      - q: "Minecraft لا يفتح، ماذا أفعل؟"
+        a: "تأكد من تحديث Java، أعد تثبيت Launcher، وتحقق من Antivirus."
+      - q: "خطأ Out of Memory"
+        a: "زد RAM المخصص، أو قلل عدد المودات والـ Render Distance."
+      - q: "مشكلة GLFW Error في تشغيل اللعبة"
+        a: "حدّث drivers بطاقة الرسومات أو ثبت OptiFine."
+      - q: "اللعبة تعلق على شاشة Mojang"
+        a: "احذف ملف options.txt من .minecraft وأعد التشغيل."
+      - q: "كيف أحل مشكلة عدم اتصال السيرفر؟"
+        a: "تحقق من IP وPort، تأكد أن السيرفر يعمل، وعطل Firewall مؤقتًا."
+
+  - id: account
+    title: "الحساب والأمان"
+    items:
+      - q: "كيف أحمي حسابي من السرقة؟"
+        a: "فعّل Two-Factor Authentication من Microsoft، ولا تشارك كلمة السر."
+      - q: "نسيت كلمة سر Minecraft"
+        a: "اذهب إلى account.microsoft.com وأعد تعيينها هناك."
+      - q: "كيف أغير اسم اللاعب؟"
+        a: "من account.minecraft.net مرة كل 30 يومًا."
+      - q: "هل Microsoft يحظر النسخ المقرصنة؟"
+        a: "نعم، النسخ غير الأصلية لا تستطيع الانضمام لسيرفرات Premium."
+
+  - id: skins_resources
+    title: "السكينات والموارد"
+    items:
+      - q: "كيف أغير سكين شخصيتي؟"
+        a: "من minecraft.net/profile أو من Launcher. ارفع PNG بحجم 64x64 أو 128x128."
+      - q: "أين أحمل سكينات مجانية؟"
+        a: "NameMC, PlanetMinecraft, MinecraftSkins.net"
+      - q: "كيف أضع Resource Pack؟"
+        a: "ضع الملف .zip في .minecraft/resourcepacks ثم فعّله من إعدادات اللعبة."
+      - q: "هل Texture Packs مسموحة في السيرفرات؟"
+        a: "نعم، في معظم السيرفرات. بعضها قد يفرض pack خاص."
+
+  - id: bedrock
+    title: "Bedrock Edition"
+    items:
+      - q: "هل يمكن لعب Bedrock مع Java؟"
+        a: "لا مباشرة. تحتاج GeyserMC على السيرفر للجمع بينهما."
+      - q: "Bedrock يدعم المودات؟"
+        a: "لا، فقط Add-ons وBehavior Packs."
+      - q: "كيف أحمل Add-ons لـ Bedrock؟"
+        a: "من المتجر داخل اللعبة أو من mcpedl.com."
+
+  - id: redstone
+    title: "Redstone والآليات"
+    items:
+      - q: "ما أساسيات Redstone للمبتدئين؟"
+        a: "ابدأ بـ Redstone Dust، Redstone Torch، Repeater، وComparator. ثم تعلم Logic Gates."
+      - q: "كيف أصنع باب تلقائي؟"
+        a: "استعمل Pressure Plate أو Lever مع Redstone Dust وPiston."
+      - q: "ما أفضل قناة لتعلم Redstone؟"
+        a: "Mumbo Jumbo، ilmango، أو Dino Crafting بالعربية!"
+
+  - id: building
+    title: "البناء"
+    items:
+      - q: "كيف أتعلم البناء الجميل؟"
+        a: "ابدأ بمنازل بسيطة، ادرس بناءات يوتيوبرز، استعمل ألوان متنوعة."
+      - q: "ما أفضل مودات البناء؟"
+        a: "Chisels & Bits، Decocraft، MrCrayfish's Furniture، WorldEdit للسيرفر."
+      - q: "كيف أنسخ مبنى بسرعة؟"
+        a: "استعمل WorldEdit في سيرفر خاص أو Litematica في single player."
+
+  - id: about_dino
+    title: "عن Dino Crafting"
+    items:
+      - q: "من هو Dino Crafting؟"
+        a: "صانع محتوى ماينكرافت بالعربية والدارجة المغربية، ومطور مود FlowInventory."
+      - q: "كيف أتواصل معك للرعاية؟"
+        a: "راسلني على abdelhakimbaalla50@gmail.com مع تفاصيل المشروع."
+      - q: "كيف أدعم القناة؟"
+        a: "اشترك في يوتيوب، تابع على Discord، وادعم على Ko-fi أو Patreon."
+      - q: "هل تقبل تعاونات؟"
+        a: "نعم، خاصة مع صانعي محتوى Minecraft عرب. راسلني."
+      - q: "هل تنشر مودات قادمة؟"
+        a: "نعم، تابع GitHub والقناة لآخر التحديثات."
+
+  - id: streaming
+    title: "البث المباشر"
+    items:
+      - q: "متى تبث مباشر؟"
+        a: "مواعيد البث في Discord. عادة مرة في الأسبوع."
+      - q: "ما إعدادات OBS التي تستعملها؟"
+        a: "1080p 60fps، Bitrate 6000، Encoder x264 أو NVENC."
+      - q: "كيف أبدأ بث Minecraft؟"
+        a: "OBS + اشتراك Twitch/YouTube. ابدأ بـ Display Capture."
+
+  - id: mobile
+    title: "Minecraft على الموبايل"
+    items:
+      - q: "هل يمكن تثبيت مودات على Bedrock Mobile؟"
+        a: "لا، فقط Add-ons من المتجر أو ملفات .mcpack."
+      - q: "أفضل كنترولر لـ Minecraft Mobile؟"
+        a: "GameSir X2 Pro أو أي كنترولر Bluetooth متوافق."
+      - q: "كيف ألعب multiplayer على Mobile؟"
+        a: "Realms من داخل اللعبة، أو Servers مثل Hive وLifeboat."

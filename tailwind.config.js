@@ -3,11 +3,27 @@ module.exports = {
   content: [
     './_includes/**/*.html',
     './_layouts/**/*.html',
-    './_posts/*.md',
+    './_posts/**/*.md',
     './*.html',
     './**/*.html',
     './*.md',
-    './**/*.md',
+    '!./node_modules/**',
+  ],
+  safelist: [
+    // Solid backgrounds for dynamic categories/buttons (with variants)
+    { pattern: /bg-(red|blue|purple|yellow|cyan|orange|indigo|green|pink|emerald)-(400|500|600|700)/, variants: ['hover'] },
+    { pattern: /bg-moroccangreen/, variants: ['hover'] },
+    { pattern: /bg-(red|blue|purple|yellow|cyan|orange|indigo|green|pink|emerald)-(400|500|600|700)\/(10|20|30)/ },
+    { pattern: /bg-moroccangreen\/(10|20|30)/ },
+    // Text colors (with hover, group-hover variants)
+    { pattern: /text-(red|blue|purple|yellow|cyan|orange|indigo|green|pink|emerald)-(300|400|500|600)/, variants: ['hover', 'group-hover'] },
+    { pattern: /text-moroccangreen/, variants: ['hover', 'group-hover'] },
+    // Borders (with hover variant)
+    { pattern: /border-(red|blue|purple|yellow|cyan|orange|indigo|green|pink|emerald)-(400|500|600|700)\/(10|20|30|50)/, variants: ['hover'] },
+    { pattern: /border-moroccangreen\/(10|20|30|50)/, variants: ['hover'] },
+    // From / via / to gradients
+    { pattern: /from-(red|blue|purple|yellow|cyan|orange|indigo|green|pink|emerald)-(400|500|600|700)\/(10|20|30)/ },
+    { pattern: /from-moroccangreen\/(10|20|30)/ },
   ],
   theme: {
     extend: {
@@ -35,5 +51,5 @@ module.exports = {
     },
   },
   plugins: [],
-  darkMode: 'class', // or 'media'
+  darkMode: 'class',
 }

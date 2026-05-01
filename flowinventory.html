@@ -1,0 +1,201 @@
+---
+layout: default
+title: FlowInventory | Dino Crafting
+description: مود FlowInventory لتنظيم المخزون تلقائيًا في Minecraft. مفتوح المصدر ومجاني.
+permalink: /flowinventory/
+lang: ma
+---
+
+{% assign mod = site.data.flowinventory %}
+
+<div class="space-y-20" dir="rtl">
+
+  <section class="relative py-16 px-8 lg:px-12 rounded-[3rem] bg-gradient-to-br from-moroccangreen/20 via-black to-black border border-moroccangreen/20 overflow-hidden">
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-moroccangreen/10 blur-[120px] rounded-full"></div>
+    <div class="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 text-[10px] font-black uppercase tracking-widest mb-6">
+          مود مميز · {{ mod.status }}
+        </div>
+        <h1 class="text-6xl lg:text-7xl font-black text-white mb-4 tracking-tighter">{{ mod.title }}</h1>
+        <p class="text-xl text-moroccangreen mb-6 font-bold">{{ mod.tagline }}</p>
+        <p class="text-gray-400 text-lg mb-10 leading-relaxed">{{ mod.description }}</p>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="{{ mod.links.curseforge }}" target="_blank" class="px-8 py-4 rounded-2xl bg-moroccangreen text-white font-bold hover:brightness-110 transition-all shadow-xl shadow-moroccangreen/30">
+            🚀 تحميل من CurseForge
+          </a>
+          <a href="{{ mod.links.modrinth }}" target="_blank" class="px-8 py-4 rounded-2xl bg-green-700 text-white font-bold hover:brightness-110 transition-all">
+            ⬡ Modrinth
+          </a>
+          <a href="{{ mod.links.github }}" target="_blank" class="px-8 py-4 rounded-2xl bg-white/10 border border-white/20 text-white font-bold hover:bg-white/20 transition-all">
+            GitHub
+          </a>
+          <a href="{{ mod.links.issues }}" target="_blank" class="px-8 py-4 rounded-2xl bg-white/5 border border-white/10 text-gray-300 font-bold hover:bg-white/10 transition-all">
+            🐛 الإبلاغ عن مشكلة
+          </a>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <img src="{{ mod.hero_image }}" alt="{{ mod.title }}" class="w-72 h-72 rounded-[2rem] object-cover border-4 border-moroccangreen/30 shadow-2xl shadow-moroccangreen/20">
+      </div>
+    </div>
+  </section>
+
+  <section class="grid sm:grid-cols-3 gap-6">
+    <div class="p-8 rounded-3xl bg-white/5 border border-white/10 text-center">
+      <div class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">التحميلات</div>
+      <div class="text-4xl font-black text-white" data-stat="{{ mod.stats_keys.downloads }}">--</div>
+    </div>
+    <div class="p-8 rounded-3xl bg-white/5 border border-white/10 text-center">
+      <div class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">المتابعون</div>
+      <div class="text-4xl font-black text-white" data-stat="{{ mod.stats_keys.followers }}">--</div>
+    </div>
+    <div class="p-8 rounded-3xl bg-white/5 border border-white/10 text-center">
+      <div class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">GitHub Stars</div>
+      <div class="text-4xl font-black text-white" data-stat="{{ mod.stats_keys.stars }}">--</div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-4xl font-black text-white mb-10">المميزات الرئيسية</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for feature in mod.features %}
+      <div class="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-moroccangreen/30 transition-all">
+        <div class="text-4xl mb-4">{{ feature.icon }}</div>
+        <h3 class="text-xl font-black text-white mb-2">{{ feature.title }}</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">{{ feature.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-4xl font-black text-white mb-10">جدول التوافق</h2>
+    <div class="overflow-x-auto rounded-3xl border border-white/10">
+      <table class="w-full text-right">
+        <thead class="bg-white/5 text-gray-400 text-xs uppercase tracking-widest">
+          <tr>
+            <th class="px-6 py-4">إصدار اللعبة</th>
+            <th class="px-6 py-4">Forge</th>
+            <th class="px-6 py-4">Fabric</th>
+            <th class="px-6 py-4">Quilt</th>
+            <th class="px-6 py-4">ملاحظات</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-white/5">
+          {% for c in mod.compatibility %}
+          <tr class="text-white">
+            <td class="px-6 py-4 font-bold">{{ c.version }}</td>
+            <td class="px-6 py-4">{% if c.forge %}<span class="text-moroccangreen">✓</span>{% else %}<span class="text-red-500">✗</span>{% endif %}</td>
+            <td class="px-6 py-4">{% if c.fabric %}<span class="text-moroccangreen">✓</span>{% else %}<span class="text-red-500">✗</span>{% endif %}</td>
+            <td class="px-6 py-4">{% if c.quilt %}<span class="text-moroccangreen">✓</span>{% else %}<span class="text-red-500">✗</span>{% endif %}</td>
+            <td class="px-6 py-4 text-gray-400 text-sm">{{ c.notes }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-4xl font-black text-white mb-10">سجل التحديثات</h2>
+    <div class="space-y-6">
+      {% for v in mod.changelog %}
+      <div class="p-8 rounded-3xl bg-white/5 border border-white/10">
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+          <div class="flex items-center gap-4">
+            <span class="px-4 py-1 rounded-full bg-moroccangreen/20 text-moroccangreen text-sm font-black">v{{ v.version }}</span>
+            <span class="text-gray-500 text-sm">{{ v.date }}</span>
+            <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest
+              {% if v.type == 'feature' %}bg-blue-500/20 text-blue-400
+              {% elsif v.type == 'fix' %}bg-yellow-500/20 text-yellow-400
+              {% elsif v.type == 'release' %}bg-moroccangreen/20 text-moroccangreen{% endif %}">
+              {{ v.type }}
+            </span>
+          </div>
+        </div>
+        <ul class="space-y-2 text-gray-300">
+          {% for item in v.items %}
+          <li class="flex gap-3"><span class="text-moroccangreen">▸</span><span>{{ item }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-4xl font-black text-white mb-10">خارطة الطريق</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for r in mod.roadmap %}
+      <div class="p-6 rounded-3xl bg-white/5 border border-white/10
+        {% if r.status == 'done' %}border-moroccangreen/30{% elsif r.status == 'in_progress' %}border-yellow-500/30{% endif %}">
+        <div class="text-[10px] uppercase tracking-widest font-black mb-3
+          {% if r.status == 'done' %}text-moroccangreen
+          {% elsif r.status == 'in_progress' %}text-yellow-400
+          {% else %}text-gray-500{% endif %}">
+          {% if r.status == 'done' %}✓ مكتمل{% elsif r.status == 'in_progress' %}⏳ قيد التنفيذ{% else %}📅 مخطط{% endif %}
+        </div>
+        <h3 class="text-lg font-black text-white mb-2">{{ r.title }}</h3>
+        <p class="text-gray-500 text-sm">{{ r.eta }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-4xl font-black text-white mb-10">آراء اللاعبين</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      {% for t in mod.testimonials %}
+      <div class="p-8 rounded-3xl bg-gradient-to-br from-white/5 via-black to-black border border-white/10">
+        <div class="text-yellow-400 text-xl mb-4">{% for i in (1..t.rating) %}★{% endfor %}</div>
+        <p class="text-gray-300 mb-6 italic">"{{ t.text }}"</p>
+        <div>
+          <div class="text-white font-bold">{{ t.name }}</div>
+          <div class="text-gray-500 text-sm">{{ t.role }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-4xl font-black text-white mb-10">أسئلة شائعة</h2>
+    <div class="space-y-4" x-data="{ open: 0 }">
+      {% for f in mod.faq %}
+      <div class="rounded-3xl bg-white/5 border border-white/10 overflow-hidden">
+        <button @click="open = open === {{ forloop.index }} ? 0 : {{ forloop.index }}" class="w-full text-right p-6 flex justify-between items-center text-white font-bold">
+          {{ f.q }}
+          <span x-text="open === {{ forloop.index }} ? '−' : '+'" class="text-moroccangreen text-2xl"></span>
+        </button>
+        <div x-show="open === {{ forloop.index }}" x-collapse class="px-6 pb-6 text-gray-400">
+          {{ f.a }}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "{{ mod.title }}",
+  "description": "{{ mod.description | escape }}",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Windows, macOS, Linux",
+  "softwareVersion": "{{ mod.changelog[0].version }}",
+  "author": {
+    "@type": "Organization",
+    "name": "Dino Crafting"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "{{ mod.links.curseforge }}"
+}
+</script>

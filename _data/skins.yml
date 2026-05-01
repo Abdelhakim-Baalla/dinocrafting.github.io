@@ -1,0 +1,24 @@
+- id: default
+  name: "Default Dino"
+  description: "السكين الكلاسيكي لـ Dino Crafting"
+  file: "/assets/images/skin.png"
+  preview: "/assets/images/avatarHead2.png"
+  default: true
+
+- id: ramadan
+  name: "Ramadan Dino"
+  description: "النسخة الرمضانية الخاصة"
+  file: "/assets/images/skin.png"
+  preview: "/assets/images/avatarHead2.png"
+
+- id: casual
+  name: "Casual Dino"
+  description: "نسخة Casual للأيام العادية"
+  file: "/assets/images/skin.png"
+  preview: "/assets/images/avatarHead2.png"
+
+- id: explorer
+  name: "Explorer Dino"
+  description: "نسخة المستكشف بمعدات كاملة"
+  file: "/assets/images/skin.png"
+  preview: "/assets/images/avatarHead2.png"

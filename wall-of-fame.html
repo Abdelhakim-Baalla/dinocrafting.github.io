@@ -1,0 +1,91 @@
+---
+layout: default
+title: جدار الشرف | Dino Crafting
+description: شكرًا لداعمي Dino Crafting على Patreon, Ko-fi, Discord, وفي كل مكان.
+permalink: /wall-of-fame/
+lang: ma
+---
+
+{% assign wall = site.data.wall_of_fame %}
+
+<div class="space-y-16" dir="rtl">
+  <section class="text-center py-12">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-300 text-[10px] font-black uppercase tracking-widest mb-6">
+      🏆 Wall of Fame
+    </div>
+    <h1 class="text-5xl lg:text-7xl font-black text-white mb-6 tracking-tighter">جدار الشرف</h1>
+    <p class="text-gray-400 text-lg max-w-2xl mx-auto">من غير الناس اللي قدامكم، ما كانش غادي يكون Dino Crafting. شكرًا لكل واحد فيكم.</p>
+  </section>
+
+  <section>
+    <h2 class="text-4xl font-black text-white mb-10">💎 الداعمون الكبار</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {% for s in wall.supporters %}
+      <div class="p-6 rounded-3xl bg-gradient-to-br from-yellow-500/10 via-black to-black border border-yellow-500/20 text-center">
+        <div class="w-20 h-20 rounded-full bg-gradient-to-br from-moroccangreen to-yellow-500 mx-auto mb-4 flex items-center justify-center text-3xl text-white font-black">
+          {{ s.name | slice: 0 }}
+        </div>
+        <h3 class="text-lg font-black text-white">{{ s.name }}</h3>
+        <p class="text-gray-500 text-xs mb-3">{{ s.handle }}</p>
+        {% if s.tier %}<span class="px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 text-[10px] font-black uppercase tracking-widest">{{ s.tier }}</span>{% endif %}
+        {% if s.amount %}<span class="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-400 text-[10px] font-black uppercase tracking-widest">{{ s.amount }}</span>{% endif %}
+        <div class="text-xs text-gray-600 mt-3">منذ {{ s.since }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-4xl font-black text-white mb-10">⚔️ أساطير Discord</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      {% for d in wall.discord_legends %}
+      <div class="p-6 rounded-3xl bg-gradient-to-br from-indigo-500/10 via-black to-black border border-indigo-500/20">
+        <div class="flex items-center gap-4">
+          <div class="w-14 h-14 rounded-full bg-indigo-500 flex items-center justify-center text-xl font-black text-white">{{ d.name | slice: 0 }}</div>
+          <div>
+            <h3 class="text-lg font-black text-white">{{ d.name }}</h3>
+            <p class="text-indigo-300 text-xs uppercase tracking-widest">{{ d.role }}</p>
+          </div>
+        </div>
+        <div class="mt-4 text-gray-400 text-sm">📨 {{ d.messages }} رسالة</div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-4xl font-black text-white mb-10">🎨 الفنانون - Fan Art</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      {% for a in wall.fan_artists %}
+      <div class="p-8 rounded-3xl bg-white/5 border border-white/10">
+        <h3 class="text-xl font-black text-white mb-2">{{ a.name }}</h3>
+        <p class="text-gray-400 mb-3">{{ a.work }}</p>
+        <p class="text-moroccangreen text-sm font-bold">{{ a.socials }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-4xl font-black text-white mb-10">💬 Top Commenters</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      {% for c in wall.top_commenters %}
+      <div class="p-6 rounded-3xl bg-white/5 border border-white/10 text-center">
+        <div class="text-5xl mb-3">{{ c.badge }}</div>
+        <h3 class="text-lg font-black text-white mb-2">{{ c.name }}</h3>
+        <p class="text-gray-400 text-sm">{{ c.comments }} تعليق</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="p-12 rounded-[3rem] bg-gradient-to-br from-moroccangreen/20 via-black to-black border border-moroccangreen/20 text-center">
+    <h2 class="text-4xl font-black text-white mb-4">انضم إلى الجدار 🌟</h2>
+    <p class="text-gray-400 mb-8 max-w-2xl mx-auto">دعمك يساعدنا على إنشاء محتوى أفضل وتطوير المودات. حتى أصغر دعم له تأثير كبير.</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="{{ site.kofi }}" target="_blank" class="px-6 py-3 rounded-xl bg-cyan-600 text-white font-bold hover:brightness-110 transition-all">Ko-fi</a>
+      <a href="{{ site.patreon }}" target="_blank" class="px-6 py-3 rounded-xl bg-orange-600 text-white font-bold hover:brightness-110 transition-all">Patreon</a>
+      <a href="{{ site.discord.invite }}" target="_blank" class="px-6 py-3 rounded-xl bg-indigo-600 text-white font-bold hover:brightness-110 transition-all">Discord</a>
+    </div>
+  </section>
+</div>

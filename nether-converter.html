@@ -1,0 +1,74 @@
+---
+layout: default
+title: محول إحداثيات Nether | Dino Crafting
+description: حول الإحداثيات بين Overworld وNether بدقة. أداة مجانية تعمل في المتصفح.
+permalink: /nether-converter/
+lang: ma
+---
+
+<div class="space-y-12" dir="rtl" x-data="{
+  ow: { x: 0, y: 64, z: 0 },
+  nether: { x: 0, y: 64, z: 0 },
+  mode: 'ow_to_nether',
+  convert() {
+    if (this.mode === 'ow_to_nether') {
+      this.nether.x = Math.floor(this.ow.x / 8);
+      this.nether.y = this.ow.y;
+      this.nether.z = Math.floor(this.ow.z / 8);
+    } else {
+      this.ow.x = this.nether.x * 8;
+      this.ow.y = this.nether.y;
+      this.ow.z = this.nether.z * 8;
+    }
+  }
+}">
+
+  <section class="text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/20 text-red-400 text-[10px] font-black uppercase tracking-widest mb-6">
+      🔥 محول إحداثيات
+    </div>
+    <h1 class="text-5xl lg:text-6xl font-black text-white mb-6 tracking-tighter">Overworld ↔ Nether</h1>
+    <p class="text-gray-400 text-lg max-w-2xl mx-auto">اختصر مسافات Minecraft. كل بلوك في Nether = 8 بلوكات في Overworld.</p>
+  </section>
+
+  <section class="max-w-3xl mx-auto p-8 rounded-[2.5rem] bg-white/5 border border-white/10">
+    <div class="flex justify-center gap-3 mb-8">
+      <button @click="mode = 'ow_to_nether'; convert()" :class="mode === 'ow_to_nether' ? 'bg-moroccangreen text-white' : 'bg-white/5 text-gray-400'" class="px-6 py-3 rounded-xl font-bold transition-all">
+        Overworld → Nether
+      </button>
+      <button @click="mode = 'nether_to_ow'; convert()" :class="mode === 'nether_to_ow' ? 'bg-red-600 text-white' : 'bg-white/5 text-gray-400'" class="px-6 py-3 rounded-xl font-bold transition-all">
+        Nether → Overworld
+      </button>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="p-6 rounded-2xl bg-moroccangreen/10 border border-moroccangreen/20">
+        <h3 class="text-moroccangreen font-black mb-4 text-center">Overworld 🌍</h3>
+        <div class="space-y-3">
+          <label class="block text-xs text-gray-400 mb-1">X</label>
+          <input type="number" x-model.number="ow.x" @input="if(mode === 'ow_to_nether') convert()" class="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-lg text-white text-center text-2xl font-black">
+          <label class="block text-xs text-gray-400 mb-1">Y</label>
+          <input type="number" x-model.number="ow.y" @input="if(mode === 'ow_to_nether') convert()" class="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-lg text-white text-center text-2xl font-black">
+          <label class="block text-xs text-gray-400 mb-1">Z</label>
+          <input type="number" x-model.number="ow.z" @input="if(mode === 'ow_to_nether') convert()" class="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-lg text-white text-center text-2xl font-black">
+        </div>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-red-600/10 border border-red-600/20">
+        <h3 class="text-red-400 font-black mb-4 text-center">Nether 🔥</h3>
+        <div class="space-y-3">
+          <label class="block text-xs text-gray-400 mb-1">X</label>
+          <input type="number" x-model.number="nether.x" @input="if(mode === 'nether_to_ow') convert()" class="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-lg text-white text-center text-2xl font-black">
+          <label class="block text-xs text-gray-400 mb-1">Y</label>
+          <input type="number" x-model.number="nether.y" @input="if(mode === 'nether_to_ow') convert()" class="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-lg text-white text-center text-2xl font-black">
+          <label class="block text-xs text-gray-400 mb-1">Z</label>
+          <input type="number" x-model.number="nether.z" @input="if(mode === 'nether_to_ow') convert()" class="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-lg text-white text-center text-2xl font-black">
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 text-center text-gray-500 text-sm">
+      💡 1 بلوك في Nether = 8 بلوكات في Overworld (الإحداثيات الأفقية فقط)
+    </div>
+  </section>
+</div>

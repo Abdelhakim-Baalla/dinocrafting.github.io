@@ -1,0 +1,158 @@
+title: "أي شخصية ماينكرافت أنت؟"
+description: "أجب على 7 أسئلة لاكتشاف شخصيتك في عالم Minecraft. شارك النتيجة مع أصدقائك!"
+
+questions:
+  - id: q1
+    text: "ما أول شيء تفعله في عالم جديد؟"
+    options:
+      - id: a
+        text: "أبدأ بقطع الأشجار وبناء قاعدة"
+        traits: [builder, survivor]
+      - id: b
+        text: "أركض لاستكشاف الكهوف والتعدين"
+        traits: [adventurer, redstoner]
+      - id: c
+        text: "أبحث عن قرية للتداول"
+        traits: [explorer, builder]
+      - id: d
+        text: "أصطاد الوحوش لجمع الموارد"
+        traits: [warrior, survivor]
+
+  - id: q2
+    text: "أي بيوم تفضل العيش فيه؟"
+    options:
+      - id: a
+        text: "Plains - بسيط وآمن"
+        traits: [builder, survivor]
+      - id: b
+        text: "Mountains - ملحمي ومليء بالموارد"
+        traits: [adventurer, explorer]
+      - id: c
+        text: "Mushroom Island - فريد وآمن"
+        traits: [builder, redstoner]
+      - id: d
+        text: "Nether - تحدي وإثارة"
+        traits: [warrior, adventurer]
+
+  - id: q3
+    text: "ما أفضل سلاح في رأيك؟"
+    options:
+      - id: a
+        text: "Diamond Sword الكلاسيكي"
+        traits: [warrior, survivor]
+      - id: b
+        text: "Bow + Arrows من بعيد"
+        traits: [adventurer, explorer]
+      - id: c
+        text: "Trident المسحور"
+        traits: [explorer, warrior]
+      - id: d
+        text: "Redstone Traps الذكية"
+        traits: [redstoner, builder]
+
+  - id: q4
+    text: "في End Dragon Fight، أنت..."
+    options:
+      - id: a
+        text: "تتقدم بشجاعة وتهاجم مباشرة"
+        traits: [warrior, adventurer]
+      - id: b
+        text: "تخطط استراتيجية كاملة قبل البداية"
+        traits: [redstoner, builder]
+      - id: c
+        text: "تساعد فريقك بالموارد والـ buff"
+        traits: [survivor, builder]
+      - id: d
+        text: "تستكشف End Cities قبل المعركة"
+        traits: [explorer, adventurer]
+
+  - id: q5
+    text: "أي مود تختار لإضافته للعبتك؟"
+    options:
+      - id: a
+        text: "Create - ميكانيكا وأتمتة"
+        traits: [redstoner, builder]
+      - id: b
+        text: "Twilight Forest - استكشاف"
+        traits: [adventurer, explorer]
+      - id: c
+        text: "FlowInventory - تنظيم ذكي"
+        traits: [builder, survivor]
+      - id: d
+        text: "Tinkers' Construct - أسلحة قوية"
+        traits: [warrior, survivor]
+
+  - id: q6
+    text: "كيف تبني بيتك؟"
+    options:
+      - id: a
+        text: "ضخم ومتعدد الطوابق"
+        traits: [builder, redstoner]
+      - id: b
+        text: "صغير وعملي - أنا في حركة دائمة"
+        traits: [adventurer, explorer]
+      - id: c
+        text: "تحت الأرض - حصن آمن"
+        traits: [survivor, warrior]
+      - id: d
+        text: "مع أنظمة Redstone مخفية"
+        traits: [redstoner, builder]
+
+  - id: q7
+    text: "ما هدفك النهائي في Minecraft؟"
+    options:
+      - id: a
+        text: "بناء أعظم مدينة"
+        traits: [builder, redstoner]
+      - id: b
+        text: "اكتشاف كل الأسرار"
+        traits: [explorer, adventurer]
+      - id: c
+        text: "هزيمة كل البوسات"
+        traits: [warrior, adventurer]
+      - id: d
+        text: "البقاء أطول مدة ممكنة"
+        traits: [survivor, builder]
+
+results:
+  builder:
+    title: "أنت Builder 🏗️"
+    description: "أنت صانع المساحات. تستمتع ببناء الأعمدة والقصور والمدن. الإبداع البصري شغفك."
+    color: "moroccangreen"
+    emoji: "🏗️"
+    advice: "جرب مودات: Chisels & Bits, Decocraft, Decorative Mod"
+
+  adventurer:
+    title: "أنت Adventurer ⚔️"
+    description: "أنت روح المغامرة. الاستكشاف والتحديات تحركك. لا تستقر أبدًا."
+    color: "red-600"
+    emoji: "⚔️"
+    advice: "جرب مودات: Twilight Forest, Aether, Better End"
+
+  redstoner:
+    title: "أنت Redstoner ⚡"
+    description: "أنت العبقري التقني. الـ Redstone والآليات الذكية لغتك المفضلة."
+    color: "yellow-500"
+    emoji: "⚡"
+    advice: "جرب مودات: Create, Computronics, Project Red"
+
+  survivor:
+    title: "أنت Survivor 🛡️"
+    description: "أنت الحكيم. تخطط لكل شيء، وتنجو في أصعب الظروف. الاستراتيجية قوتك."
+    color: "blue-500"
+    emoji: "🛡️"
+    advice: "جرب مودات: TerraFirmaCraft, Tough As Nails, Spice of Life"
+
+  warrior:
+    title: "أنت Warrior 🗡️"
+    description: "أنت المحارب. تهاجم مباشرة، تواجه أي عدو، ولا تتراجع. القوة لغتك."
+    color: "purple-500"
+    emoji: "🗡️"
+    advice: "جرب مودات: Tinkers' Construct, Ice and Fire, Mowzie's Mobs"
+
+  explorer:
+    title: "أنت Explorer 🗺️"
+    description: "أنت المستكشف. الخريطة لا تكفيك، وكل بيوم لغز. الفضول دافعك."
+    color: "indigo-500"
+    emoji: "🗺️"
+    advice: "جرب مودات: Biomes O' Plenty, Better PvP, Antique Atlas"

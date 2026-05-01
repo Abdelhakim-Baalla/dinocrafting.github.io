@@ -1,0 +1,130 @@
+slug: flowinventory
+title: FlowInventory
+tagline: "نظام ذكي لإدارة المخزون في ماينكرافت"
+description: "FlowInventory هو مود ماينكرافت مفتوح المصدر يقوم بترتيب المخزون تلقائيًا، تبديل الأدوات بذكاء، وضبط الـ Hotbar بحسب أسلوب لعبك."
+hero_image: https://media.forgecdn.net/avatars/591/10/637841050000000000.png
+hero_video: ""
+status: stable
+license: MIT
+
+links:
+  curseforge: "https://www.curseforge.com/minecraft/mc-mods/flowinventory"
+  modrinth: "https://modrinth.com/mod/flowinventory"
+  github: "https://github.com/Abdelhakim-Baalla/flowinventory"
+  issues: "https://github.com/Abdelhakim-Baalla/flowinventory/issues"
+  wiki: "https://github.com/Abdelhakim-Baalla/flowinventory#readme"
+
+features:
+  - icon: "✨"
+    title: "ترتيب تلقائي للمخزون"
+    text: "خوارزمية ذكية تنظم العناصر في الصناديق والمخزون بنقرة واحدة."
+  - icon: "🎯"
+    title: "Hotbar ذكي"
+    text: "يتعلم نمط لعبك ويضع الأدوات الصحيحة في المكان المناسب."
+  - icon: "⚡"
+    title: "تبديل تلقائي للأدوات"
+    text: "يستبدل الفأس بالمعول أو السيف تلقائيًا حسب البلوك أو العدو."
+  - icon: "🔄"
+    title: "Auto-Refill"
+    text: "يعيد ملء العنصر المستهلك من المخزون مباشرة."
+  - icon: "🛠️"
+    title: "إعدادات قابلة للتخصيص"
+    text: "تحكم كامل في كل الميزات من ملف الإعدادات."
+  - icon: "🌍"
+    title: "متعدد الإصدارات"
+    text: "يدعم Forge وFabric لعدة إصدارات من Minecraft."
+
+compatibility:
+  - version: "1.21.x"
+    forge: true
+    fabric: true
+    quilt: true
+    notes: "آخر إصدار مستقر"
+  - version: "1.20.x"
+    forge: true
+    fabric: true
+    quilt: true
+    notes: "مدعوم بالكامل"
+  - version: "1.19.x"
+    forge: true
+    fabric: true
+    quilt: false
+    notes: "إصلاحات أمنية فقط"
+  - version: "1.18.x"
+    forge: true
+    fabric: false
+    quilt: false
+    notes: "Legacy build"
+
+changelog:
+  - version: "1.2.0"
+    date: "2026-04-15"
+    type: "feature"
+    items:
+      - "إضافة دعم Quilt"
+      - "تحسين أداء الفرز بنسبة 35%"
+      - "إصلاح مشكلة التوافق مع Sodium"
+  - version: "1.1.5"
+    date: "2026-02-20"
+    type: "fix"
+    items:
+      - "إصلاح crash نادر عند فتح Shulker Box"
+      - "تحديث ترجمات"
+  - version: "1.1.0"
+    date: "2026-01-10"
+    type: "feature"
+    items:
+      - "إضافة Auto-Refill"
+      - "دعم Smart Hotbar"
+  - version: "1.0.0"
+    date: "2025-11-01"
+    type: "release"
+    items:
+      - "الإصدار العام الأول"
+      - "نشر على CurseForge وModrinth"
+
+roadmap:
+  - status: "done"
+    title: "إصدار v1.0 العام"
+    eta: "تم"
+  - status: "done"
+    title: "نشر على CurseForge وModrinth"
+    eta: "تم"
+  - status: "in_progress"
+    title: "نظام Profiles لكل لاعب"
+    eta: "قريبًا"
+  - status: "planned"
+    title: "دعم Bedrock Edition"
+    eta: "Q3 2026"
+  - status: "planned"
+    title: "ربط مع Backpack mods"
+    eta: "Q4 2026"
+
+testimonials:
+  - name: "أحمد"
+    role: "لاعب Survival"
+    text: "أحسن مود استعملته للمخزون. غيّر طريقة لعبي بالكامل."
+    rating: 5
+  - name: "Yassine"
+    role: "Modpack creator"
+    text: "ضروري في كل modpack. أداء ممتاز وبدون bugs."
+    rating: 5
+  - name: "Salma"
+    role: "Builder"
+    text: "وفرت علي ساعات في تنظيم الصناديق. مود بسيط وقوي."
+    rating: 5
+
+stats_keys:
+  downloads: flowinventory-downloads
+  followers: flowinventory-followers
+  stars: flowinventory-stars
+
+faq:
+  - q: "كيف أثبت FlowInventory؟"
+    a: "حمل الملف من CurseForge أو Modrinth وضعه في مجلد mods، ثم شغل اللعبة مع Forge أو Fabric."
+  - q: "هل المود مجاني؟"
+    a: "نعم، 100% مجاني ومفتوح المصدر برخصة MIT."
+  - q: "هل يعمل على Minecraft الأصلي فقط؟"
+    a: "نعم، يحتاج Minecraft Java Edition مع Forge أو Fabric."
+  - q: "كيف أبلغ عن مشكلة؟"
+    a: "افتح Issue في GitHub أو راسلني عبر Discord."

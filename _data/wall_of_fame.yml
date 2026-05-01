@@ -1,0 +1,66 @@
+supporters:
+  - name: "محمد"
+    handle: "@mohamed"
+    type: "patreon"
+    tier: "Diamond"
+    since: "2025-12"
+    avatar: ""
+
+  - name: "Yassine B."
+    handle: "@yassine"
+    type: "kofi"
+    amount: "50€"
+    since: "2026-01"
+    avatar: ""
+
+  - name: "Salma"
+    handle: "@salma"
+    type: "patreon"
+    tier: "Gold"
+    since: "2026-02"
+    avatar: ""
+
+  - name: "Karim"
+    handle: "@karim"
+    type: "kofi"
+    amount: "25€"
+    since: "2026-03"
+    avatar: ""
+
+discord_legends:
+  - name: "Hamza"
+    role: "Top Helper"
+    messages: 1245
+    avatar: ""
+
+  - name: "Aya"
+    role: "Active Member"
+    messages: 980
+    avatar: ""
+
+  - name: "Reda"
+    role: "Mod Tester"
+    messages: 612
+    avatar: ""
+
+fan_artists:
+  - name: "Nour"
+    work: "FlowInventory Logo Redesign"
+    image: ""
+    socials: "@nour_art"
+
+  - name: "Adam"
+    work: "Dino Crafting Banner"
+    image: ""
+    socials: "@adam_designs"
+
+top_commenters:
+  - name: "@minecraft_fan_ma"
+    comments: 87
+    badge: "🏆"
+  - name: "@gaming_morocco"
+    comments: 54
+    badge: "🥈"
+  - name: "@dz_player"
+    comments: 41
+    badge: "🥉"
