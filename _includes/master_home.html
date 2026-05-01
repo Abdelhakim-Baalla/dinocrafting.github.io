@@ -63,11 +63,20 @@
                    height: 400,
                    skin: '/assets/images/skin.png'
                  });
+                 skinViewer.fov = 55;
+                 skinViewer.zoom = 0.9;
+                 skinViewer.autoRotate = true;
+                 skinViewer.autoRotateSpeed = 0.6;
+                 if ('renderPaused' in skinViewer) skinViewer.renderPaused = false;
                  if (skinViewer.animations && typeof skinViewer.animations.add === 'function') {
                    skinViewer.animations.add(skinview3d.WalkingAnimation);
                  } else if (typeof skinview3d.WalkingAnimation === 'function' && 'animation' in skinViewer) {
                    skinViewer.animation = new skinview3d.WalkingAnimation();
                  }
+                 const control = skinViewer.createOrbitControls();
+                 control.enableZoom = false;
+                 control.enablePan = false;
+                 control.rotateSpeed = 0.8;
                }
              ">
           <canvas id="skin-canvas" class="w-full h-full cursor-grab active:cursor-grabbing"></canvas>
@@ -94,4 +103,6 @@
       </div>
     </div>
   </section>
+
+  {% include home_fan_blocks.html %}
 </div>

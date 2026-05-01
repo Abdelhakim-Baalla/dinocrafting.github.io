@@ -1,0 +1,39 @@
+name: Refresh Public Stats Cache
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate stats cache
+        run: node ./scripts/update-stats.mjs
+
+      - name: Commit updated cache
+        env:
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: github-actions[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: github-actions[bot]@users.noreply.github.com
+        run: |
+          git add api/stats.json _data/stats.json
+          if git diff --cached --quiet; then
+            echo "No stats changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: refresh public stats cache"
+          git push

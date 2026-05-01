@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   const channelId = 'UCboeGauwIyfDKiYDhhTHgyA';
   const socialBladeUrl = `https://img.shields.io/youtube/channel/subscribers/${channelId}.json`;
   const videoCountUrl = `https://img.shields.io/youtube/channel/views/${channelId}.json`;
-  const bloggerFeedUrl = 'https://dinocrafting9988.blogspot.com/feeds/posts/default?alt=json&max-results=1';
 
   const setStat = (key, value) => {
     document.querySelectorAll(`[data-stat="${key}"]`).forEach((el) => {
@@ -16,15 +15,40 @@ document.addEventListener('DOMContentLoaded', async () => {
   };
 
   try {
+    const cachedRes = await fetch('/api/stats.json', { cache: 'no-store' });
+    if (cachedRes.ok) {
+      const cached = await cachedRes.json();
+      if (cached?.youtube?.subscribers) setStat('youtube-subscribers', cached.youtube.subscribers);
+      if (cached?.youtube?.views) setStat('youtube-videos', cached.youtube.views);
+      if (typeof cached?.news?.total_posts === 'number') setStat('blog-posts', `${cached.news.total_posts}`);
+      if (cached?.discord?.members_online) setStat('discord-members', `${cached.discord.members_online}`);
+      if (cached?.modrinth?.flowinventory_downloads) setStat('flowinventory-downloads', `${cached.modrinth.flowinventory_downloads}`);
+
+      if (cached?.youtube?.latest_video) {
+        document.querySelectorAll('[data-latest-video-title]').forEach((el) => {
+          el.textContent = cached.youtube.latest_video.title || 'Latest upload';
+        });
+        document.querySelectorAll('[data-latest-video-link]').forEach((el) => {
+          el.href = cached.youtube.latest_video.url || 'https://www.youtube.com/@Dinocrafting';
+        });
+        document.querySelectorAll('[data-latest-video-thumb]').forEach((el) => {
+          el.src = cached.youtube.latest_video.thumbnail || '';
+        });
+      }
+      return;
+    }
+  } catch (error) {
+    console.warn('Cached stats fetch failed:', error);
+  }
+
+  try {
     const subscribersRes = await fetch(socialBladeUrl);
     if (subscribersRes.ok) {
       const subscribersData = await subscribersRes.json();
       const subsValue = parseBadgeValue(subscribersData.value);
       if (subsValue) setStat('youtube-subscribers', subsValue);
     }
-  } catch (error) {
-    console.warn('YouTube subscribers fetch failed:', error);
-  }
+  } catch {}
 
   try {
     const viewsRes = await fetch(videoCountUrl);
@@ -33,23 +57,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       const viewsValue = parseBadgeValue(viewsData.value);
       if (viewsValue) setStat('youtube-videos', viewsValue);
     }
-  } catch (error) {
-    console.warn('YouTube videos/views fetch failed:', error);
-  }
+  } catch {}
 
-  try {
-    const blogRes = await fetch(bloggerFeedUrl);
-    if (blogRes.ok) {
-      const blogData = await blogRes.json();
-      const total = blogData?.feed?.openSearch$totalResults?.$t;
-      if (total) setStat('blog-posts', total);
-    }
-  } catch (error) {
-    console.warn('Blogger stats fetch failed:', error);
-  }
-
-  // If no public endpoint exists, keep this manual fallback synced with community reality.
-  if ([...document.querySelectorAll('[data-stat="discord-members"]')].every((el) => el.textContent === '0')) {
+  if ([...document.querySelectorAll('[data-stat="discord-members"]')].every((el) => el.textContent === '--' || el.textContent === '0')) {
     setStat('discord-members', 'n/a');
   }
 });

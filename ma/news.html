@@ -8,7 +8,6 @@ lang: ma
 
 <div class="py-20" dir="rtl">
   <div class="max-w-6xl mx-auto px-6">
-    <!-- Header -->
     <div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-24">
       <div>
         <div class="inline-flex items-center gap-3 px-4 py-2 bg-red-600/20 text-red-500 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-6">
@@ -20,7 +19,13 @@ lang: ma
       <p class="text-gray-500 text-lg max-w-sm text-right">كاع التحديثات، الفيديوهات الجديدة، والأخبار الحصرية ديال Dino Crafting.</p>
     </div>
 
-    <div class="flex flex-wrap gap-3 mb-10" id="news-filters">
+    <div id="news-featured" class="mb-10"></div>
+
+    <div class="mb-8">
+      <input id="news-search" type="text" placeholder="بحث في المقالات..." class="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder:text-gray-500 outline-none focus:border-moroccangreen/60">
+    </div>
+
+    <div class="flex flex-wrap gap-3 mb-4" id="news-filters">
       <button data-filter="all" class="px-4 py-2 rounded-full bg-moroccangreen text-white text-xs font-black uppercase tracking-widest">All</button>
       <button data-filter="blogs" class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-xs font-black uppercase tracking-widest">Blogs</button>
       <button data-filter="news" class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-xs font-black uppercase tracking-widest">News</button>
@@ -28,16 +33,15 @@ lang: ma
       <button data-filter="mods" class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-xs font-black uppercase tracking-widest">Mods</button>
     </div>
 
-    <!-- News Grid (Dynamically loaded from Blogger) -->
+    <div id="trending-tags" class="flex flex-wrap gap-2 mb-10"></div>
+
     <div id="news-container" class="grid gap-12">
-      <!-- Loading State -->
       <div class="col-span-full text-center py-20">
         <div class="inline-block w-16 h-16 border-4 border-moroccangreen/30 border-t-moroccangreen rounded-full animate-spin mb-4"></div>
         <p class="text-gray-400">جاري تحميل الأخبار...</p>
       </div>
     </div>
 
-    <!-- No posts fallback (hidden by default) -->
     <div id="no-posts" class="hidden text-center py-20">
       <div class="text-6xl mb-6">📭</div>
       <h2 class="text-3xl font-black text-white mb-4">لا توجد أخبار حالياً</h2>
@@ -54,36 +58,48 @@ lang: ma
   async function loadNewsPosts() {
     const container = document.getElementById('news-container');
     const noPosts = document.getElementById('no-posts');
-    
-    try {
-      const response = await fetch('{{ site.blogger }}/feeds/posts/default?alt=json&max-results=12');
-      const data = await response.json();
-      
-      if (data.feed.entry) {
-        const entries = data.feed.entry.map(entry => {
-          const title = entry.title.$t;
-          const content = entry.content ? entry.content.$t : entry.summary.$t;
-          const date = new Date(entry.published.$t);
-          const formattedDate = date.toLocaleDateString('ar-MA', { 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
-          });
-          const categories = entry.category ? entry.category.map(c => c.term) : [];
-          
-          // Extract image
-          const imgMatch = content.match(/<img[^>]+src="([^">]+)"/);
-          const image = imgMatch ? imgMatch[1] : '';
-          
-          // Strip HTML from content
-          const plainText = content.replace(/<[^>]*>/g, '').substring(0, 200);
-          
-          const normalizedCategories = categories.map(c => c.toLowerCase());
-          return { title, content: plainText, date: formattedDate, categories, normalizedCategories, image };
-        });
+    const featuredEl = document.getElementById('news-featured');
+    const searchInput = document.getElementById('news-search');
+    const tagsEl = document.getElementById('trending-tags');
 
-        const renderPosts = (posts) => {
-          container.innerHTML = posts.map((post, index) => {
+    try {
+      const response = await fetch('/api/stats.json', { cache: 'no-store' });
+      const data = await response.json();
+      const entries = (data.news.posts || []).map((entry) => {
+        const date = new Date(entry.published_at);
+        const formattedDate = date.toLocaleDateString('ar-MA', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+        return {
+          title: entry.title,
+          content: entry.excerpt,
+          date: formattedDate,
+          categories: entry.labels || [],
+          normalizedCategories: [entry.category || 'blogs'],
+          image: entry.image || '',
+          url: entry.url || '#'
+        };
+      });
+
+      if (data.news.featured) {
+        featuredEl.innerHTML = `
+          <div class="p-8 rounded-[3rem] bg-white/5 border border-moroccangreen/30">
+            <div class="text-[10px] uppercase tracking-widest text-moroccangreen font-black mb-3">Featured Pin</div>
+            <h2 class="text-3xl font-black text-white mb-3">${data.news.featured.title}</h2>
+            <p class="text-gray-400 mb-5">${data.news.featured.excerpt || ''}</p>
+            <a href="${data.news.featured.url || '#'}" target="_blank" class="inline-flex px-5 py-2 rounded-lg bg-moroccangreen text-white font-bold">Open Source Post</a>
+          </div>
+        `;
+      }
+
+      if (Array.isArray(data.news.trending_labels)) {
+        tagsEl.innerHTML = data.news.trending_labels.map((tag) => `<span class="px-3 py-1 rounded-full text-xs font-bold bg-white/5 border border-white/10 text-gray-300">#${tag}</span>`).join('');
+      }
+
+      const renderPosts = (posts) => {
+        container.innerHTML = posts.map((post, index) => {
           const isFeatured = index === 0;
           const layoutClass = isFeatured 
             ? 'col-span-full flex flex-col lg:flex-row gap-12 p-10 rounded-[4rem] bg-white/5 border border-white/10 hover:bg-white/[0.08] transition-all overflow-hidden'
@@ -115,39 +131,50 @@ lang: ma
               </div>
               <h2 class="${titleClass} font-black ${isFeatured ? 'text-white mb-8 group-hover:text-moroccangreen transition-colors leading-tight' : 'text-white mb-6 group-hover:text-moroccangreen transition-colors'}">${post.title}</h2>
               <p class="text-gray-400 ${excerptClass} leading-relaxed">${post.content}...</p>
+              <a href="${post.url}" target="_blank" class="inline-flex mt-6 px-4 py-2 bg-white/10 border border-white/20 rounded-xl text-white font-bold hover:bg-white/20 transition-all w-fit">Open original</a>
             </div>
           </article>
           `;
-          }).join('');
-        };
+        }).join('');
+      };
 
-        renderPosts(entries);
+      let activeFilter = 'all';
+      let searchTerm = '';
+      const recompute = () => {
+        let filtered = entries;
+        if (activeFilter !== 'all') filtered = filtered.filter((p) => p.normalizedCategories.includes(activeFilter));
+        if (searchTerm) filtered = filtered.filter((p) => `${p.title} ${p.content}`.toLowerCase().includes(searchTerm));
+        if (!filtered.length) {
+          container.innerHTML = '';
+          noPosts.classList.remove('hidden');
+        } else {
+          noPosts.classList.add('hidden');
+          renderPosts(filtered);
+        }
+      };
 
-        const filters = document.querySelectorAll('#news-filters button');
-        filters.forEach((btn) => {
-          btn.addEventListener('click', () => {
-            filters.forEach((b) => b.className = 'px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-xs font-black uppercase tracking-widest');
-            btn.className = 'px-4 py-2 rounded-full bg-moroccangreen text-white text-xs font-black uppercase tracking-widest';
-            const type = btn.getAttribute('data-filter');
-            if (type === 'all') {
-              renderPosts(entries);
-              return;
-            }
-            const filtered = entries.filter((p) => p.normalizedCategories.includes(type));
-            renderPosts(filtered.length ? filtered : entries);
-          });
+      renderPosts(entries);
+      const filters = document.querySelectorAll('#news-filters button');
+      filters.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          filters.forEach((b) => b.className = 'px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-xs font-black uppercase tracking-widest');
+          btn.className = 'px-4 py-2 rounded-full bg-moroccangreen text-white text-xs font-black uppercase tracking-widest';
+          activeFilter = btn.getAttribute('data-filter');
+          recompute();
         });
-      } else {
-        container.innerHTML = '';
-        noPosts.classList.remove('hidden');
-      }
+      });
+      searchInput.addEventListener('input', () => {
+        searchTerm = searchInput.value.trim().toLowerCase();
+        recompute();
+      });
     } catch (error) {
-      console.error('Failed to load Blogger feed:', error);
+      console.error('Failed to load cached news feed:', error);
       container.innerHTML = `
         <div class="col-span-full text-center py-20">
           <p class="text-red-500">تعذر تحميل الأخبار. حاول مرة أخرى لاحقاً.</p>
         </div>
       `;
+      noPosts.classList.remove('hidden');
     }
   }
 

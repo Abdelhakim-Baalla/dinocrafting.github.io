@@ -1,0 +1,33 @@
+<section class="grid lg:grid-cols-2 gap-8">
+  <article class="p-8 rounded-[2.5rem] bg-white/5 border border-white/10">
+    <h3 class="text-2xl font-black text-white mb-4" data-i18n="latest_upload_title">Latest Upload</h3>
+    <a data-latest-video-link href="{{ site.youtube.url }}" target="_blank" class="block">
+      <img data-latest-video-thumb src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Latest upload thumbnail" class="w-full aspect-video object-cover rounded-2xl border border-white/10 mb-4">
+      <h4 data-latest-video-title class="text-white font-bold text-lg line-clamp-2">Loading latest video...</h4>
+    </a>
+    <a data-latest-video-link href="{{ site.youtube.url }}" target="_blank" class="inline-flex mt-6 px-6 py-3 rounded-xl bg-red-600 text-white font-bold hover:bg-red-700 transition-all" data-i18n="latest_upload_cta">Watch on YouTube</a>
+  </article>
+
+  <article class="p-8 rounded-[2.5rem] bg-white/5 border border-white/10">
+    <h3 class="text-2xl font-black text-white mb-4" data-i18n="flow_timeline_title">FlowInventory Timeline</h3>
+    <div class="space-y-4 text-sm">
+      <div class="flex items-start gap-3">
+        <span class="mt-1 w-2.5 h-2.5 rounded-full bg-moroccangreen"></span>
+        <div><div class="text-white font-bold">v0.1</div><div class="text-gray-400">Initial prototype and inventory auto-sort.</div></div>
+      </div>
+      <div class="flex items-start gap-3">
+        <span class="mt-1 w-2.5 h-2.5 rounded-full bg-moroccangreen"></span>
+        <div><div class="text-white font-bold">v1.0</div><div class="text-gray-400">Public release with Forge/Fabric support.</div></div>
+      </div>
+      <div class="flex items-start gap-3">
+        <span class="mt-1 w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+        <div><div class="text-white font-bold">Modrinth Review</div><div class="text-gray-400">Status: <span class="text-yellow-300">Under review</span></div></div>
+      </div>
+    </div>
+    <div class="mt-6 flex gap-3 flex-wrap">
+      <a href="{{ site.github.flowinventory }}" target="_blank" class="px-5 py-2 rounded-lg bg-white/10 border border-white/20 text-white font-bold hover:bg-white/20 transition-all">GitHub</a>
+      <a href="{{ site.modrinth.flowinventory }}" target="_blank" class="px-5 py-2 rounded-lg bg-moroccangreen text-white font-bold hover:brightness-110 transition-all">Modrinth</a>
+      <span class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 font-bold">Downloads: <span data-stat="flowinventory-downloads">--</span></span>
+    </div>
+  </article>
+</section>
