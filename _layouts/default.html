@@ -57,18 +57,32 @@
 
   {% include header.html %}
 
-  <!-- TOP LEADERBOARD AD -->
-  <div class="container mx-auto px-4 mt-4 flex justify-center">
-    <div class="w-full max-w-4xl bg-black/40 rounded-xl overflow-hidden border border-white/5 shadow-lg min-h-[90px] flex items-center justify-center">
-      {% include ad-slot.html zone="leaderboard_top" %}
-    </div>
-  </div>
+   <!-- Top Leaderboard Ad -->
+   <div class="container mx-auto px-4 mt-4 flex justify-center">
+     <div class="w-full max-w-4xl bg-black/40 rounded-xl overflow-hidden border border-white/5 shadow-lg min-h-[90px] flex items-center justify-center">
+       {% include ad-slot.html zone="leaderboard_top" %}
+     </div>
+   </div>
 
-  <main class="container mx-auto px-4 py-8">
-    {{ content }}
-  </main>
+   <main class="container mx-auto px-4 py-8">
+     {{ content }}
+   </main>
 
-  {% include footer.html %}
+   <!-- Mid-page Ad (after content) -->
+   <div class="container mx-auto px-4 mt-8 flex justify-center">
+     <div class="w-full max-w-4xl bg-black/40 rounded-xl overflow-hidden border border-white/5 shadow-lg min-h-[250px] flex items-center justify-center">
+       {% include ad-slot.html zone="in_content_after" %}
+     </div>
+   </div>
+
+   <!-- Footer Ad -->
+   <div class="container mx-auto px-4 mt-8 flex justify-center">
+     <div class="w-full max-w-4xl bg-black/40 rounded-xl overflow-hidden border border-white/5 shadow-lg min-h-[90px] flex items-center justify-center">
+       {% include ad-slot.html zone="footer_ad" %}
+     </div>
+   </div>
+
+   {% include footer.html %}
 
   <!-- Floating Discord Button (Bottom Right) -->
   <a href="{{ site.discord.invite }}" target="_blank" class="fixed bottom-8 right-8 z-50 flex items-center gap-3 px-6 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-full shadow-2xl shadow-indigo-600/40 hover:scale-110 transition-all animate-bounce" title="Join Discord Server">

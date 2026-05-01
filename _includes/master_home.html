@@ -40,47 +40,7 @@
     </div>
   </section>
 
-  <!-- SMART OPTIMIZER TOOL -->
-  <section id="optimizer" class="py-20 p-12 lg:p-20 rounded-[4rem] bg-white/5 border border-white/10 relative overflow-hidden">
-    <div class="absolute inset-0 bg-moroccangreen/5 blur-[120px]"></div>
-    <div class="relative z-10 max-w-4xl mx-auto text-center">
-       <h2 class="text-5xl font-black text-white mb-8 uppercase italic">{{ t.optimizer_title }}</h2>
-       <p class="text-gray-400 text-xl mb-12">{{ t.optimizer_desc }}</p>
-       
-       <div class="bg-black/40 p-10 rounded-[3rem] border border-white/5 shadow-2xl">
-          <div class="grid md:grid-cols-2 gap-10 items-center">
-             <div class="text-right">
-                <label class="block text-xs font-black text-gray-500 uppercase tracking-widest mb-4">{{ t.label_ram }}</label>
-                <input type="range" min="1" max="32" x-model="pcRam" class="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-moroccangreen">
-                <div class="text-4xl font-black text-white mt-4"><span x-text="pcRam"></span> GB</div>
-             </div>
-             <div class="space-y-4">
-                <button @click="optimize()" class="w-full py-6 bg-moroccangreen text-white font-black rounded-2xl shadow-2xl shadow-moroccangreen/40 hover:scale-105 transition-all text-xl uppercase tracking-widest italic">
-                  {{ t.btn_calculate }}
-                </button>
-             </div>
-          </div>
-          
-          <!-- Results -->
-          <div x-show="showOptimizer" x-transition class="mt-12 pt-12 border-t border-white/5 text-left">
-             <h3 class="text-2xl font-black text-moroccangreen mb-6 uppercase tracking-tighter">{{ t.recommendation_title }}</h3>
-             <div class="grid gap-4">
-                <template x-if="pcRam <= 2">
-                   <div class="p-6 rounded-2xl bg-red-600/10 border border-red-600/20 text-red-500 font-bold">
-                      ⚠️ {{ t.rec_low_ram }}
-                   </div>
-                </template>
-                <div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-gray-300">
-                   🚀 **{{ t.rec_mod_1 }}**: FlowInventory (Core Stability)
-                </div>
-                <div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-gray-300">
-                   ⚡ **{{ t.rec_mod_2 }}**: Dino-Optimize (FPS Booster)
-                </div>
-             </div>
-          </div>
-       </div>
-    </div>
-  </section>
+   <!-- SMART OPTIMIZER TOOL - REMOVED -->
 
   <!-- 3D CREATOR SECTION -->
   <section class="p-12 lg:p-20 rounded-[4rem] bg-gradient-to-br from-red-600/10 via-black to-black border border-white/5 relative overflow-hidden group">

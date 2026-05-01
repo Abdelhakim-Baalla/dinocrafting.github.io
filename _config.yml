@@ -25,6 +25,10 @@ twitter:
   username: "dinoo_crafting"
   url: "https://x.com/dinoo_crafting"
 
+bluesky:
+  username: "dino-crafting"
+  url: "https://bsky.app/profile/dino-crafting.bsky.social"
+
 instagram: "https://www.instagram.com/dinocrafting1"
 
 tiktok:
@@ -33,7 +37,7 @@ tiktok:
 
 discord:
   invite: "https://discord.com/invite/uG7MxUvw4w"
-  server_id: "1339756380564786227"  # Will be updated if different
+  server_id: "1103382525679775794"  # Optional: for widget embedding
   widget_color: "#006233"
 
 twitch: "https://www.twitch.tv/dinocrafting9988"
@@ -42,11 +46,26 @@ facebook: "https://web.facebook.com/profile.php?id=61577156144265"
 
 patreon: "https://www.patreon.com/cw/Abdelhakim_Baalla"
 
+kofi: "https://ko-fi.com/dinocrafting"
+
+github:
+  profile: "https://github.com/Abdelhakim-Baalla"
+  flowinventory: "https://github.com/Abdelhakim-Baalla/flowinventory"
+  sponsors: "https://github.com/sponsors/Abdelhakim-Baalla"
+
+modrinth:
+  flowinventory: "https://modrinth.com/mod/flowinventory"
+
 blogger: "https://dinocrafting9988.blogspot.com/"
 
 linkedin: "https://www.linkedin.com/abdelhakimbaalla"
 
 personal_site: "baalla.tech"
+
+# Community Platforms
+minecraft_platforms:
+  planet_minecraft: "https://www.planetminecraft.com/member/dino_crafting/"
+  spigotmc: "https://www.spigotmc.org/members/dino_crafting.2527032/"
 
 # Analytics (Google Analytics 4)
 analytics:
@@ -95,24 +114,23 @@ themes:
     color: "#10b981" # Emerald Green
     accent: "#7c3aed" # Royal Purple
 
-# Monetization Configuration
-monetization:
-  provider: "adsterra" # Options: monetag, adsterra, none
-  adsterra:
-    social_bar: |
-      <script src="https://pl29295838.profitablecpmratenetwork.com/37/f6/45/37f645712c080bfa0a69d29005885e24.js"></script>
-    popunder: |
-      <script src="https://pl29295837.profitablecpmratenetwork.com/25/07/ae/2507aec21f1299de1253b1297767d8ba.js"></script>
-    leaderboard_top: |
-      <script type="text/javascript">
-        atOptions = { 'key' : '78dafdb40103dddf990a91715c61c366', 'format' : 'iframe', 'height' : 60, 'width' : 468, 'params' : {} };
-      </script>
-      <script type="text/javascript" src="https://www.highperformanceformat.com/78dafdb40103dddf990a91715c61c366/invoke.js"></script>
-    footer: |
-      <script async="async" data-cfasync="false" src="https://pl29295836.profitablecpmratenetwork.com/3c0ff27766e57a9417d964826c26cefb/invoke.js"></script>
-      <div id="container-3c0ff27766e57a9417d964826c26cefb"></div>
-    in_content: |
-      <script async="async" data-cfasync="false" src="https://pl29295836.profitablecpmratenetwork.com/3c0ff27766e57a9417d964826c26cefb/invoke.js"></script>
-      <div id="container-3c0ff27766e57a9417d964826c26cefb"></div>
-  monetag:
-    multitag_script: '<script src="https://quge5.com/88/tag.min.js" data-zone="234755" async data-cfasync="false"></script>'
+  monetization:
+    provider: "adsterra" # Options: monetag, adsterra, none
+    adsterra:
+      social_bar: |
+        <script src="https://pl29295838.profitablecpmratenetwork.com/37/f6/45/37f645712c080bfa0a69d29005885e24.js"></script>
+      popunder: |
+        <script src="https://pl29295837.profitablecpmratenetwork.com/25/07/ae/2507aec21f1299de1253b1297767d8ba.js"></script>
+      leaderboard_top: |
+        <script type="text/javascript">
+          atOptions = { 'key' : '78dafdb40103dddf990a91715c61c366', 'format' : 'iframe', 'height' : 60, 'width' : 468, 'params' : {} };
+        </script>
+        <script type="text/javascript" src="https://www.highperformanceformat.com/78dafdb40103dddf990a91715c61c366/invoke.js"></script>
+      footer_ad: |
+        <script async="async" data-cfasync="false" src="https://pl29295836.profitablecpmratenetwork.com/3c0ff27766e57a9417d964826c26cefb/invoke.js"></script>
+        <div id="container-3c0ff27766e57a9417d964826c26cefb"></div>
+      in_content_after: |
+        <script async="async" data-cfasync="false" src="https://pl29295836.profitablecpmratenetwork.com/3c0ff27766e57a9417d964826c26cefb/invoke.js"></script>
+        <div id="container-3c0ff27766e57a9417d964826c26cefb"></div>
+    monetag:
+      multitag_script: '<script src="https://quge5.com/88/tag.min.js" data-zone="234755" async data-cfasync="false"></script>'

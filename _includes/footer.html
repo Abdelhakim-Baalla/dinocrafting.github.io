@@ -4,8 +4,20 @@
       <div>
         <span class="text-2xl font-bold bg-gradient-to-r from-moroccangreen to-moroccanred bg-clip-text text-transparent">Dinocrafting</span>
         <p class="mt-2 text-gray-500 max-w-xs">{{ site.data.locales[lang].hero.subtitle }}</p>
-        <p class="mt-2 text-red-500 text-sm font-bold">350K+ YouTube Subscribers</p>
       </div>
+      <div class="flex flex-col items-center md:items-end gap-4">
+        <div class="flex gap-6 text-sm font-medium">
+          <a href="/{{ lang }}/terms/" class="hover:text-moroccangreen transition-colors">{{ site.data.locales[lang].footer.terms }}</a>
+          <a href="/{{ lang }}/privacy/" class="hover:text-moroccangreen transition-colors">{{ site.data.locales[lang].footer.privacy }}</a>
+          <a href="{{ site.youtube.url }}" target="_blank" class="hover:text-red-500 transition-colors">YouTube</a>
+          <a href="{{ site.discord.invite }}" target="_blank" class="hover:text-indigo-500 transition-colors">Discord</a>
+          <a href="{{ site.kofi }}" target="_blank" class="hover:text-pink-400 transition-colors">Ko-fi</a>
+        </div>
+        <div class="text-xs text-gray-600">
+          &copy; {{ "now" | date: "%Y" }} Dino Crafting. {{ site.data.locales[lang].footer.rights }}
+        </div>
+      </div>
+    </div>
       <div class="flex flex-col items-center md:items-end gap-4">
         <div class="flex gap-6 text-sm font-medium">
           <a href="{{ site.youtube.url }}" target="_blank" class="hover:text-red-500 transition-colors flex items-center gap-2">
