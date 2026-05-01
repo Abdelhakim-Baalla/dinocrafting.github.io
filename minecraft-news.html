@@ -17,3 +17,44 @@ lang: ma
     </div>
   </div>
 </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "{{ site.url }}/" },
+    { "@type": "ListItem", "position": 2, "name": "كلاستر أخبار ماينكرافت", "item": "{{ site.url }}/minecraft-news/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "روابط أخبار ماينكرافت",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "url": "{{ site.url }}/news/" },
+    { "@type": "ListItem", "position": 2, "url": "{{ site.url }}/status/" },
+    { "@type": "ListItem", "position": 3, "url": "{{ site.url }}/site-map/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ما مصدر أخبار Dino Crafting؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "يتم عرض الأخبار مباشرة داخل الموقع مع تحديثات دورية للبيانات." }
+    },
+    {
+      "@type": "Question",
+      "name": "كيف أعرف حالة آخر تحديث للبيانات؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "صفحة الحالة تعرض آخر وقت تحديث وموثوقية كل مصدر بيانات." }
+    }
+  ]
+}
+</script>

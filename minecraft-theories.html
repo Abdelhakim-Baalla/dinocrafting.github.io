@@ -17,3 +17,44 @@ lang: ma
     </div>
   </div>
 </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "{{ site.url }}/" },
+    { "@type": "ListItem", "position": 2, "name": "كلاستر نظريات ماينكرافت", "item": "{{ site.url }}/minecraft-theories/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "روابط نظريات ماينكرافت",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "url": "{{ site.url }}/theories/" },
+    { "@type": "ListItem", "position": 2, "url": "{{ site.url }}/community/" },
+    { "@type": "ListItem", "position": 3, "url": "{{ site.url }}/news/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "أين أجد نظريات ماينكرافت الجديدة؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "تُجمع النظريات في صفحة النظريات مع تحديثات إضافية من الأخبار والمجتمع." }
+    },
+    {
+      "@type": "Question",
+      "name": "كيف أشارك بنظريتي؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "يمكنك مناقشة نظريتك مع المجتمع على الديسكورد ثم إرسالها للنشر عبر قنوات التواصل." }
+    }
+  ]
+}
+</script>

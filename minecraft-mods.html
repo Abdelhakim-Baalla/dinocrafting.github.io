@@ -17,3 +17,44 @@ lang: ma
     </div>
   </div>
 </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "{{ site.url }}/" },
+    { "@type": "ListItem", "position": 2, "name": "كلاستر مودات ماينكرافت", "item": "{{ site.url }}/minecraft-mods/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "روابط مودات ماينكرافت",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "url": "{{ site.url }}/mods/" },
+    { "@type": "ListItem", "position": 2, "url": "{{ site.url }}/videos/" },
+    { "@type": "ListItem", "position": 3, "url": "{{ site.url }}/news/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ما أفضل صفحة لبدء تحميل مودات Dino Crafting؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "ابدأ من صفحة المودات ثم تابع فيديوهات الشرح للحصول على طريقة التثبيت المناسبة." }
+    },
+    {
+      "@type": "Question",
+      "name": "أين أجد آخر تحديثات FlowInventory؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "ستجد آخر المستجدات في صفحة الأخبار وفيديوهات المودات على الموقع." }
+    }
+  ]
+}
+</script>
