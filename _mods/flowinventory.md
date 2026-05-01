@@ -30,8 +30,8 @@ tags: [inventory, automation, utility, quality of life]
       </div>
     </div>
 
-    <!-- Ad Break -->
-    {% include ad-slot.html zone="in_content" %}
+    <!-- Ad Break (disabled for cleaner experience) -->
+    {% comment %} {% include ad-slot.html zone="in_content" %} {% endcomment %}
 
     <!-- Content -->
     <div class="prose prose-invert max-w-none prose-emerald">
@@ -66,9 +66,7 @@ tags: [inventory, automation, utility, quality of life]
       </ol>
     </div>
 
-    <!-- More Ads -->
-    <div class="mt-20">
-      {% include ad-slot.html zone="footer" %}
-    </div>
+    <!-- Footer Ad (disabled) -->
+    {% comment %} {% include ad-slot.html zone="footer" %} {% endcomment %}
   </div>
 </section>

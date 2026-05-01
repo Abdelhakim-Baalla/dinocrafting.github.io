@@ -16,11 +16,11 @@
   <!-- Tailwind CSS -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   
-  <!-- 3D Skin Viewer Library (jsDelivr Stable) -->
-  <script src="https://cdn.jsdelivr.net/npm/skinview3d@2.4.0/dist/skinview3d.bundle.js"></script>
+   <!-- 3D Skin Viewer Library -->
+   <script src="https://cdn.jsdelivr.net/npm/skinview3d@3.0.0/bundles/skinview3d.bundle.min.js"></script>
 
-  <!-- Alpine JS -->
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+   <!-- Alpine JS -->
+   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   
   <!-- Google Analytics -->
   {% if site.analytics.google_id != "" %}
@@ -33,12 +33,11 @@
   </script>
   {% endif %}
 
-  <!-- Ad Provider Script -->
-  {% if site.monetization.provider == "monetag" %}
-    {{ site.monetization.monetag.multitag_script }}
-  {% elsif site.monetization.provider == "adsterra" %}
-    {{ site.monetization.adsterra.social_bar }}
-  {% endif %}
+   <!-- Ad Provider Script (limited) -->
+   {% if site.monetization.provider == "adsterra" %}
+     <!-- Leaderboard Top Only -->
+     {% comment %} Removed intrusive social_bar and popunder scripts {% endcomment %}
+   {% endif %}
   
   {% seo %}
 
@@ -69,17 +68,78 @@
     {{ content }}
   </main>
 
-  <!-- Sticky Bottom Anchor Ad -->
-  <div class="fixed bottom-0 left-0 w-full z-50 flex justify-center pointer-events-none">
-    <div class="pointer-events-auto w-full max-w-2xl bg-white/10 backdrop-blur-xl border-t border-white/10 shadow-2xl">
-      {% include ad-slot.html zone="footer" %}
-    </div>
-  </div>
-
   {% include footer.html %}
 
+  <!-- Floating Discord Button (Bottom Right) -->
+  <a href="{{ site.discord.invite }}" target="_blank" class="fixed bottom-8 right-8 z-50 flex items-center gap-3 px-6 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-full shadow-2xl shadow-indigo-600/40 hover:scale-110 transition-all animate-bounce" title="Join Discord Server">
+    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+    </span> Join
+  </a>
+
+  <!-- Blogger Feed JavaScript -->
   <script>
-    // Theme & Ramadan Logic
+    // Fetch latest blog posts from Blogger feed
+    async function loadBlogPosts() {
+      const blogContainer = document.getElementById('blog-posts');
+      if (!blogContainer) return;
+
+      try {
+        const response = await fetch('{{ site.blogger }}/feeds/posts/default?alt=json&max-results=6');
+        const data = await response.json();
+        
+        if (data.feed.entry) {
+          const posts = data.feed.entry.map(entry => {
+            const title = entry.title.$t;
+            const url = entry.link.find(l => l.rel === 'alternate').href;
+            const content = entry.content ? entry.content.$t : entry.summary.$t;
+            const date = new Date(entry.published.$t);
+            const formattedDate = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            
+            // Extract categories/labels if available
+            const categories = entry.category ? entry.category.map(c => c.term) : [];
+            
+            return { title, url, content, date: formattedDate, categories };
+          });
+
+          // Render posts
+          blogContainer.innerHTML = posts.map(post => `
+            <article class="group p-8 rounded-[2rem] bg-white/5 border border-white/10 hover:border-moroccangreen/30 transition-all duration-300">
+              <div class="mb-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-10 h-10 rounded-full bg-orange-600/20 flex items-center justify-center text-orange-500">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                  </div>
+                  <div>
+                    <div class="text-xs text-gray-500 uppercase tracking-widest">${post.date}</div>
+                    ${post.categories.length ? `<div class="flex gap-2 mt-1">${post.categories.slice(0,2).map(c => `<span class="px-2 py-0.5 bg-orange-600/20 text-orange-500 text-[10px] rounded uppercase">${c}</span>`).join('')}</div>` : ''}
+                  </div>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3 line-clamp-2 group-hover:text-moroccangreen transition-colors">${post.title}</h3>
+                <p class="text-gray-400 text-sm line-clamp-3">${post.content.replace(/<[^>]*>/g, '').substring(0, 150)}...</p>
+              </div>
+              <a href="${post.url}" target="_blank" class="inline-flex items-center gap-2 text-orange-500 font-bold text-sm uppercase tracking-widest group-hover:gap-3 transition-all">
+                Read Full Article
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+            </article>
+          `).join('');
+        }
+      } catch (error) {
+        console.error('Failed to load Blogger feed:', error);
+        blogContainer.innerHTML = `
+          <div class="col-span-3 text-center py-12">
+            <p class="text-gray-400">Unable to load blog posts. <a href="{{ site.blogger }}" target="_blank" class="text-orange-500">Visit blog directly</a>.</p>
+          </div>
+        `;
+      }
+    }
+
+    // Load posts after DOM ready
+    document.addEventListener('DOMContentLoaded', loadBlogPosts);
+  </script>
+
+  <!-- Theme & Ramadan Logic -->
+  <script>
     document.addEventListener('DOMContentLoaded', () => {
       const now = new Date();
       // Ramadan 2026: Feb 18 - Mar 20

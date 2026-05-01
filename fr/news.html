@@ -1,12 +1,12 @@
 ---
 layout: default
-title: آخر الأخبار | Dino Crafting
-description: أحدث أخبار Dino Crafting - تحديثات المودات، فيديوهات يوتيوب جديدة، وأحداث المجتمع.
-permalink: /ma/news/
-lang: ma
+title: Actualités | Dino Crafting
+description: Les dernières nouvelles de Dino Crafting - mises à jour de mods, nouvelles vidéos YouTube, et événements communautaires.
+permalink: /fr/news/
+lang: fr
 ---
 
-<div class="py-20" dir="rtl">
+<div class="py-20">
   <div class="max-w-6xl mx-auto px-6">
     <!-- Header -->
     <div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-24">
@@ -15,9 +15,9 @@ lang: ma
           <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
           Live Feed
         </div>
-        <h1 class="text-7xl font-black text-white italic uppercase tracking-tighter leading-none">أخبار <span class="text-moroccangreen">DINO NEWS</span></h1>
+        <h1 class="text-7xl font-black text-white italic uppercase tracking-tighter leading-none">DINO <span class="text-moroccangreen">NEWS</span></h1>
       </div>
-      <p class="text-gray-500 text-lg max-w-sm text-right">كاع التحديثات، الفيديوهات الجديدة، والأخبار الحصرية ديال Dino Crafting.</p>
+      <p class="text-gray-500 text-lg max-w-sm">Toutes les mises à jour, nouvelles vidéos et actualités exclusives de Dino Crafting.</p>
     </div>
 
     <!-- Blog Posts Grid (Dynamically loaded from Blogger) -->
@@ -30,31 +30,30 @@ lang: ma
         </div>
         <div class="flex-1 flex flex-col justify-center">
           <div id="featured-meta" class="flex gap-4 mb-6">
-            <span class="px-4 py-1 bg-moroccangreen text-white text-[10px] font-black rounded-full uppercase tracking-widest">Latest News</span>
+            <span class="px-4 py-1 bg-moroccangreen/20 text-moroccangreen text-[10px] font-black rounded-full uppercase tracking-widest">Dernières Nouvelles</span>
           </div>
-          <h2 id="featured-title" class="text-5xl font-black text-white mb-8 group-hover:text-moroccangreen transition-colors leading-tight">Loading latest news...</h2>
-          <p id="featured-excerpt" class="text-gray-400 text-xl leading-relaxed mb-10">جاري تحميل الأخبار من المدونة...</p>
-          <a id="featured-link" href="{{ site.blogger }}" target="_blank" class="px-10 py-5 bg-white text-black font-black rounded-2xl hover:scale-105 transition-all inline-block w-fit uppercase tracking-widest italic">اقرأ المزيد</a>
+          <h2 id="featured-title" class="text-5xl font-black text-white mb-8 group-hover:text-moroccangreen transition-colors leading-tight">Chargement des dernières nouvelles...</h2>
+          <p id="featured-excerpt" class="text-gray-400 text-xl leading-relaxed mb-10">Chargement des actualités depuis le blog...</p>
+          <a id="featured-link" href="{{ site.blogger }}" target="_blank" class="px-10 py-5 bg-white text-black font-black rounded-2xl hover:scale-105 transition-all inline-block w-fit uppercase tracking-widest italic">Lire la Suite</a>
         </div>
       </article>
 
       <!-- Secondary Posts Grid -->
       <div id="news-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Posts will be injected here -->
         <div class="p-8 rounded-[3.5rem] bg-white/5 border border-white/10">
           <div class="h-48 bg-gradient-to-br from-orange-600/20 to-yellow-600/20 rounded-[2.5rem] mb-6 flex items-center justify-center">
             <div class="w-12 h-12 border-4 border-orange-500/30 border-t-orange-500 rounded-full animate-spin"></div>
           </div>
-          <p class="text-gray-400 text-center">Loading news...</p>
+          <p class="text-gray-400 text-center">Chargement des actualités...</p>
         </div>
       </div>
     </div>
 
-    <!-- View All Button -->
+    <!-- View All -->
     <div class="mt-20 text-center">
       <a href="{{ site.blogger }}" target="_blank" class="inline-flex items-center gap-4 px-12 py-6 bg-orange-600 text-white font-black rounded-[2.5rem] hover:bg-orange-700 transition-all shadow-2xl shadow-orange-600/30 uppercase tracking-widest">
         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-        View All Posts on Blogger
+        Voir Tous les Articles sur Blogger
       </a>
     </div>
   </div>
@@ -75,7 +74,7 @@ lang: ma
           const url = entry.link.find(l => l.rel === 'alternate').href;
           const content = entry.content ? entry.content.$t : entry.summary.$t;
           const date = new Date(entry.published.$t);
-          const formattedDate = date.toLocaleDateString('ar-MA', { month: 'short', day: 'numeric', year: 'numeric' });
+          const formattedDate = date.toLocaleDateString('fr-FR', { month: 'short', day: 'numeric', year: 'numeric' });
           const categories = entry.category ? entry.category.map(c => c.term) : [];
           
           // Get first image from content
@@ -97,11 +96,10 @@ lang: ma
           featuredContainer.querySelector('#featured-excerpt').textContent = featured.content.replace(/<[^>]*>/g, '').substring(0, 200) + '...';
           featuredContainer.querySelector('#featured-link').href = featured.url;
           
-          // Set featured image
-          const featuredImg = featuredContainer.querySelector('img') || featuredContainer.querySelector('div');
-          if (featuredImg.tagName === 'IMG') {
-            featuredImg.src = featured.image;
-            featuredImg.classList.remove('hidden');
+          // Update featured image
+          const featuredImgDiv = featuredContainer.querySelector('div[class*="rounded-[3rem]"]');
+          if (featuredImgDiv) {
+            featuredImgDiv.innerHTML = `<img src="${featured.image}" alt="${featured.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">`;
           }
         }
 
@@ -119,7 +117,7 @@ lang: ma
               </div>
               <h3 class="text-3xl font-black text-white mb-6 group-hover:text-moroccangreen transition-colors">${post.title}</h3>
               <p class="text-gray-500 leading-relaxed mb-8">${post.content.replace(/<[^>]*>/g, '').substring(0, 120)}...</p>
-              <a href="${post.url}" target="_blank" class="text-moroccangreen font-black uppercase text-xs tracking-widest group-hover:translate-x-2 transition-all inline-block">التفاصيل &larr;</a>
+              <a href="${post.url}" target="_blank" class="text-moroccangreen font-black uppercase text-xs tracking-widest group-hover:translate-x-2 transition-all inline-block">Lire la Suite &larr;</a>
             </article>
           `).join('');
         }

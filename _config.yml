@@ -18,8 +18,35 @@ google_site_verification: ""
 youtube:
   channel_id: "@Dinocrafting"
   url: "https://www.youtube.com/@Dinocrafting"
-instagram: "dinocrafting1"
-discord: "https://discord.gg/a3UrT5Wm8V"
+  studio: "https://studio.youtube.com/channel/UCboeGauwIyfDKiYDhhTHgyA"
+  playlist: "https://www.youtube.com/embed?listType=user_uploads&list=Dinocrafting"
+
+twitter:
+  username: "dinoo_crafting"
+  url: "https://x.com/dinoo_crafting"
+
+instagram: "https://www.instagram.com/dinocrafting1"
+
+tiktok:
+  username: "dino_crafting1"
+  url: "https://www.tiktok.com/@dino_crafting1"
+
+discord:
+  invite: "https://discord.com/invite/uG7MxUvw4w"
+  server_id: "1339756380564786227"  # Will be updated if different
+  widget_color: "#006233"
+
+twitch: "https://www.twitch.tv/dinocrafting9988"
+
+facebook: "https://web.facebook.com/profile.php?id=61577156144265"
+
+patreon: "https://www.patreon.com/cw/Abdelhakim_Baalla"
+
+blogger: "https://dinocrafting9988.blogspot.com/"
+
+linkedin: "https://www.linkedin.com/abdelhakimbaalla"
+
+personal_site: "baalla.tech"
 
 # Analytics (Google Analytics 4)
 analytics:
