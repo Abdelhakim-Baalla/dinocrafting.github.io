@@ -119,22 +119,16 @@ themes:
     accent: "#7c3aed" # Royal Purple
 
   monetization:
-    provider: "none" # Options: monetag, adsterra, none
+    provider: "adsterra" # Options: monetag, adsterra, none
     adsterra:
-      social_bar: |
-        <script src="https://pl29295838.profitablecpmratenetwork.com/37/f6/45/37f645712c080bfa0a69d29005885e24.js"></script>
-      popunder: |
-        <script src="https://pl29295837.profitablecpmratenetwork.com/25/07/ae/2507aec21f1299de1253b1297767d8ba.js"></script>
+      social_bar: ""
+      popunder: ""
       leaderboard_top: |
         <script type="text/javascript">
           atOptions = { 'key' : '78dafdb40103dddf990a91715c61c366', 'format' : 'iframe', 'height' : 60, 'width' : 468, 'params' : {} };
         </script>
         <script type="text/javascript" src="https://www.highperformanceformat.com/78dafdb40103dddf990a91715c61c366/invoke.js"></script>
-      footer_ad: |
-        <script async="async" data-cfasync="false" src="https://pl29295836.profitablecpmratenetwork.com/3c0ff27766e57a9417d964826c26cefb/invoke.js"></script>
-        <div id="container-3c0ff27766e57a9417d964826c26cefb"></div>
-      in_content_after: |
-        <script async="async" data-cfasync="false" src="https://pl29295836.profitablecpmratenetwork.com/3c0ff27766e57a9417d964826c26cefb/invoke.js"></script>
-        <div id="container-3c0ff27766e57a9417d964826c26cefb"></div>
+      footer_ad: ""
+      in_content_after: ""
     monetag:
       multitag_script: '<script src="https://quge5.com/88/tag.min.js" data-zone="234755" async data-cfasync="false"></script>'

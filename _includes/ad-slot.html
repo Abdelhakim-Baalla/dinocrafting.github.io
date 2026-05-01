@@ -1,5 +1,13 @@
 {% assign provider = site.themes.monetization.provider %}
 {% if provider != "none" %}
+{% assign ad_code = "" %}
+{% if provider == "adsterra" %}
+  {% assign ad_code = site.themes.monetization.adsterra[include.zone] | default: "" | strip %}
+{% endif %}
+{% if provider == "monetag" %}
+  {% assign ad_code = "monetag" %}
+{% endif %}
+{% if ad_code != "" %}
 <div x-data="{ hideAds: new URLSearchParams(window.location.search).has('noads') }" x-show="!hideAds">
 <div class="ad-slot my-6 flex flex-col items-center justify-center p-2 bg-black/5 dark:bg-white/5 rounded-2xl border border-white/5 transition-all hover:border-moroccangreen/20" data-zone="{{ include.zone }}">
   <!-- Label -->
@@ -23,4 +31,5 @@
   </div>
 </div>
 </div>
+{% endif %}
 {% endif %}
