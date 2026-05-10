@@ -1,13 +1,13 @@
 {
   "stats_version": "2.1.0",
   "health": {
-    "generated_at": "2026-05-10T19:37:56.119Z",
+    "generated_at": "2026-05-10T20:35:35.066Z",
     "next_refresh_minutes": 30,
     "stale_after_minutes": 90,
     "age_minutes": 0,
     "is_stale": false
   },
-  "generated_at": "2026-05-10T19:37:56.119Z",
+  "generated_at": "2026-05-10T20:35:35.066Z",
   "sources": {
     "youtube_badges": "live",
     "youtube_feed": "live",
@@ -36,18 +36,16 @@
     "status": "under_review"
   },
   "news": {
-    "total_posts": 19,
+    "total_posts": 20,
     "featured": {
-      "id": "tag:blogger.com,1999:blog-5667942582438309994.post-1946942977452683517",
-      "title": "الريدستون في ماين كرافت: دليل مفصل للآليات، الأتمتة، واللور",
-      "url": "https://dinocrafting9988.blogspot.com/2025/08/blog-post_30.html",
-      "excerpt": "الريدستون في ماين كرافت: إتقان الآليات، الأتمتة، واللور مع دلائل تفصيلية مرحباً بكم في مدونتي المخصصة لعشاق ماين كرافت! إذا كنتم من اللاعبين الذين يسعون لتحويل أفكارهم إلى واقع داخل اللعبة، فإن الريدستون (Redstone) هو مف",
-      "published_at": "2025-08-30T17:07:00.000+01:00",
-      "labels": [
-        "شروحات ماين كرافت"
-      ],
+      "id": "tag:blogger.com,1999:blog-5667942582438309994.post-7410938727308608973",
+      "title": "أفضل 10 مودات راح تخلي ماين كرافت الجوال أجمل 🔥🤩 | Minecraft PE",
+      "url": "https://dinocrafting9988.blogspot.com/2026/05/10-minecraft-pe.html",
+      "excerpt": "&nbsp;&nbsp;أفضل 9 مودات جمالية لماين كرافت PE و Bedrock 2026 | دليل شامل مع روابط التحميل&nbsp;&nbsp;&nbsp;شاهد المقارنة الكاملة بالفيديو على قناة Dino Craftingهل سئمت من المظهر التقليدي لماين كرافت الجوال؟ هل تريد أن ت",
+      "published_at": "2026-05-10T21:17:53.660+01:00",
+      "labels": [],
       "category": "blogs",
-      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEiPTM0HlGJH5cfHAMxgcsziAaHYnnccDVVRZX6FXrx9y1AtD2WpfczlfSxnt-Q1jPEsDVmkNWThctVQ-g5wOpjLIrGB-GevKXg06-LVkP_yUPkLToP4ZWhXw8aPDl0x1IEmiFn3PY6pTrxTJRRd99i4epaXZMzeKO4u6XawNnkT7MWGzPZ69TVC4z20sBGr=w320-h320"
+      "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgiRGJzWHBCUmLFZVJBsBYga5cvMjrmF4HymatDYQYdx-OpanFMWqDTCNYaLmQIqrlE4vzDKJCjTFVh7k5dF7WAYnaGDGayEx99MZ7IB_LOm8wmc1hfaiywvMM7Fix0ZsATknyiFALnUYZ29IMXnruhcwGcz-Hnny40XXIXCULHLaHST7Pq7SDOIitvuMdL/w640-h360/Nouveau%20projet.jpg"
     },
     "trending_labels": [
       "نظريات ماين كرافت",
@@ -56,6 +54,16 @@
       "أخبار ماين كرافت"
     ],
     "posts": [
+      {
+        "id": "tag:blogger.com,1999:blog-5667942582438309994.post-7410938727308608973",
+        "title": "أفضل 10 مودات راح تخلي ماين كرافت الجوال أجمل 🔥🤩 | Minecraft PE",
+        "url": "https://dinocrafting9988.blogspot.com/2026/05/10-minecraft-pe.html",
+        "excerpt": "&nbsp;&nbsp;أفضل 9 مودات جمالية لماين كرافت PE و Bedrock 2026 | دليل شامل مع روابط التحميل&nbsp;&nbsp;&nbsp;شاهد المقارنة الكاملة بالفيديو على قناة Dino Craftingهل سئمت من المظهر التقليدي لماين كرافت الجوال؟ هل تريد أن ت",
+        "published_at": "2026-05-10T21:17:53.660+01:00",
+        "labels": [],
+        "category": "blogs",
+        "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgiRGJzWHBCUmLFZVJBsBYga5cvMjrmF4HymatDYQYdx-OpanFMWqDTCNYaLmQIqrlE4vzDKJCjTFVh7k5dF7WAYnaGDGayEx99MZ7IB_LOm8wmc1hfaiywvMM7Fix0ZsATknyiFALnUYZ29IMXnruhcwGcz-Hnny40XXIXCULHLaHST7Pq7SDOIitvuMdL/w640-h360/Nouveau%20projet.jpg"
+      },
       {
         "id": "tag:blogger.com,1999:blog-5667942582438309994.post-1946942977452683517",
         "title": "الريدستون في ماين كرافت: دليل مفصل للآليات، الأتمتة، واللور",
